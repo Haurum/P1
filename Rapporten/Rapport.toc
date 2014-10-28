@@ -10,4 +10,5 @@
 \contentsline {chapter}{\chapternumberline {5}Laster}{9}{chapter.5}
 \contentsline {section}{\numberline {5.1}Vindlast}{9}{section.5.1}
 \contentsline {chapter}{\chapternumberline {6}Konklusion}{11}{chapter.6}
-\contentsline {appendix}{\chapternumberline {A}Fors\IeC {\o }g med tr\IeC {\ae }samlinger}{13}{appendix.A}
+\contentsline {chapter}{Litteratur}{13}{section*.5}
+\contentsline {appendix}{\chapternumberline {A}Fors\IeC {\o }g med tr\IeC {\ae }samlinger}{15}{appendix.A}

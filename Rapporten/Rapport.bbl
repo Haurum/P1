@@ -1,0 +1,39 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Byggeriets Evaluerings Center}(2007)]{bib:bec}
+\textbf{{Byggeriets Evaluerings Center}}, \textbf{2007}.
+\newblock {Byggeriets Evaluerings Center}.
+\newblock \textit{Budgetafvigelser på kulturbyggerier i Danmark}, 2007.
+
+\bibitem[Isover(2008)]{isover}
+\textbf{Isover}, \textbf{2008}.
+\newblock Isover.
+\newblock \textit{Typeoversigt over konstruktionsdele}.
+\newblock \url{http://www.isover.dk/bygningskonstruktioner}, 2008.
+\newblock Downloadet: 19-05-2008.
+
+\bibitem[Jensen et~al.(2007)Jensen, Mohr, Nicolajsen, Mortensen, Bygbjerg,
+  Hansen, Larsen, Hansen, Bager, Svensson, Søndergaard, Plum, Riberholt,
+  Hansen, Dahl, Larsen, Goltermann, Steenfelt, Sørensen, og
+  Bai]{tekniskstaabi}
+\textbf{Jensen et~al.}, \textbf{2007}.
+\newblock Bjarne~Chr. Jensen, Gunner Mohr, Asta Nicolajsen, Bo~Mortensen,
+  Henrik Bygbjerg, Lars~Pilegaard Hansen, Hans~Jørgen Larsen, Svend~Ole
+  Hansen, Dirch~H. Bager, Eilif Svensson, Ejnar Søndergaard, Carsten~Munk
+  Plum, Hilmer Riberholt, Lars~Zenke Hansen, Kaare K.~B. Dahl, Henning Larsen,
+  Per Goltermann, Jørgen~S. Steenfelt, Carsten~S. Sørensen  og Werner Bai.
+\newblock \textit{Teknisk Ståbi}.
+\newblock  ISBN: 978-87-571-2556-6, 19. udgave. Nyt Teknisk Forlag, 2007.
+
+\bibitem[Phil-Andersen(2007)]{julemaend}
+\textbf{Phil-Andersen}, \textbf{2007}.
+\newblock Alex Phil-Andersen.
+\newblock \textit{Økonomiske julemænd}.
+\newblock Nordjyske, 10.02, 2007.
+
+\end{thebibliography}

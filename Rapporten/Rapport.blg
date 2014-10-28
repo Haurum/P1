@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Rapport.aux
+The style file: bibtex/harvard.bst
+A level-1 auxiliary file: formalia/forside.aux
+A level-1 auxiliary file: formalia/titelblad.aux
+A level-1 auxiliary file: formalia/forord.aux
+A level-1 auxiliary file: kontekst/indledning.aux
+A level-1 auxiliary file: kontekst/partsinteresser.aux
+A level-1 auxiliary file: kontekst/prisestimering.aux
+A level-1 auxiliary file: teknisk/staal.aux
+A level-1 auxiliary file: teknisk/laster.aux
+A level-1 auxiliary file: formalia/konklusion.aux
+A level-1 auxiliary file: appendiks/appendiks1.aux
+url: is an unknown function---line 320 of file bibtex/harvard.bst
+Database file #1: bibtex/litteratur.bib
+Warning--empty institution in bib:bec
+1 is an integer literal, not a string, for entry isover
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry tekniskstaabi
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry julemaend
+while executing---line 1485 of file bibtex/harvard.bst
+You've used 4 entries,
+            2921 wiz_defined-function locations,
+            642 strings with 5955 characters,
+and the built_in function-call counts, 2337 in all, are:
+= -- 180
+> -- 217
+< -- 7
++ -- 73
+- -- 69
+* -- 209
+:= -- 401
+add.period$ -- 17
+call.type$ -- 4
+change.case$ -- 27
+chr.to.int$ -- 4
+cite$ -- 9
+duplicate$ -- 89
+empty$ -- 131
+format.name$ -- 77
+if$ -- 454
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 3
+newline$ -- 32
+num.names$ -- 20
+pop$ -- 68
+preamble$ -- 1
+purify$ -- 27
+quote$ -- 0
+skip$ -- 72
+stack$ -- 0
+substring$ -- 8
+swap$ -- 14
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 39
+warning$ -- 1
+while$ -- 12
+width$ -- 0
+write$ -- 69
+(There were 4 error messages)

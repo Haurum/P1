@@ -1,14 +1,8 @@
 \changetocdepth {2}
 \select@language {danish}
 \contentsline {chapter}{\chapternumberline {1}Indledning}{1}{chapter.1}
-\contentsline {chapter}{\chapternumberline {2}Partsinteresser}{3}{chapter.2}
-\contentsline {chapter}{\chapternumberline {3}Prisestimering}{5}{chapter.3}
-\contentsline {chapter}{\chapternumberline {4}St\IeC {\r a}lmateriale}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Fremstilling}{7}{section.4.1}
-\contentsline {section}{\numberline {4.2}Egenskaber}{7}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Arbejdskurve}{7}{subsection.4.2.1}
-\contentsline {chapter}{\chapternumberline {5}Laster}{9}{chapter.5}
-\contentsline {section}{\numberline {5.1}Vindlast}{9}{section.5.1}
-\contentsline {chapter}{\chapternumberline {6}Konklusion}{11}{chapter.6}
-\contentsline {chapter}{Litteratur}{13}{section*.5}
-\contentsline {appendix}{\chapternumberline {A}Fors\IeC {\o }g med tr\IeC {\ae }samlinger}{15}{appendix.A}
+\contentsline {chapter}{\chapternumberline {2}Teknologianalyse}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}GPS}{3}{section.2.1}
+\contentsline {chapter}{\chapternumberline {3}Konklusion}{5}{chapter.3}
+\contentsline {chapter}{Litteratur}{7}{section*.5}
+\contentsline {appendix}{\chapternumberline {A}Fors\IeC {\o }g med tr\IeC {\ae }samlinger}{9}{appendix.A}

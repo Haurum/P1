@@ -1,9 +1,26 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{3}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[FindTheBestRoute.com(2014)]{ftbr}
+\textbf{FindTheBestRoute.com}, \textbf{2014}.
+\newblock FindTheBestRoute.com.
+\newblock \textit{Route Optimization - Find the best route between multiple
+  addresses}.
+\newblock \url{http://findthebestroute.com/RouteFinder.html}, 2014.
+\newblock Set d. 27/10-2014.
+
+\bibitem[Google(2014)]{googleapi}
+\textbf{Google}, \textbf{2014}.
+\newblock Google.
+\newblock \textit{Google Maps JavaScript API v3}.
+\newblock
+  \url{https://developers.google.com/maps/documentation/javascript/directions},
+  2014.
+\newblock Set d. 27/10-2014.
 
 \bibitem[VisitDanmark(2013)]{faktaogtalVD}
 \textbf{VisitDanmark}, \textbf{2013}.

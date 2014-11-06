@@ -10,9 +10,9 @@
 
 \include{formalia/forside}
 \cleardoublepage												% Indsaetter tom side, saa naeste kapitel starter paa hoejre side (hvis noedvendigt)
-\include{formalia/titelblad}
+\input{formalia/titelblad}
 %\cleardoublepage
-\include{formalia/forord}
+\input{formalia/forord}
 \cleardoublepage
 
 %%%% Indholdsfortegnelse (TOC) %%%%
@@ -30,16 +30,23 @@
 
 %% Indledende %%												% Opdel evt. i passende afsnit for overblikkets skyld
 
-\include{kontekst/indledning}
+\input{kontekst/indledning}
 
 % Analyse % 
-\chapter{Problemanalyse}
-\include{analyse/interessentanalyse}
-\include{analyse/teknologianalyse}
+
+\input{analyse/problemanalyseIndeledning}
+\input{analyse/interessentanalyse}
+\input{analyse/teknologianalyse}
+
+% Problem %
+
+\input{problem/problemIndledning}
+\input{problem/afgransning}
+\input{problem/formulering}
 
 %% Afrunding %%
 
-\include{formalia/konklusion}
+\input{formalia/konklusion}
 
 %%%% Kilder %%%%
 
@@ -71,8 +78,8 @@
 
 %% Filer til appendiks %%
 
-\include{appendiks/appendiks1}
-
+\input{appendiks/sporgeskema}
+\input{appendiks/interview}
 
 %%%% Bilag %%%%
 

@@ -6,53 +6,62 @@ A level-1 auxiliary file: formalia/forside.aux
 A level-1 auxiliary file: formalia/titelblad.aux
 A level-1 auxiliary file: formalia/forord.aux
 A level-1 auxiliary file: kontekst/indledning.aux
+A level-1 auxiliary file: analyse/problemanalyseIndeledning.aux
 A level-1 auxiliary file: analyse/interessentanalyse.aux
 A level-1 auxiliary file: analyse/teknologianalyse.aux
+A level-1 auxiliary file: problem/problemIndledning.aux
+A level-1 auxiliary file: problem/afgransning.aux
+A level-1 auxiliary file: problem/formulering.aux
 A level-1 auxiliary file: formalia/konklusion.aux
-A level-1 auxiliary file: appendiks/appendiks1.aux
+A level-1 auxiliary file: appendiks/sporgeskema.aux
+A level-1 auxiliary file: appendiks/interview.aux
 url: is an unknown function---line 320 of file bibtex/harvard.bst
 Database file #1: bibtex/litteratur.bib
+1 is an integer literal, not a string, for entry ftbr
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry googleapi
+while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry faktaogtalVD
 while executing---line 1485 of file bibtex/harvard.bst
-You've used 1 entry,
+You've used 3 entries,
             2921 wiz_defined-function locations,
-            626 strings with 5330 characters,
-and the built_in function-call counts, 364 in all, are:
-= -- 32
-> -- 11
-< -- 2
-+ -- 4
-- -- 3
-* -- 21
-:= -- 65
-add.period$ -- 5
-call.type$ -- 1
-change.case$ -- 2
-chr.to.int$ -- 1
-cite$ -- 2
-duplicate$ -- 21
-empty$ -- 31
-format.name$ -- 5
-if$ -- 69
+            641 strings with 5748 characters,
+and the built_in function-call counts, 1026 in all, are:
+= -- 96
+> -- 33
+< -- 6
++ -- 12
+- -- 9
+* -- 59
+:= -- 175
+add.period$ -- 15
+call.type$ -- 3
+change.case$ -- 6
+chr.to.int$ -- 3
+cite$ -- 6
+duplicate$ -- 63
+empty$ -- 91
+format.name$ -- 15
+if$ -- 205
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 15
-num.names$ -- 5
-pop$ -- 6
+newline$ -- 29
+num.names$ -- 15
+pop$ -- 18
 preamble$ -- 1
-purify$ -- 2
+purify$ -- 6
 quote$ -- 0
-skip$ -- 14
+skip$ -- 40
 stack$ -- 0
-substring$ -- 2
-swap$ -- 4
+substring$ -- 6
+swap$ -- 12
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 11
+type$ -- 33
 warning$ -- 0
-while$ -- 3
+while$ -- 9
 width$ -- 0
-write$ -- 24
-(There were 2 error messages)
+write$ -- 58
+(There were 4 error messages)

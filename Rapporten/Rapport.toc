@@ -20,14 +20,16 @@
 \contentsline {section}{\numberline {2.5}Eksisterende l\IeC {\o }sninger}{6}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}FindTheBestRoute.com}{6}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}TripAdvisor Offline City Guides}{6}{subsection.2.5.2}
-\contentsline {chapter}{\chapternumberline {3}Problem beskrivelse}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Problem afgr\IeC {\ae }nsning}{8}{section.3.1}
-\contentsline {section}{\numberline {3.2}Problem formulering}{8}{section.3.2}
-\contentsline {chapter}{\chapternumberline {4}Konklusion}{9}{chapter.4}
-\contentsline {chapter}{Litteratur}{10}{section*.5}
-\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{12}{appendix.A}
-\contentsline {section}{\numberline {A.1}Teori}{12}{section.A.1}
-\contentsline {section}{\numberline {A.2}Resultater}{12}{section.A.2}
-\contentsline {appendix}{\chapternumberline {B}Interview}{13}{appendix.B}
-\contentsline {section}{\numberline {B.1}Teori}{13}{section.B.1}
-\contentsline {section}{\numberline {B.2}Transkribering}{13}{section.B.2}
+\contentsline {chapter}{\chapternumberline {3}Problemformulering}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}Problemformuleringen}{8}{section.3.1}
+\contentsline {section}{\numberline {3.2}Krav}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Afg\IeC {\ae }rnsning}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}L\IeC {\o }sningsforslag}{9}{section.3.4}
+\contentsline {chapter}{\chapternumberline {4}Konklusion}{10}{chapter.4}
+\contentsline {chapter}{Litteratur}{11}{section*.5}
+\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{13}{appendix.A}
+\contentsline {section}{\numberline {A.1}Teori}{13}{section.A.1}
+\contentsline {section}{\numberline {A.2}Resultater}{13}{section.A.2}
+\contentsline {appendix}{\chapternumberline {B}Interview}{14}{appendix.B}
+\contentsline {section}{\numberline {B.1}Teori}{14}{section.B.1}
+\contentsline {section}{\numberline {B.2}Transskribering}{14}{section.B.2}

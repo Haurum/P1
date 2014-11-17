@@ -1,9 +1,23 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[AnalyseDanmark(2014{\natexlab{a}})]{kvalitativ}
+\textbf{AnalyseDanmark}, \textbf{2014{\natexlab{a}}}.
+\newblock AnalyseDanmark.
+\newblock \textit{Kvalitative metoder}.
+\newblock \url{http://www.analysedanmark.dk/kvalitative-metoder/}, 2014.
+\newblock Set d. 7/11-2014.
+
+\bibitem[AnalyseDanmark(2014{\natexlab{b}})]{kvantitativ}
+\textbf{AnalyseDanmark}, \textbf{2014{\natexlab{b}}}.
+\newblock AnalyseDanmark.
+\newblock \textit{Kvantitative metoder}.
+\newblock \url{http://www.analysedanmark.dk/kvantitative-metoder/}, 2014.
+\newblock Set d. 7/11-2014.
 
 \bibitem[FindTheBestRoute.com(2014)]{ftbr}
 \textbf{FindTheBestRoute.com}, \textbf{2014}.
@@ -21,6 +35,11 @@
   \url{https://developers.google.com/maps/documentation/javascript/directions},
   2014.
 \newblock Set d. 27/10-2014.
+
+\bibitem[Harboe()]{metodeogprojektskrivning}
+\textbf{\textbf{Harboe}}.
+\newblock Thomas Harboe.
+\newblock \textit{Metode og Projektskrivning}.
 
 \bibitem[VisitDanmark(2013)]{faktaogtalVD}
 \textbf{VisitDanmark}, \textbf{2013}.

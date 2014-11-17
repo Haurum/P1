@@ -55,8 +55,9 @@
 %%%% CUSTOM SETTINGS %%%%
 
 % ¤¤ Marginer ¤¤ %
-\setlrmarginsandblock{3.5cm}{2.5cm}{*}		% \setlrmarginsandblock{Indbinding}{Kant}{Ratio}
-\setulmarginsandblock{2.5cm}{3.0cm}{*}		% \setulmarginsandblock{Top}{Bund}{Ratio}
+%\setlrmarginsandblock{3.5cm}{2.5cm}{*}
+\setlrmarginsandblock{2.5cm}{2.5cm}{*} %\setlrmarginsandblock{Indbinding}{Kant}{Ratio}
+\setulmarginsandblock{2.5cm}{2.5cm}{*}		% \setulmarginsandblock{Top}{Bund}{Ratio}
 \checkandfixthelayout 						% Oversaetter vaerdier til brug for andre pakker
 
 %	¤¤ Afsnitsformatering ¤¤ %
@@ -169,9 +170,11 @@
 }
 \nouppercaseheads											% Ingen Caps oenskes
 
-\makeevenhead{AAU}{Gruppe A401}{}{\leftmark}				% Definerer lige siders sidehoved (\makeevenhead{Navn}{Venstre}{Center}{Hoejre})
-\makeoddhead{AAU}{\rightmark}{}{Aalborg Universitet}		% Definerer ulige siders sidehoved (\makeoddhead{Navn}{Venstre}{Center}{Hoejre})
-\makeevenfoot{AAU}{\thepage}{}{}							% Definerer lige siders sidefod (\makeevenfoot{Navn}{Venstre}{Center}{Hoejre})
+\makeevenhead{AAU}{Gruppe A401}{}{Aalborg Universitet}
+%\makeevenhead{AAU}{Gruppe A401}{}{\leftmark}				% Definerer lige siders sidehoved (\makeevenhead{Navn}{Venstre}{Center}{Hoejre})
+\makeoddhead{AAU}{Gruppe A401}{}{Aalborg Universitet}
+%\makeoddhead{AAU}{\rightmark}{}{Aalborg Universitet}		% Definerer ulige siders sidehoved (\makeoddhead{Navn}{Venstre}{Center}{Hoejre})
+\makeevenfoot{AAU}{}{}{\thepage}{}{}							% Definerer lige siders sidefod (\makeevenfoot{Navn}{Venstre}{Center}{Hoejre})
 \makeoddfoot{AAU}{}{}{\thepage}								% Definerer ulige siders sidefod (\makeoddfoot{Navn}{Venstre}{Center}{Hoejre})
 \makeheadrule{AAU}{\textwidth}{0.5pt}						% Tilfoejer en streg under sidehovedets indhold
 \makefootrule{AAU}{\textwidth}{0.5pt}{1mm}					% Tilfoejer en streg under sidefodens indhold

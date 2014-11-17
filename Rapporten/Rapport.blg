@@ -3,65 +3,68 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Rapport.aux
 The style file: bibtex/harvard.bst
 A level-1 auxiliary file: formalia/forside.aux
-A level-1 auxiliary file: formalia/titelblad.aux
-A level-1 auxiliary file: formalia/forord.aux
-A level-1 auxiliary file: kontekst/indledning.aux
-A level-1 auxiliary file: analyse/problemanalyseIndeledning.aux
-A level-1 auxiliary file: analyse/interessentanalyse.aux
-A level-1 auxiliary file: analyse/teknologianalyse.aux
-A level-1 auxiliary file: problem/problemIndledning.aux
-A level-1 auxiliary file: problem/afgransning.aux
-A level-1 auxiliary file: problem/formulering.aux
-A level-1 auxiliary file: formalia/konklusion.aux
-A level-1 auxiliary file: appendiks/sporgeskema.aux
-A level-1 auxiliary file: appendiks/interview.aux
 url: is an unknown function---line 320 of file bibtex/harvard.bst
 Database file #1: bibtex/litteratur.bib
+Repeated entry---line 91 of file bibtex/litteratur.bib
+ : @misc{metodeogprojektskrivning
+ :                               ,
+I'm skipping whatever remains of this entry
+1 is an integer literal, not a string, for entry kvalitativ
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry kvantitativ
+while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry ftbr
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry googleapi
 while executing---line 1485 of file bibtex/harvard.bst
+Warning--empty year in metodeogprojektskrivning
+Warning--empty year in metodeogprojektskrivning
+Warning--empty publisher in metodeogprojektskrivning
+Warning--empty year in metodeogprojektskrivning
+1 is an integer literal, not a string, for entry metodeogprojektskrivning
+while executing---line 1485 of file bibtex/harvard.bst
+Warning--empty  in metodeogprojektskrivning
 1 is an integer literal, not a string, for entry faktaogtalVD
 while executing---line 1485 of file bibtex/harvard.bst
-You've used 3 entries,
+You've used 6 entries,
             2921 wiz_defined-function locations,
-            641 strings with 5748 characters,
-and the built_in function-call counts, 1026 in all, are:
-= -- 96
-> -- 33
-< -- 6
-+ -- 12
-- -- 9
-* -- 59
-:= -- 175
-add.period$ -- 15
-call.type$ -- 3
-change.case$ -- 6
-chr.to.int$ -- 3
-cite$ -- 6
-duplicate$ -- 63
-empty$ -- 91
-format.name$ -- 15
-if$ -- 205
-int.to.chr$ -- 1
+            640 strings with 5707 characters,
+and the built_in function-call counts, 2031 in all, are:
+= -- 182
+> -- 66
+< -- 12
++ -- 25
+- -- 18
+* -- 129
+:= -- 335
+add.period$ -- 28
+call.type$ -- 6
+change.case$ -- 12
+chr.to.int$ -- 5
+cite$ -- 17
+duplicate$ -- 129
+empty$ -- 188
+format.name$ -- 30
+if$ -- 408
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 29
-num.names$ -- 15
-pop$ -- 18
+missing$ -- 2
+newline$ -- 48
+num.names$ -- 30
+pop$ -- 48
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 12
 quote$ -- 0
-skip$ -- 40
+skip$ -- 73
 stack$ -- 0
-substring$ -- 6
-swap$ -- 12
+substring$ -- 12
+swap$ -- 25
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 33
-warning$ -- 0
-while$ -- 9
+type$ -- 61
+warning$ -- 5
+while$ -- 18
 width$ -- 0
-write$ -- 58
-(There were 4 error messages)
+write$ -- 103
+(There were 8 error messages)

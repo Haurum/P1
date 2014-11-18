@@ -5,15 +5,8 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[AnalyseDanmark(2014{\natexlab{a}})]{kvalitativ}
-\textbf{AnalyseDanmark}, \textbf{2014{\natexlab{a}}}.
-\newblock AnalyseDanmark.
-\newblock \textit{Kvalitative metoder}.
-\newblock \url{http://www.analysedanmark.dk/kvalitative-metoder/}, 2014.
-\newblock Set d. 7/11-2014.
-
-\bibitem[AnalyseDanmark(2014{\natexlab{b}})]{kvantitativ}
-\textbf{AnalyseDanmark}, \textbf{2014{\natexlab{b}}}.
+\bibitem[AnalyseDanmark(2014)]{kvantitativ}
+\textbf{AnalyseDanmark}, \textbf{2014}.
 \newblock AnalyseDanmark.
 \newblock \textit{Kvantitative metoder}.
 \newblock \url{http://www.analysedanmark.dk/kvantitative-metoder/}, 2014.
@@ -40,6 +33,14 @@
 \textbf{\textbf{Harboe}}.
 \newblock Thomas Harboe.
 \newblock \textit{Metode og Projektskrivning}.
+
+\bibitem[TDC(2014)]{TDC}
+\textbf{TDC}, \textbf{2014}.
+\newblock TDC.
+\newblock \textit{Data i udlandet}.
+\newblock
+  \url{http://kundeservice.tdc.dk/privat/publish.php?dogtag=p_help_mob_ud_pdk_du},
+  2014.
 
 \bibitem[VisitDanmark(2013)]{faktaogtalVD}
 \textbf{VisitDanmark}, \textbf{2013}.

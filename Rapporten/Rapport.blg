@@ -11,8 +11,6 @@ Illegal end of database file---line 106 of file bibtex/litteratur.bib
  :  note = {Set d. 18/11-2014}
  :                            
 I'm skipping whatever remains of this entry
-1 is an integer literal, not a string, for entry kvantitativ
-while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry ftbr
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry googleapi
@@ -28,4 +26,4 @@ Warning--empty  in metodeogprojektskrivning
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry faktaogtalVD
 while executing---line 1485 of file bibtex/harvard.bst
-(There were 9 error messages)
+(There were 8 error messages)

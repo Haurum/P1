@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  19 NOV 2014 14:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.11.21)  21 NOV 2014 14:18
 entering extended mode
 **Rapport.tex
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.tex
+(C:\Uni\semester1\github\P1\Rapporten\Rapport.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\Søren\Desktop\P1\Rapporten\preamble_ida14.tex
+(C:\Uni\semester1\github\P1\Rapporten\preamble_ida14.tex
 ("C:\Program Files\MiKTeX 2.9\tex\latex\memoir\memoir.cls"
 Document Class: memoir 2013/05/30 v3.7b configurable book, report, article docu
 ment class
@@ -1645,8 +1645,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 89.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 ))
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.aux
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forside.aux))
+(C:\Uni\semester1\github\P1\Rapporten\Rapport.aux
+(C:\Uni\semester1\github\P1\Rapporten\formalia/forside.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
@@ -1712,8 +1712,8 @@ LaTeX Info: Redefining \nameref on input line 6.
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
 LaTeX Info: Redefining \nameref on input line 6.
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.out)
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.out)
+(C:\Uni\semester1\github\P1\Rapporten\Rapport.out)
+(C:\Uni\semester1\github\P1\Rapporten\Rapport.out)
 \@outlinefile=\write4
 LaTeX Info: Redefining \Ref on input line 6.
 \c__siunitx_mathsf_int=\count332
@@ -1732,7 +1732,7 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 6.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\ustmry.fd")
 \c__siunitx_mathtt_int=\count333
 
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forside.tex) [1
+(C:\Uni\semester1\github\P1\Rapporten\formalia/forside.tex) [1
 
 
 
@@ -1740,7 +1740,7 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 6.
 
 
 ]
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/titelblad.tex
+(C:\Uni\semester1\github\P1\Rapporten\formalia/titelblad.tex
 <billeder/AAU-logo-stud-DK-RGB.pdf, id=222, 136.51pt x 97.09073pt>
 File: billeder/AAU-logo-stud-DK-RGB.pdf Graphic file (type pdf)
 
@@ -1753,16 +1753,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--24
 
  []
 
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/synopsis.tex))
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forord.tex [3 <C:/Users/Søren/D
-esktop/P1/Rapporten/billeder/AAU-logo-stud-DK-RGB.pdf>]
+(C:\Uni\semester1\github\P1\Rapporten\formalia/synopsis.tex))
+(C:\Uni\semester1\github\P1\Rapporten\formalia/forord.tex [3 <C:/Uni/semester1/
+github/P1/Rapporten/billeder/AAU-logo-stud-DK-RGB.pdf>]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pbk.fd")) [4
 
 ]
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.toc [5
+(C:\Uni\semester1\github\P1\Rapporten\Rapport.toc [5
 
 ]) [6]
-(C:\Users\Søren\Desktop\P1\Rapporten\kontekst/indledning.tex
+(C:\Uni\semester1\github\P1\Rapporten\kontekst/indledning.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
@@ -1772,20 +1772,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/problemanalyseIndeledning.tex
+) (C:\Uni\semester1\github\P1\Rapporten\analyse/problemanalyseIndeledning.tex
 [1
 
 
-]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/interessentanalyse.tex
+]) (C:\Uni\semester1\github\P1\Rapporten\analyse/interessentanalyse.tex
 [2
 
-] [3]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/sporgeskema.tex [4])
-(C:\Users\Søren\Desktop\P1\Rapporten\analyse/teknologianalyse.tex [5] [6])
-(C:\Users\Søren\Desktop\P1\Rapporten\problem/formulering.tex [7]) [8
+] [3]) (C:\Uni\semester1\github\P1\Rapporten\analyse/sporgeskema.tex [4])
+(C:\Uni\semester1\github\P1\Rapporten\analyse/teknologianalyse.tex [5] [6])
+(C:\Uni\semester1\github\P1\Rapporten\problem/formulering.tex [7]) [8
 
 ]
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/konklusion.tex [9])
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.bbl [10
+(C:\Uni\semester1\github\P1\Rapporten\formalia/konklusion.tex [9])
+(C:\Uni\semester1\github\P1\Rapporten\Rapport.bbl [10
 
 ]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 13.
@@ -1795,8 +1795,8 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )) [11
 
 ]
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.lox) [12]
-(C:\Users\Søren\Desktop\P1\Rapporten\appendiks/sporgeskema.tex
+(C:\Uni\semester1\github\P1\Rapporten\Rapport.lox) [12]
+(C:\Uni\semester1\github\P1\Rapporten\appendiks/sporgeskema.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
@@ -1805,16 +1805,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 33--48
+Underfull \hbox (badness 10000) in paragraph at lines 33--46
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 95--106
+Underfull \hbox (badness 10000) in paragraph at lines 93--104
 
  []
 
-) (C:\Users\Søren\Desktop\P1\Rapporten\appendiks/interview.tex [15] [16
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+! Class memoir Error:  Illegal pream-token (1): `c' used.
+
+See the memoir class documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+                                             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! Class memoir Error:  Illegal pream-token (1): `c' used.
+
+See the memoir class documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+                                             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! Class memoir Error:  Illegal pream-token (1): `c' used.
+
+See the memoir class documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+                                             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! Class memoir Error:  Illegal pream-token (1): `c' used.
+
+See the memoir class documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+                                             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) (C:\Uni\semester1\github\P1\Rapporten\appendiks/interview.tex [15] [16
 
 ]
 [17]) [18]
@@ -1822,8 +1875,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--106
 \tf@lox=\write6
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
- (C:\Users\Søren\Desktop\P1\Rapporten\Rapport.aux
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forside.aux))
+ (C:\Uni\semester1\github\P1\Rapporten\Rapport.aux
+(C:\Uni\semester1\github\P1\Rapporten\formalia/forside.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
 Package rerunfilecheck Info: File `Rapport.out' has not changed.
@@ -1852,7 +1905,7 @@ ram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Program Files
 type1/public/cm-super/sfti1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/cm-super/sftt1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/
 ubkd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
-Output written on Rapport.pdf (24 pages, 552212 bytes).
+Output written on Rapport.pdf (24 pages, 552700 bytes).
 PDF statistics:
  486 PDF objects out of 1000 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)

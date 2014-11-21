@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  21 NOV 2014 14:07
-=======
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.11.21)  21 NOV 2014 14:21
->>>>>>> 70fc8fae1060cde127792c8b60711d47d2e43235
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  21 NOV 2014 14:41
 entering extended mode
 **Rapport.tex
-(C:\Uni\semester1\github\P1\Rapporten\Rapport.tex
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -17,7 +13,7 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Uni\semester1\github\P1\Rapporten\preamble_ida14.tex
+(C:\Users\Søren\Desktop\P1\Rapporten\preamble_ida14.tex
 ("C:\Program Files\MiKTeX 2.9\tex\latex\memoir\memoir.cls"
 Document Class: memoir 2013/05/30 v3.7b configurable book, report, article docu
 ment class
@@ -1649,8 +1645,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 89.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 ))
-(C:\Uni\semester1\github\P1\Rapporten\Rapport.aux
-(C:\Uni\semester1\github\P1\Rapporten\formalia/forside.aux))
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.aux
+(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forside.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
@@ -1716,8 +1712,8 @@ LaTeX Info: Redefining \nameref on input line 6.
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
 LaTeX Info: Redefining \nameref on input line 6.
-(C:\Uni\semester1\github\P1\Rapporten\Rapport.out)
-(C:\Uni\semester1\github\P1\Rapporten\Rapport.out)
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.out)
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.out)
 \@outlinefile=\write4
 LaTeX Info: Redefining \Ref on input line 6.
 \c__siunitx_mathsf_int=\count332
@@ -1736,7 +1732,7 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 6.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\ustmry.fd")
 \c__siunitx_mathtt_int=\count333
 
-(C:\Uni\semester1\github\P1\Rapporten\formalia/forside.tex) [1
+(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forside.tex) [1
 
 
 
@@ -1744,7 +1740,7 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 6.
 
 
 ]
-(C:\Uni\semester1\github\P1\Rapporten\formalia/titelblad.tex
+(C:\Users\Søren\Desktop\P1\Rapporten\formalia/titelblad.tex
 <billeder/AAU-logo-stud-DK-RGB.pdf, id=222, 136.51pt x 97.09073pt>
 File: billeder/AAU-logo-stud-DK-RGB.pdf Graphic file (type pdf)
 
@@ -1757,16 +1753,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--24
 
  []
 
-(C:\Uni\semester1\github\P1\Rapporten\formalia/synopsis.tex))
-(C:\Uni\semester1\github\P1\Rapporten\formalia/forord.tex [3 <C:/Uni/semester1/
-github/P1/Rapporten/billeder/AAU-logo-stud-DK-RGB.pdf>]
+(C:\Users\Søren\Desktop\P1\Rapporten\formalia/synopsis.tex))
+(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forord.tex [3 <C:/Users/Søren/D
+esktop/P1/Rapporten/billeder/AAU-logo-stud-DK-RGB.pdf>]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pbk.fd")) [4
 
 ]
-(C:\Uni\semester1\github\P1\Rapporten\Rapport.toc [5
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.toc [5
 
 ]) [6]
-(C:\Uni\semester1\github\P1\Rapporten\kontekst/indledning.tex
+(C:\Users\Søren\Desktop\P1\Rapporten\kontekst/indledning.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
@@ -1776,20 +1772,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-) (C:\Uni\semester1\github\P1\Rapporten\analyse/problemanalyseIndeledning.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+
+ []
+
 [1
 
 
-]) (C:\Uni\semester1\github\P1\Rapporten\analyse/interessentanalyse.tex
-[2
+]
 
-<<<<<<< HEAD
-] [3]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/sporgeskema.tex
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 11.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+) (C:\Users\Søren\Desktop\P1\Rapporten\kontekst/begreber.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/problemanalyseIndeledning.tex
+[2]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/interessentanalyse.tex
+[3
+
+] [4]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/sporgeskema.tex
 Underfull \hbox (badness 10000) in paragraph at lines 18--21
 
  []
 
-[4]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 22--25
 
  []
@@ -1814,41 +1849,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--1
 
  []
 
-[5]) (C:\Users\Søren\Desktop\P1\Rapporten\problem/formulering.tex [6])
-[7
+[6]) (C:\Users\Søren\Desktop\P1\Rapporten\problem/formulering.tex [7])
+[8
 
-] (C:\Users\Søren\Desktop\P1\Rapporten\formalia/konklusion.tex [8])
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.bbl [9
-=======
-] [3]) (C:\Uni\semester1\github\P1\Rapporten\analyse/sporgeskema.tex [4])
-(C:\Uni\semester1\github\P1\Rapporten\analyse/teknologianalyse.tex [5] [6])
-(C:\Uni\semester1\github\P1\Rapporten\problem/formulering.tex [7]) [8
-
-]
-(C:\Uni\semester1\github\P1\Rapporten\formalia/konklusion.tex [9])
-(C:\Uni\semester1\github\P1\Rapporten\Rapport.bbl [10
->>>>>>> 70fc8fae1060cde127792c8b60711d47d2e43235
+] (C:\Users\Søren\Desktop\P1\Rapporten\formalia/konklusion.tex [9])
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.bbl [10
 
 ]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 13.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) [10
+)) [11
 
 ]
-<<<<<<< HEAD
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.lox) [11]
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.lox) [12]
 (C:\Users\Søren\Desktop\P1\Rapporten\appendiks/sporgeskema.tex
-=======
-(C:\Uni\semester1\github\P1\Rapporten\Rapport.lox) [12]
-(C:\Uni\semester1\github\P1\Rapporten\appendiks/sporgeskema.tex
->>>>>>> 70fc8fae1060cde127792c8b60711d47d2e43235
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-[12
+[13
 
 
 ]
@@ -1856,32 +1877,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--46
 
  []
 
-<<<<<<< HEAD
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 95--106
-
- []
-
-) (C:\Users\Søren\Desktop\P1\Rapporten\appendiks/interview.tex [14] [15
-=======
 [14]
 Underfull \hbox (badness 10000) in paragraph at lines 93--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
-
- []
-
-
 ! Class memoir Error:  Illegal pream-token (1): `c' used.
 
 See the memoir class documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+l.135     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
                                              
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1893,7 +1901,7 @@ See the memoir class documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+l.135     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
                                              
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1905,7 +1913,7 @@ See the memoir class documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+l.135     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
                                              
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1917,69 +1925,35 @@ See the memoir class documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
+l.135     \begin{tabular}{ | 1 | 1 | 1 | 1 |}
                                              
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-) (C:\Uni\semester1\github\P1\Rapporten\appendiks/interview.tex [15] [16
->>>>>>> 70fc8fae1060cde127792c8b60711d47d2e43235
+[15]) (C:\Users\Søren\Desktop\P1\Rapporten\appendiks/interview.tex [16]
+[17
 
-]
-[16]) [17]
+] [18]) [19]
 \tf@toc=\write5
 \tf@lox=\write6
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
- (C:\Uni\semester1\github\P1\Rapporten\Rapport.aux
-(C:\Uni\semester1\github\P1\Rapporten\formalia/forside.aux))
+ (C:\Users\Søren\Desktop\P1\Rapporten\Rapport.aux
+(C:\Users\Søren\Desktop\P1\Rapporten\formalia/forside.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
-
-
-Package rerunfilecheck Warning: File `Rapport.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Rapport.out':
-(rerunfilecheck)             Before: 6D62847AA4FEF27E258B53D71D10C356;3418
-(rerunfilecheck)             After:  F5E73AC18F050295C347E5E64BA37B07;3296.
+Package rerunfilecheck Info: File `Rapport.out' has not changed.
+(rerunfilecheck)             Checksum: C79DB3A8EAA2A7A512AC270059EBACCE;3439.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  ) 
 Here is how much of TeX's memory you used:
- 24253 strings out of 493921
- 426312 string characters out of 3147278
+ 24258 strings out of 493921
+ 426468 string characters out of 3147278
  746330 words of memory out of 3000000
- 27012 multiletter control sequences out of 15000+200000
+ 27013 multiletter control sequences out of 15000+200000
  25564 words of font info for 63 fonts, out of 3000000 for 9000
  843 hyphenation exceptions out of 8191
  44i,13n,78p,10547b,903s stack positions out of 5000i,500n,10000p,200000b,50000s
-<<<<<<< HEAD
-pdfTeX warning (dest): name{subsection.2.6.2} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.6.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
-, replaced by a fixed one
-
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Progr
-am Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Files
-/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/cm-super/sfbx1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-su
-per/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1
-440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1440.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/cm-super/sfsl2488.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/cm-super/sfti0900.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/cm-super/sfti1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/cm-super/sftt1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/ub
-kd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
-Output written on Rapport.pdf (23 pages, 550177 bytes).
-=======
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Pro
 gram Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Fil
 es/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/font
@@ -1994,10 +1968,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Program Files
 type1/public/cm-super/sfti1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/cm-super/sftt1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/
 ubkd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
-Output written on Rapport.pdf (24 pages, 552700 bytes).
->>>>>>> 70fc8fae1060cde127792c8b60711d47d2e43235
+Output written on Rapport.pdf (25 pages, 555342 bytes).
 PDF statistics:
- 483 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
+ 491 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
  422 words of extra memory for PDF output out of 10000 (max. 10000000)
 

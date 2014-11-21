@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  19 NOV 2014 14:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  21 NOV 2014 14:07
 entering extended mode
 **Rapport.tex
 (C:\Users\Søren\Desktop\P1\Rapporten\Rapport.tex
@@ -1779,29 +1779,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 ]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/interessentanalyse.tex
 [2
 
-] [3]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/sporgeskema.tex [4])
-(C:\Users\Søren\Desktop\P1\Rapporten\analyse/teknologianalyse.tex [5] [6])
-(C:\Users\Søren\Desktop\P1\Rapporten\problem/formulering.tex [7]) [8
+] [3]) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/sporgeskema.tex
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
 
-]
-(C:\Users\Søren\Desktop\P1\Rapporten\formalia/konklusion.tex [9])
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.bbl [10
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--37
+
+ []
+
+) (C:\Users\Søren\Desktop\P1\Rapporten\analyse/teknologianalyse.tex
+Underfull \hbox (badness 10000) in paragraph at lines 38--1
+
+ []
+
+[5]) (C:\Users\Søren\Desktop\P1\Rapporten\problem/formulering.tex [6])
+[7
+
+] (C:\Users\Søren\Desktop\P1\Rapporten\formalia/konklusion.tex [8])
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.bbl [9
 
 ]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 13.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) [11
+)) [10
 
 ]
-(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.lox) [12]
+(C:\Users\Søren\Desktop\P1\Rapporten\Rapport.lox) [11]
 (C:\Users\Søren\Desktop\P1\Rapporten\appendiks/sporgeskema.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-[13
+[12
 
 
 ]
@@ -1809,15 +1837,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--48
 
  []
 
-[14]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 95--106
 
  []
 
-) (C:\Users\Søren\Desktop\P1\Rapporten\appendiks/interview.tex [15] [16
+) (C:\Users\Søren\Desktop\P1\Rapporten\appendiks/interview.tex [14] [15
 
 ]
-[17]) [18]
+[16]) [17]
 \tf@toc=\write5
 \tf@lox=\write6
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
@@ -1826,35 +1854,51 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
 (C:\Users\Søren\Desktop\P1\Rapporten\formalia/forside.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
-Package rerunfilecheck Info: File `Rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 6D62847AA4FEF27E258B53D71D10C356;3418.
+
+
+Package rerunfilecheck Warning: File `Rapport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Rapport.out':
+(rerunfilecheck)             Before: 6D62847AA4FEF27E258B53D71D10C356;3418
+(rerunfilecheck)             After:  F5E73AC18F050295C347E5E64BA37B07;3296.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  ) 
 Here is how much of TeX's memory you used:
  24253 strings out of 493921
- 426303 string characters out of 3147278
- 747330 words of memory out of 3000000
+ 426312 string characters out of 3147278
+ 746330 words of memory out of 3000000
  27012 multiletter control sequences out of 15000+200000
  25564 words of font info for 63 fonts, out of 3000000 for 9000
  843 hyphenation exceptions out of 8191
  44i,13n,78p,10547b,903s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Pro
-gram Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Fil
-es/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/font
-s/type1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/cm-super/sfbx1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-
-super/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfb
-x1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1440.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl2488.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/cm-super/sfti0900.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/cm-super/sfti1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/cm-super/sftt1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/
-ubkd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
-Output written on Rapport.pdf (24 pages, 552212 bytes).
+pdfTeX warning (dest): name{subsection.2.6.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.6.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
+, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Progr
+am Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Files
+/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/cm-super/sfbx1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-su
+per/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1
+440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1440.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/cm-super/sfsl2488.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/cm-super/sfti0900.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/cm-super/sfti1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/cm-super/sftt1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/ub
+kd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
+Output written on Rapport.pdf (23 pages, 550177 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
+ 483 PDF objects out of 1000 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)
  422 words of extra memory for PDF output out of 10000 (max. 10000000)
 

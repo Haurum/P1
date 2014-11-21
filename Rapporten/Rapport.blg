@@ -3,14 +3,20 @@ The style file: bibtex/harvard.bst
 A level-1 auxiliary file: formalia/forside.aux
 url: is an unknown function---line 320 of file bibtex/harvard.bst
 Database file #1: bibtex/litteratur.bib
-Repeated entry---line 91 of file bibtex/litteratur.bib
+Repeated entry---line 131 of file bibtex/litteratur.bib
  : @misc{metodeogprojektskrivning
  :                               ,
 I'm skipping whatever remains of this entry
-Illegal end of database file---line 106 of file bibtex/litteratur.bib
+Illegal end of database file---line 146 of file bibtex/litteratur.bib
  :  note = {Set d. 18/11-2014}
  :                            
 I'm skipping whatever remains of this entry
+Warning--empty year in YouthCentral
+Warning--empty year in YouthCentral
+Warning--empty year in YouthCentral
+1 is an integer literal, not a string, for entry YouthCentral
+while executing---line 1485 of file bibtex/harvard.bst
+Warning--empty  in YouthCentral
 1 is an integer literal, not a string, for entry ftbr
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry googleapi
@@ -22,8 +28,16 @@ Warning--empty year in metodeogprojektskrivning
 1 is an integer literal, not a string, for entry metodeogprojektskrivning
 while executing---line 1485 of file bibtex/harvard.bst
 Warning--empty  in metodeogprojektskrivning
+1 is an integer literal, not a string, for entry PengeloseButikker
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry VisitAalborg
+while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry TDC
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry VA
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry faktaogtalVD
 while executing---line 1485 of file bibtex/harvard.bst
-(There were 8 error messages)
+1 is an integer literal, not a string, for entry UniversityOfMinnesota
+while executing---line 1485 of file bibtex/harvard.bst
+(There were 13 error messages)

@@ -1,4 +1,4 @@
-
+﻿
 Turister/Hoved- og underspørgsmål turister.docx
 
 Turister/Hoved- og underspørgsmål turister.docx
@@ -12,3 +12,13 @@ Turister/~$ved- og underspørgsmål turister.docx
 Turister/~$ved- og underspørgsmål turister.docx
 Rapporten/analyse/interview.tex
 Turister/~$teressentanalyse.docx
+
+*.aux
+
+*.log
+
+*.gz
+
+*.out
+
+/Rapporten/Rapport.pdf

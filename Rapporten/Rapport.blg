@@ -11,13 +11,9 @@ Illegal end of database file---line 146 of file bibtex/litteratur.bib
  :  note = {Set d. 18/11-2014}
  :                            
 I'm skipping whatever remains of this entry
-Warning--empty year in YouthCentral
-Warning--empty year in YouthCentral
-Warning--empty year in YouthCentral
-1 is an integer literal, not a string, for entry YouthCentral
-while executing---line 1485 of file bibtex/harvard.bst
-Warning--empty  in YouthCentral
 1 is an integer literal, not a string, for entry ftbr
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry Faxe
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry googleapi
 while executing---line 1485 of file bibtex/harvard.bst
@@ -40,4 +36,10 @@ while executing---line 1485 of file bibtex/harvard.bst
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry UniversityOfMinnesota
 while executing---line 1485 of file bibtex/harvard.bst
-(There were 13 error messages)
+Warning--empty year in YouthCentral
+Warning--empty year in YouthCentral
+Warning--empty year in YouthCentral
+1 is an integer literal, not a string, for entry YouthCentral
+while executing---line 1485 of file bibtex/harvard.bst
+Warning--empty  in YouthCentral
+(There were 14 error messages)

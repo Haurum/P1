@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.13)  10 NOV 2014 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.13)  24 NOV 2014 08:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1971,39 +1971,51 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 6.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 11.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 11.
 Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 14.
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 14.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 26.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 19.
-)
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 44.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 44.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 44.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 44.
- [9
+(babel)             in language  on input line 26.
 
-] (./formalia/konklusion.tex
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 1.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 1.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 1.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 1.
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
-[10]
+ []
+
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 31.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 31.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 31.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 31.
+[9
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 48.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 48.
+) (./formalia/konklusion.tex
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 1.
+ [10]
 Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining danish shorthand "~
@@ -2217,13 +2229,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
 (./formalia/forside.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
-Package rerunfilecheck Info: File `Rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 0CE83D15C468C146426CB67260885A22;3573.
+
+
+Package rerunfilecheck Warning: File `Rapport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Rapport.out':
+(rerunfilecheck)             Before: 9D56AF9170E394DA9D22DC781F452330;3590
+(rerunfilecheck)             After:  CB828FF47C7484A391451C607C08193D;3678.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  ) 
 Here is how much of TeX's memory you used:
- 24385 strings out of 493117
- 427001 string characters out of 6135432
+ 24386 strings out of 493117
+ 427012 string characters out of 6135432
  754499 words of memory out of 5000000
  27363 multiletter control sequences out of 15000+600000
  25564 words of font info for 63 fonts, out of 8000000 for 9000
@@ -2245,10 +2264,10 @@ t/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/urw/bookman/ubkd8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/urw/bookman/ubkl8a.pfb>
-Output written on Rapport.pdf (25 pages, 505791 bytes).
+Output written on Rapport.pdf (25 pages, 507961 bytes).
 PDF statistics:
- 519 PDF objects out of 1000 (max. 8388607)
- 460 compressed objects within 5 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 520 PDF objects out of 1000 (max. 8388607)
+ 461 compressed objects within 5 object streams
+ 94 named destinations out of 1000 (max. 500000)
  446 words of extra memory for PDF output out of 10000 (max. 10000000)
 

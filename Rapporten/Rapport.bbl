@@ -1,23 +1,17 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[AnalyseDanmark(2014{\natexlab{a}})]{kvalitativ}
-\textbf{AnalyseDanmark}, \textbf{2014{\natexlab{a}}}.
-\newblock AnalyseDanmark.
-\newblock \textit{Kvalitative metoder}.
-\newblock \url{http://www.analysedanmark.dk/kvalitative-metoder/}, 2014.
-\newblock Set d. 7/11-2014.
-
-\bibitem[AnalyseDanmark(2014{\natexlab{b}})]{kvantitativ}
-\textbf{AnalyseDanmark}, \textbf{2014{\natexlab{b}}}.
-\newblock AnalyseDanmark.
-\newblock \textit{Kvantitative metoder}.
-\newblock \url{http://www.analysedanmark.dk/kvantitative-metoder/}, 2014.
-\newblock Set d. 7/11-2014.
+\bibitem[Central()]{YouthCentral}
+\textbf{\textbf{Central}}.
+\newblock Youth Central.
+\newblock \textit{Planning your trip}.
+\newblock
+  \url{https://www.youthcentral.vic.gov.au/travel-transport/travelling-overseas/planning-your-trip}.
+\newblock Set d. 27/10-2014.
 
 \bibitem[FindTheBestRoute.com(2014)]{ftbr}
 \textbf{FindTheBestRoute.com}, \textbf{2014}.
@@ -41,6 +35,39 @@
 \newblock Thomas Harboe.
 \newblock \textit{Metode og Projektskrivning}.
 
+\bibitem[Ritzau(2014)]{PengeloseButikker}
+\textbf{Ritzau}, \textbf{2014}.
+\newblock Ritzau.
+\newblock \textit{Forbrugerrådet: Pengeløse butikker udelukker kunder}.
+\newblock \url{http://www.information.dk/telegram/496765}, 2014.
+\newblock Set d. 20/11-2014.
+
+\bibitem[Østergaard og Lubson(2013)]{VisitAalborg}
+\textbf{Østergaard og Lubson}, \textbf{2013}.
+\newblock Mads~Zahle Østergaard og Paul Lubson.
+\newblock \textit{Turismens økonomiske betydning i Danmark 2011}.
+\newblock
+  \url{http://www.visitdenmark.dk/sites/default/files/vdk_images/PDF-and-other-files/Analyser/2013/turismens_oekonomiske_betydning_i_danmark_2011_revideret_udgave.pdf},
+  2013.
+\newblock Set d. 20/11-2014.
+
+\bibitem[TDC(2014)]{TDC}
+\textbf{TDC}, \textbf{2014}.
+\newblock TDC.
+\newblock \textit{Data i udlandet}.
+\newblock
+  \url{http://kundeservice.tdc.dk/privat/publish.php?dogtag=p_help_mob_ud_pdk_du},
+  2014.
+
+\bibitem[{VisitAalborg}(2014)]{VA}
+\textbf{{VisitAalborg}}, \textbf{2014}.
+\newblock {VisitAalborg}.
+\newblock \textit{Sammen er vi både attraktive og stærke!}
+\newblock
+  \url{http://www.visitaalborg.dk/sites/default/files/asp/visitaalborg/uploads/partner2015/partner2015.pdf},
+  2014.
+\newblock Set d. 20/11-2014.
+
 \bibitem[VisitDanmark(2013)]{faktaogtalVD}
 \textbf{VisitDanmark}, \textbf{2013}.
 \newblock VisitDanmark.
@@ -49,5 +76,13 @@
   \url{http://www.visitdenmark.dk/da/denmark/fakta-og-tal-om-turismen-i-danmark},
   2013.
 \newblock Set d. 26/10-2014.
+
+\bibitem[Vitcenda(2011)]{UniversityOfMinnesota}
+\textbf{Vitcenda}, \textbf{2011}.
+\newblock Mary Vitcenda.
+\newblock \textit{Why should visitors love your town? Count the ways}.
+\newblock
+  \url{http://www.extension.umn.edu/community/news/tourism-assets.html}, 2011.
+\newblock Set d. 20/11-2014.
 
 \end{thebibliography}

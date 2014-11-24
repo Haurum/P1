@@ -10,3 +10,23 @@ Turister/~$ved- og underspørgsmål turister.docx
 Turister/~$ved- og underspørgsmål turister.docx
 
 Turister/~$ved- og underspørgsmål turister.docx
+
+*.aux
+
+*.aux
+
+*.log
+
+*.out
+
+*.gz
+
+Rapporten/Rapport.toc
+
+Rapporten/Rapport.synctex.gz
+
+Rapporten/Rapport.out
+
+Rapporten/Rapport.log
+
+Rapporten/Rapport.aux

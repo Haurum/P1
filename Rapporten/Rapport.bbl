@@ -1,9 +1,16 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Dansk Statistik}(2008)]{Turismen}
+\textbf{{Dansk Statistik}}, \textbf{2008}.
+\newblock {Dansk Statistik}.
+\newblock \textit{Turismen - Regionalt, nationalt og internationalt}.
+\newblock \url{http://www.dst.dk/pukora/epub/upload/11676/tur08.pdf}, 2008.
+\newblock Set d. 19/11-2014 - side 8.
 
 \bibitem[FindTheBestRoute.com(2014)]{ftbr}
 \textbf{FindTheBestRoute.com}, \textbf{2014}.
@@ -83,6 +90,13 @@
 \newblock
   \url{http://www.extension.umn.edu/community/news/tourism-assets.html}, 2011.
 \newblock Set d. 20/11-2014.
+
+\bibitem[Vodafone()]{VF}
+\textbf{\textbf{Vodafone}}.
+\newblock Vodafone.
+\newblock \textit{Turismen - Regionalt, nationalt og internationalt}.
+\newblock
+  \url{http://www.vodafone.co.uk/shop/pay-monthly/travelling-abroad/vodafone-data-traveller/index.htm}.
 
 \bibitem[{Youth Central}()]{YouthCentral}
 \textbf{\textbf{{Youth Central}}}.

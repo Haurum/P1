@@ -17,8 +17,8 @@
 \contentsline {section}{\numberline {3.1}Problemafgr\IeC {\ae }nsning}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Problemformuleringen}{9}{section.3.2}
 \contentsline {section}{\numberline {3.3}Kravspecifikationer}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Optimale l\IeC {\o }sning}{9}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Gruppens l\IeC {\o }sning}{11}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.1}Optimale l\IeC {\o }sningsforslag}{9}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Gruppens l\IeC {\o }sningsforslag}{11}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}L\IeC {\o }sningsforslag}{12}{section.3.4}
 \contentsline {chapter}{\chapternumberline {4}Konklusion}{13}{chapter.4}
 \contentsline {chapter}{Litteratur}{14}{section*.6}

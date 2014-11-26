@@ -2,26 +2,39 @@
 
 I dette afsnit vil den endelige problemformulering blive beskrevet, samt kravene til den endelige løsning. Til sidst afgrænses der i forhold til gruppens evner og de krav der er blevet opstillet. 
 
-
 \section{Problemafgrænsning}
 Ud fra denne analyse, kan der konkluderes, at VisitAalborg og turisterne er ressourcepersoner, hvoraf turisterne har større indflydelse på programmet, da der er de endelige brugere. VisitAalborg kan bruges som guider til, hvad der kan være af indhold i programmet, men der skal stadig tages højde for, at det er i deres interesse, at få deres arbjedspartnere med ind i programmet, selvom det ikke i alle tilfælde er til turistens interesse.
 Ved spørgeskemaet blev der uddraget, at turister allerede har løsninger fra punkt til punkt, hvor der i eksisterende løsninger blev påpeget, at der også findes løsninger for fler-punktsruter. TripAdvisor viste, at der også er programmer, som tager højde for brugerens interesse, men alt taget i betragtning, er der ikke en løsning der kombinerer alle disse funktioner, som der belyses i gruppens spørgeskema og interview, til at være i brugerens bedste interesse: En simpel løsning, der inddrager brugerens interesse, og foreslår yderligere punkter til en mere interessant rute. Dette kunne endda optimiseres ved en offline-funktion, som TripAdvisor også gør brug af ved et offline kort.
 
 \section{Problemformuleringen}
 Hvordan udvikles der en softwareløsning, der hjælper turisten med at finde rundt i en storby, på en interessant rute mellem turistens egne valgte attraktioner?
-\section{Kravspecifikationer - optimale løsning}
 
+\section{Kravspecifikationer}
+I dette afsnit vil gruppen kigge og vurdere, hvilke krav der skal indegå i en løsning. Heri vil der både blive opstillet krav til en optimal løsning og til en afgrænset løsning, som gruppen mener at være realistisk, at kunne lave.
+
+\subsection{Optimale løsning}
+For at kunne udvilke en softwareløsning, der besvarer gruppens problemformulering, er det vigtigt at definere nogle krav til programmet. Til en optimal løsning, har gruppen vurderet, at der skal være følgende krav:
 \begin{itemize}
 	\item Programmet skal udvikles som en applikation til moderne smartphones, inklusiv iOS, Android og Windows Phone. 
-	\item Programmet skal kunne beregne den korteste rute mellem en række punkter.
-	\item Det skal være i stand til at give forslag til en anden rute, der inkludere attraktioner der ligger tæt på ruten.
 	\item Programmet skal vise et kort med ruten, og på kortet vise attraktioner der er tæt på. 
+	\item Programmet skal kunne beregne den korteste rute mellem en række punkter.
 	\item Det skal være muligt at få programmet til at vise rutevejledningen, på samme måde som normale GPS-enheder. 
-	\item Der skal være mulighed for at downloade en offline version af den rute der er valgt, inklusiv kortet for det omkringliggende område. Dette er for at hjælpe dem der ikke har billig data hvor de bruger programmet.
 	\item Programmet skal give mulighed for at bedømme attraktioner, og derved tildele dem en rating. Dette skal bruges til at rangere attraktionerne, for at hjælpe turisterne med at vælge den mest interessante rute. 
+	\item Det skal være i stand til at give forslag til en anden rute, der inkludere attraktioner der ligger tæt på ruten.
+	\item Der skal være mulighed for at downloade en offline version af den rute der er valgt, inklusiv kortet for det omkringliggende område. Dette er for at hjælpe dem der ikke har billig data hvor de bruger programmet.
 \end{itemize}
+Til disse krav har gruppen konstrueret nogle skitser af den optimale løsning, for at give et billede af hvordan det eventuelt kunne se ud. \newline
 
-\section{Kravsspecifikationer}
+
+\includegraphics[scale=0.4]{start1} \newline
+Denne skitse viser den overordnede brugergrænseflade. Gruppen ønsker, at programmet skulle fungere på den måde, at der findes to valg muligheder, forholdsvis rating og afstand. Disse to muligheder vil så give en række attraktioner, alt efter hvilken af dem brugeren har valgt. De attraktioner, som brugeren ønsker at se, skal brugeren blot tjekke af, ved at klikke på attraktionerne (I dette tilfælde nr. 1, nr. 2 etc), og de vil derefter blive tilføjet til den nuværende rute. 
+
+
+\includegraphics[scale=0.4]{start2} \newline
+Denne skitse viser en udvidet brugergrænseflade, hvor brugeren har valgt at klikke på drop-down-menuen "info". Denne menu vil derefter give bruger nogle informationer omkring attraktionen. Den vil derudover have to yderligere muligheder, start- og slutpunkt. Disse funktioner kan brugeren fx anvende, hvis der er en ønsket slut/start-lokalisation, hvor programmet derefter skal beregne den ønskede rute ud fra. \newline
+
+
+\subsection{Gruppens løsning}
 Gruppen har gennem spørgskema og interview, fået stillet en række krav til løsningen, af turister og VisitAalborg. 
 Gennem spørgskemaet, blev det konkluderet, at det vigtigste for turister, er at de kan opleve byen på en interessant rute. 
 Derudover har turistbureauet givet udtryk for, at løsningen gerne skal være så simpel som mulig, og løse en specifik opgave godt, da de mener, at det er i turistens bedste interesse. \newline

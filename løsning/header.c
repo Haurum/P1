@@ -18,3 +18,9 @@ typedef struct {
   double laengde;
   attraktion start, slut;
 } kant;
+
+
+typedef struct {
+  double ruteLaengde;
+  char rute[ANTAL_ATTRAKTIONER][MAX_STRING];
+} naboRute;

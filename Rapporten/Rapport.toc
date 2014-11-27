@@ -3,25 +3,27 @@
 \contentsline {chapter}{\chapternumberline {1}Indledning}{1}{chapter.1}
 \contentsline {subsection}{\numberline {1.0.1}Begreber}{2}{subsection.1.0.1}
 \contentsline {chapter}{\chapternumberline {2}Problemanalyse}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Sp\IeC {\o }rgeskema}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Udformning}{5}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Resultatbehandling}{5}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Interviewet}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Udformning}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Resultatbehandling}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Opsummering}{7}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Eksisterende l\IeC {\o }sninger}{7}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}FindTheBestRoute.com}{7}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}TripAdvisor Offline City Guides}{8}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.1}Interessentanalyse}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Prioriteringen}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Opsamling p\IeC {\r a} interessentanalyse}{5}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Sp\IeC {\o }rgeskema}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Udformning}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Resultatbehandling}{5}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Interviewet}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Udformning}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Resultatbehandling}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Opsummering}{7}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Eksisterende l\IeC {\o }sninger}{8}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}FindTheBestRoute.com}{8}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}TripAdvisor Offline City Guides}{8}{subsection.2.4.2}
 \contentsline {chapter}{\chapternumberline {3}Problembeskrivelsen}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}Problemafgr\IeC {\ae }nsning}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Problemformuleringen}{9}{section.3.2}
 \contentsline {section}{\numberline {3.3}Kravspecifikationer}{9}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Optimale l\IeC {\o }sningsforslag}{9}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Gruppens l\IeC {\o }sningsforslag}{11}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}L\IeC {\o }sningsforslag}{12}{section.3.4}
 \contentsline {chapter}{\chapternumberline {4}Konklusion}{13}{chapter.4}
-\contentsline {chapter}{Litteratur}{14}{section*.6}
+\contentsline {chapter}{Litteratur}{14}{section*.5}
 \contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{16}{appendix.A}
 \contentsline {section}{\numberline {A.1}Teori}{16}{section.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{16}{subsection.A.1.1}

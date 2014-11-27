@@ -25,7 +25,6 @@ For at kunne udvilke en softwareløsning, der besvarer gruppens problemformuleri
 \end{itemize}
 Til disse krav har gruppen konstrueret nogle skitser af den optimale løsning, for at give et billede af hvordan det eventuelt kunne se ud. \newline
 
-
 \includegraphics[scale=0.35]{start1} \newline
 Denne skitse viser den overordnede brugergrænseflade. Gruppen ønsker, at programmet skulle fungere på den måde, at der findes to valg muligheder, forholdsvis rating og afstand. Disse to muligheder vil så give en række attraktioner, alt efter hvilken af dem brugeren har valgt. De attraktioner, som brugeren ønsker at se, skal brugeren blot tjekke af, ved at klikke på attraktionerne (I dette tilfælde nr. 1, nr. 2 etc), og de vil derefter blive tilføjet til den nuværende rute. 
 
@@ -46,9 +45,7 @@ Gruppen har gennem spørgskema og interview, fået stillet en række krav til l�
 Gennem spørgskemaet, blev det konkluderet, at det vigtigste for turister, er at de kan opleve byen på en interessant rute. 
 Derudover har turistbureauet givet udtryk for, at løsningen gerne skal være så simpel som mulig, og løse en specifik opgave godt, da de mener, at det er i turistens bedste interesse. \newline
 Der er blevet stillet krav fra universitets side, om at programmet skal være et lille specifikt program i C, af høj kvalitet. Dette stemmer godt overens, med de krav der er blevet stillet fra turistbureauets side.   \newline
-
-Dette afsnit vil opsætte kravene for programmet og dets funktionaliteter, og vil ligge til grundlag for udviklingen af programmet. 
-
+Ud fra dette, har gruppen opsat nogle krav for programmet og dets funktionaliteter, og disse krav er som følgende:
 \begin{itemize}
 	\item Programmet skal kunne beregne den korteste rute mellem en række punkter.
 	\item Det skal være i stand til at give forslag til en anden rute, der inkludere attraktioner der ligger tæt på ruten.
@@ -56,12 +53,11 @@ Dette afsnit vil opsætte kravene for programmet og dets funktionaliteter, og vi
  	\item Programmet skal som minimum være kompatibel med Windows styresystemet. 
 \end{itemize}
 
-Da dette er et P1 projekt, og gruppen er begrænset af både tid og erfaring, har gruppen valgte at begrænse softwareløsningen, på følgende punkter \newline
+Da dette er et P1 projekt, og gruppen er begrænset af både tid og erfaring, har gruppen valgt at begrænse softwareløsningen, på følgende punkter: 
 \begin{itemize}
 	\item Rutevejledningen bliver i fugleflugtslinje.
 	\item Brugeren kan kun vælge destinationer ud fra en række forudbestemte punkter.
 	\item Tekstbaseret brugergrænseflade.
 \end{itemize}
 
-\section{Løsningsforslag}
 På baggrund af kravene og afgrænsningen, har gruppen tænkt sig at lave et program, som har nogle forudbestemte destinationer, der dækker over destinationerne i Aalborg, hvorefter brugeren vælger de destinationer han/hun ønsker at besøge. Programmet vil ud fra disse punkter, beregne den korteste rute, og undersøge om der er andre attraktioner, som ligger tæt på ruten, og spørge brugeren, om det kunne være interessant at besøge disse steder. Hvis ja, vil disse punkter også blive inkluderet. Resultatet bliver en liste over destinationerne, der står i rækkefølge, så turisten ved hvilken rækkefølge de skal besøge dem i, for at få den mest optimale rute.

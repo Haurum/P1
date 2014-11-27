@@ -28,7 +28,7 @@ void initialiserAttraktioner(attraktion *attraktioner);
 void udregnKanter(kant *kanter, attraktion *valgteAttraktioner);
 void findKortesteNaboRute(attraktion *valgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde);
 void outputTilFil(attraktion *ruteAttraktioner);
-void findNaboRute(attraktion *valgteAttraktioner, kant *kanter, naboRute loesning);
+void findNaboRute(attraktion *valgteAttraktioner, kant *kanterne, naboRute loesning);
 
 int main()
 {
@@ -95,5 +95,34 @@ void findKortesteNaboRute(attraktion *valgteAttraktioner, attraktion *ruteAttrak
         ruteAttraktioner[j] = loesninger[i].rute[j];
       }
     }
+  }
+}
+
+void findNaboRute(attraktion *valgteAttraktion, kant *kanterne, naboRute loesning){
+  int i = 0;
+  int j = 0;
+  double lavesteLaengde = 10000;
+  loesning.ruteLaengde = 0;
+
+  loesning.rute[i] = valgteAttraktion[i];
+  for(i = 0; i < ANTAL_ATTRAKTIONER; ++i){
+    for(j = 0; j < ANTAL_KANTER; ++j){
+      if(kanterne[j].start.navn == loesning.rute[i].navn){
+        double temp = kanterne[j].laengde;
+        if(temp < lavesteLaengde){
+          lavesteLaengde = temp;
+          loesning.rute[i+1] = kanterne[j].slut;
+        }
+      }
+      if(kanterne[j].slut.navn == loesning.rute[i].navn){
+        double temp = kanterne[j].laengde;
+        if(temp < lavesteLaengde){
+          lavesteLaengde = temp;
+          loesning.rute[i+1] = kanterne[j].start;
+        }
+      }
+    }
+    loesning.ruteLaengde += lavesteLaengde;
+    lavesteLaengde = 10000;
   }
 }

@@ -4,33 +4,6 @@
 #include <math.h>
 #include "CuTest.h"
 
-#define ANTAL_ATTRAKTIONER 10
-#define ANTAL_KANTER ANTAL_ATTRAKTIONER*(ANTAL_ATTRAKTIONER-1)/2
-#define MAX_STRING 30
-
-typedef struct {
-  char navn[MAX_STRING];
-  char adresse[MAX_STRING]; 
-  double lndg, brdg;
-  int antalKanter;
-} attraktion;
-
-typedef struct {
-  double laengde;
-  attraktion start, slut;
-} kant;
-
-void initialiserAttraktioner(attraktion *attraktioner);
-
-int main(void) {
-	attraktion attraktioner[ANTAL_ATTRAKTIONER];
-	
-	initialiserAttraktioner(attraktioner);
-	printf("%s %s %lf %lf\n", attraktioner[0].navn, attraktioner[0].adresse, attraktioner[0].lndg, attraktioner[0].brdg);
-
-	return 0;
-}
-
 void initialiserAttraktioner(attraktion *attraktioner){
 		FILE *input_file_pointer;
 	int i = 0;

@@ -21,9 +21,8 @@
 \contentsline {section}{\numberline {3.1}Problemafgr\IeC {\ae }nsning}{10}{section.3.1}
 \contentsline {section}{\numberline {3.2}Problemformuleringen}{10}{section.3.2}
 \contentsline {section}{\numberline {3.3}Kravspecifikationer}{10}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Optimale l\IeC {\o }sning}{10}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Gruppens l\IeC {\o }sning}{12}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}L\IeC {\o }sningsforslag}{13}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.1}Optimale l\IeC {\o }sningsforslag}{10}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Gruppens l\IeC {\o }sningsforslag}{12}{subsection.3.3.2}
 \contentsline {chapter}{\chapternumberline {4}Konklusion}{14}{chapter.4}
 \contentsline {chapter}{Litteratur}{15}{section*.5}
 \contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{17}{appendix.A}

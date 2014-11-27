@@ -8,8 +8,8 @@
 #define MAX_STRING 30
 
 typedef struct {
-  char *navn;
-  char *adresse; 
+  char navn[MAX_STRING];
+  char adresse[MAX_STRING]; 
   double lndg, brdg;
   int antalKanter;
 } attraktion;

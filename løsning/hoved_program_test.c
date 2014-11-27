@@ -30,7 +30,7 @@ typedef struct {
 void initialiserAttraktioner(attraktion *attraktioner);
 void findKortesteNaboRute(attraktion *valgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde);
 void outputTilFil(attraktion *ruteAttraktioner);
-void findNaboRute(kant *kanterne, naboRute loesning, attraktion startAttraktion);
+void findNaboRute(kant *kanterne, naboRute *naboRuten, attraktion startAttraktion);
 double beregn_dist(double lat1, double lon1, double lat2, double lon2);
 void udregn_kanter(attraktion *attraktioner, kant *kanter);
 int attraktionSoegning(attraktion *rute, attraktion rutePunkt);
@@ -38,16 +38,16 @@ int attraktionSoegning(attraktion *rute, attraktion rutePunkt);
 int main()
 {
   attraktion attraktioner[ANTAL_ATTRAKTIONER];
-  attraktion valgteAttraktioner[ANTAL_ATTRAKTIONER];
+  /*attraktion valgteAttraktioner[ANTAL_ATTRAKTIONER];*/
   attraktion ruteAttraktioner[ANTAL_ATTRAKTIONER];
   kant kanter[ANTAL_KANTER];
   double samletLaengde;
 
-  strcpy(attraktioner[0].navn, "a");
-  strcpy(attraktioner[1].navn, "b");
-  strcpy(attraktioner[2].navn, "c");
-  strcpy(attraktioner[3].navn, "d");
-  strcpy(attraktioner[4].navn, "e");
+  strcpy(attraktioner[0].navn, "nul");
+  strcpy(attraktioner[1].navn, "et");
+  strcpy(attraktioner[2].navn, "to");
+  strcpy(attraktioner[3].navn, "tre");
+  strcpy(attraktioner[4].navn, "fire");
 
   attraktioner[0].lndg = 9.875491000000011;
   attraktioner[0].brdg = 57.041256;
@@ -82,6 +82,7 @@ int main()
   for(i = 0; i < ANTAL_ATTRAKTIONER; ++i){
   printf("%s %s\n", attraktioner[i].navn, ruteAttraktioner[i].navn);
   }
+  printf("%lf", samletLaengde);
   return 0;
 }
 
@@ -109,52 +110,52 @@ void findKortesteNaboRute(attraktion *valgteAttraktioner, attraktion *ruteAttrak
 
   *samletLaengde = 100000;
 
-  naboRute ruter[ANTAL_ATTRAKTIONER];
+  naboRute nyNaboRute;
 
   int i;
   int j;
   for (i = 0; i < ANTAL_ATTRAKTIONER; ++i)
   {
-    findNaboRute(kanter, ruter[i], valgteAttraktioner[i]);
-    if(ruter[i].ruteLaengde < *samletLaengde){
-      *samletLaengde = ruter[i].ruteLaengde;
+    findNaboRute(kanter, &nyNaboRute, valgteAttraktioner[i]);
+    if(nyNaboRute.ruteLaengde < *samletLaengde){
+      *samletLaengde = nyNaboRute.ruteLaengde;
       for (j = 0; j < ANTAL_ATTRAKTIONER; ++j)
       {
-        ruteAttraktioner[j] = ruter[i].rute[j];
+        ruteAttraktioner[j] = nyNaboRute.rute[j];
       }
     }
   }
 }
 
-void findNaboRute(kant *kanterne, naboRute naboRuten, attraktion startAttraktion){
+void findNaboRute(kant *kanterne, naboRute *naboRuten, attraktion startAttraktion){
   int i = 0;
   double lavesteLaengde = 10000;
-  naboRuten.ruteLaengde = 0;
+  naboRuten->ruteLaengde = 0;
 
-  naboRuten.rute[i] = startAttraktion;
+  naboRuten->rute[i] = startAttraktion;
   for(i = 0; i < ANTAL_ATTRAKTIONER; ++i){
     int j = 0;
     for(j = 0; j < ANTAL_KANTER; ++j){
-      if(kanterne[j].start.navn == naboRuten.rute[i].navn){
-        if(attraktionSoegning(naboRuten.rute, kanterne[j].slut)){
+      if(strcmp(kanterne[j].start.navn, naboRuten->rute[i].navn) == 0){
+        if(attraktionSoegning(naboRuten->rute, kanterne[j].slut)){
           double temp = kanterne[j].laengde;
           if(temp < lavesteLaengde){
            lavesteLaengde = temp;
-           naboRuten.rute[i+1] = kanterne[j].slut;
+           naboRuten->rute[i+1] = kanterne[j].slut;
           }
         }
       }
-      if(kanterne[j].slut.navn == naboRuten.rute[i].navn){
-        if(attraktionSoegning(naboRuten.rute, kanterne[j].start)){
+      if(strcmp(kanterne[j].slut.navn, naboRuten->rute[i].navn) == 0){
+        if(attraktionSoegning(naboRuten->rute, kanterne[j].start)){
           double temp = kanterne[j].laengde;
           if(temp < lavesteLaengde){
             lavesteLaengde = temp;
-            naboRuten.rute[i+1] = kanterne[j].start;
+            naboRuten->rute[i+1] = kanterne[j].start;
           }
         }
       }
     }
-    naboRuten.ruteLaengde += lavesteLaengde;
+    naboRuten->ruteLaengde += lavesteLaengde;
     lavesteLaengde = 10000;
   }
 }
@@ -163,7 +164,7 @@ int attraktionSoegning(attraktion *rute, attraktion rutePunkt){
   int i;
 
   for(i = 0; i < ANTAL_ATTRAKTIONER; i++){
-    if(rute[i].navn == rutePunkt.navn)
+    if(strcmp(rute[i].navn, rutePunkt.navn) == 0)
       return 0;
   }
   return 1;

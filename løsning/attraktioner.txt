@@ -1,0 +1,5 @@
+nul adresse_nul 9.875491 57.041256
+et adresse_et 9.952438 57.036041
+to adresse_to 9.675491 56.041256
+tre adresse_tre 10.005491 56.541256
+fire adresse_fire 11.875491 58.041256

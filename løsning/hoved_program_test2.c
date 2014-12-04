@@ -6,9 +6,9 @@
 #define JORDENS_RADIUS 6373
 #define PI 3.141592653589793
 #define GRAD_TIL_RAD 0.017453292519943295769236907684886
-#define ANTAL_ATTRAKTIONER 5
+#define ANTAL_ATTRAKTIONER 12
 #define ANTAL_KANTER ANTAL_ATTRAKTIONER*(ANTAL_ATTRAKTIONER-1)/2
-#define MAX_STRING 30
+#define MAX_STRING 50
 
 typedef struct {
   char navn[MAX_STRING];
@@ -62,10 +62,6 @@ int main()
 void initialiserAttraktioner(attraktion *attraktioner){
     FILE *input_file_pointer;
   int i = 0;
-  char nvn[MAX_STRING];
-  char adrs[MAX_STRING];
-  double lndgrad;
-  double brdgrad;
 
   input_file_pointer = fopen("attraktioner.txt", "r");
 

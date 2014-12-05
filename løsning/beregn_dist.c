@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 #define JORDENS_RADIUS 6373
 #define PI 3.141592653589793
@@ -23,6 +24,7 @@ typedef struct {
 
 double beregn_dist(double lat1, double lon1, double lat2, double lon2);
 void udregn_kanter(attraktion *attraktioner, kant *kanter);
+void output_liste(attraktion *attraktioner, int antalAttraktioner);
 
 
 int main()
@@ -31,14 +33,19 @@ int main()
 	attraktion attraktioner[ANTAL_ATTRAKTIONER];
 	attraktioner[0].lndg = 9.875491000000011;
 	attraktioner[0].brdg = 57.041256;
+  strcpy(attraktioner[0].navn, "Nummer et er her");
 	attraktioner[1].lndg = 9.95243800000003;
 	attraktioner[1].brdg = 57.036041;
+  strcpy(attraktioner[1].navn, "Nummer to er her");
 	attraktioner[2].lndg = 9.675491000000011;
 	attraktioner[2].brdg = 56.041256;
+  strcpy(attraktioner[2].navn, "Nummer tre er her");
 	attraktioner[3].lndg = 10.005491000000011;
 	attraktioner[3].brdg = 56.541256;
+  strcpy(attraktioner[3].navn, "Nummer fire er her");
 	attraktioner[4].lndg = 11.875491000000011;
 	attraktioner[4].brdg = 58.041256;
+  strcpy(attraktioner[4].navn, "Nummer fem er her");
 
 	udregn_kanter(attraktioner, kanter);
 	printf("antal kanter %i\n", ANTAL_KANTER);
@@ -51,6 +58,8 @@ int main()
 	double lat1 = (57.041256), lon1 = (9.875491000000011),  lat2 = (57.036041), lon2 = (9.95243800000003);
 	double dist = beregn_dist(lat1, lon1, lat2, lon2);
 	printf("%f\n", dist);
+
+  output_liste(attraktioner, 5);
 	return 0;
 }
 
@@ -86,5 +95,23 @@ void udregn_kanter(attraktion *attraktioner, kant *kanter)
 
 		}
 	}
+}
+
+void output_liste(attraktion *attraktioner, int antalAttraktioner)
+{
+	FILE *fp;
+	fp = fopen("KortesteRute.txt", "w");
+	
+	if (fp == NULL)
+	{
+		printf("Kunne ikke finde filen 'KortesteRute.txt'");
+		return;
+	}
+
+  int i;
+
+  for (i = 0; i < antalAttraktioner; i++)
+    fprintf(fp, "%i: %s\n", i + 1, attraktioner[i].navn);
+
 }
 

@@ -1,0 +1,12 @@
+Aalborgs_Forsvar-_og_Garrisonsmuseum Skydebanevej_22 57.0563 9.882790
+Aalborg_Historiske_Museum Algade_48 57.048093 9.918098
+Aalborgtaarnet Sondre_skovvej_30 57.041595 9.904918
+Aalborg_Zoo Molleparkvej_63 57.038344 9.899764
+Utzon_Centeret Slotspladsen_4 57.0494564 9.9263902
+Springeren_-_Maritimt_Oplevelsescenter Venstre_Fjordvej_81 57.059168 9.893590
+Graabrodrekloster_Museet Algade_19 57.0471681 9.921541
+Nordkraft Osterbro 13 57.0462097 9.9326699
+Aalborg_Teater Jernbanegade 11 57.047013 9.916458
+Gaagade_1 Bispengade_22 57.049364 9.918534
+Gaagade_2 Bredgade_6 57.046738 9.924156
+Havnefronten Strandvejen_2 57.051162 9.922353

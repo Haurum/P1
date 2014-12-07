@@ -1,5 +1,5 @@
-1: Nummer et er her
-2: Nummer to er her
-3: Nummer tre er her
-4: Nummer fire er her
-5: Nummer fem er her
+1: Mit hus
+2: Mikael bor her, distancen mellem attraktionere: 4.69 km
+3: Soerens lejlighed, distancen mellem attraktionere: 111.95 km
+4: Random sted, distancen mellem attraktionere: 59.23 km
+5: Endnu mere random sted, distancen mellem attraktionere: 201.16 km

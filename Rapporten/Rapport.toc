@@ -27,10 +27,10 @@
 \contentsline {subsection}{\numberline {4.1.2}Gruppens l\IeC {\o }sningsforslag}{13}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Teorier}{14}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Grafteori}{14}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Matematikteori}{16}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Implementering}{17}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Programbeskrivelse}{17}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Opsummering}{18}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.2.2}Matematikteori}{15}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Implementering}{18}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Programbeskrivelse}{18}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Opsummering}{19}{subsection.4.3.2}
 \contentsline {chapter}{\chapternumberline {5}Konklusion}{20}{chapter.5}
 \contentsline {chapter}{Litteratur}{21}{section*.5}
 \contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{23}{appendix.A}

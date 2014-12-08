@@ -105,48 +105,98 @@ Indledning mangler.
 Grafteori er et afsnit i denne rapport, som omhandler en generel forklaring på graf teori, hvorefter teorien bag ”Nærmeste Nabo Algoritme” vil blive beskrevet, herefter forklares ”udregningstid” i rute-algoritmer, og til sidst Traveling Salesman Problem. Alt dette beskrives, for at give et udgangspunkt for implementering af en hensigtsmæssig algoritme i programmet for denne rapport.\newline
 Matematikken bag graf teori er ét aspekt af emnet, hvor visualisering og tegning er en anden. Den matematiske del behandler kombinationerne af knuder og kanter. En knude er et punkt, i vores tilfælde en attraktion som skal besøges, hvor en kant er vejen derhen. En kant er derfor længden fra ét punkt til det næste.
 I graf teori er begrebet ”graf” mere fleksibelt, da punkterne ikke nødvendigvis har x, y eller z værdier, alt efter antallet af dimensioner man behandler det i. Grafen i denne form er en afbildning af punkter i den form, hvor det virker hensigtsmæssigt. Heraf opstår isomorfiske modeller, som er forskellige afbildninger, af selv samme graf. 
-%Figur1 fra dokumentet mangler%
-Denne matematik-type er stadig under udforskning, da der endnu ikke er en fuldstændig løsning på problemer i teorien, for blandt andet ”Traveling Salesman Problem”. Heriblandt findes mange typer af problemer, hvor forskellige teoretiske løsninger kan bruges. En af disse løsninger er den Nærmeste Nabo Algoritme (NNA, Nearest Neighbor Algorithm), som behandler et problem der opstår, når en række knuder skal indgå, og kun skal indgå én gang, hvilket betyder, at der ikke må være en løkke (loop). Dette opnåes gennem brug af Hamiltonian Paths, hvilket er en ”rute” gennem knuder på grafen. I NAA vil en kant have en værdi, og disse værdier er bestemmende for, hvilken kant der skal følges. Fra den knude der behandles, skal kanten med den laveste værdi følges. Dette kan dog optimeres, ved at lave en matrice over kanterne fra alle knuder. Her tages højde for hvilke kanter der samlet set giver den korteste rute, uden brug af løkker. 
-%Figur2 fra dokumentet mangler%
+
+\begin{wrapfigure}{}{0.6\textwidth}
+  \vspace{-45pt}
+  \begin{center}
+    \includegraphics[scale=0.8]{grafteori1} \newline
+    \textit{Figur 3.1: Brugergrænseflade}\newline
+  \end{center}
+  \vspace{-20pt}
+\end{wrapfigure}
+
+Denne matematik-type er stadig under udforskning, da der endnu ikke er en fuldstændig løsning på problemer i teorien, for blandt andet ”Traveling Salesman Problem”. Heriblandt findes mange typer af problemer, hvor forskellige teoretiske løsninger kan bruges. En af disse løsninger er den Nærmeste Nabo Algoritme (NNA, Nearest Neighbor Algorithm), som behandler et problem der opstår, når en række knuder skal indgå, og kun skal indgå én gang, hvilket betyder, at der ikke må være en løkke (loop). Dette opnåes gennem brug af Hamiltonian Paths, hvilket er en ”rute” gennem knuder på grafen. I NAA vil en kant have en værdi, og disse værdier er bestemmende for, hvilken kant der skal følges. Fra den knude der behandles, skal kanten med den laveste værdi følges. Dette kan dog optimeres, ved at lave en matrice over kanterne fra alle knuder. Her tages højde for hvilke kanter der samlet set giver den korteste rute, uden brug af løkker.
+
+ 
+\begin{wrapfigure}{}{0.6\textwidth}
+  \vspace{-45pt}
+  \begin{center}
+    \includegraphics[scale=0.8]{grafteori2} \newline
+    \textit{Figur 3.1: Brugergrænseflade}\newline
+  \end{center}
+  \vspace{-20pt}
+\end{wrapfigure}
+
 I dette tilfælde (figur 2), er den endelige rutes længde: 1+5+4+8 = 18. Spørgsmålet er så, er dette den koreste rute? Herefter opstilles en matrice, der beskriver alle kanter.
 %TABULAR MANGLER%
-De mulige ruter er:
-ABDCE = 3+4+5+6 = 18.
-ACDBE = 1+5+4+8 = 18.
-AEBDC = 2+8+4+5 = 19.
-ABECD = 3+8+6+5 = 22.
-ABEDC = 3+8+7+5 = 23.
-ACEBD = 1+6+8+4 = 19.
-ACEDB = 1+6+7+4 = 18.
-AECDB = 2+6+5+4 = 17.
+
+\begin{tabular}{| l | l | l | l | l | l |}
+	\hline
+	  & A & B & C & D & E \\ \hline
+	A & - & 3 & 1 & - & 2 \\ \hline
+	B & 3 & - & - & 3 & 8 \\ \hline
+	C & 1 & - & - & 5 & 6 \\ \hline
+	D & - & 4 & 5 & - & 7 \\ \hline
+	E & 2 & 8 & 6 & 7 & - \\
+	\hline
+	\end{tabular}
+
+
+De mulige ruter er: \newline
+ABDCE = 3+4+5+6 = 18. \newline
+ACDBE = 1+5+4+8 = 18. \newline
+AEBDC = 2+8+4+5 = 19. \newline
+ABECD = 3+8+6+5 = 22. \newline
+ABEDC = 3+8+7+5 = 23. \newline
+ACEBD = 1+6+8+4 = 19. \newline
+ACEDB = 1+6+7+4 = 18. \newline
+AECDB = 2+6+5+4 = 17. \newline
+
 Den korteste rute er altså AECDB, hvilket er 1 kortere end den antagede rute. Den optimale Hamiltonian Path er derfor denne rute. Dette tager NNA ikke højde for, da den starter i en valgt start-knude, og derefter følger kanten, med den derfra laveste værdi. Det smarte ved NNA er, at den ikke kræver meget kraft for en computer at udføre, hvorimod at finde den optimale Hamiltonian rute, vil være langt mere compliceret. NNA tager dog ikke højde for, hvad konsekvenser de skridt den tager, har for det endelige resultat.
 Udover NNA, findes også Dijkstra’s algoritme, hvor første step er, at bestemme ende-knuden, og sætte dens distance til nul. Denne knude sættes til at være den første knude, som behandles. I det en knude er checket færdig, vil denne knude markeres som ”besøgt”, og kanten med den mindste værdi følges, og næste knude markeres som ”nuværende” knude. En kant bliver kun fulgt, hvis det er den korteste rute, tilregnet tidligere kanter.
 Problematikken med Dijkstra’s algoritme i forhold til dette projekt er, at den checker den korteste rute fra start-knude til slut-knude, men den indkluderer ikke nødvendigvis alle knuder som oplyses. I det denne rapport er afgrænset til fugleflugtslinjer, vil Dijkstra’s ikke være den optimale. Hvis en rute igennem en by, hvor der er tilregnet veje, stier og andre knuder, vil Dijkstra’s være det bedste valg. Denne algoritme vil også være i brug ved den optimale løsning.
 Ved brug af NAA vil en udregningstid for algoritmen beskrives som O(Nd), hvor N er kardinaliteten (antallet af knuder),  d er antallet af dimensioner, og O er udregningstiden. Dette vil sige, at for hver knude vi inddrager i udregningen, vil udregningstiden bliver antallet af dimensioner større. Denne udregningstid er baseret på, at udregningen bliver gjort gennem en ”naiv” metode, hvor udregningen konstant bliver testet for, hvorvidt den ”nuværende” beregnede rute, er kortere eller længere end den hurtigste hidtil.
 
-\subsection{Matematikteori•}
-Essensen i dette projekt er at finde en flerpunktsrute mellem nogle valgte attraktioner, hvor brugeren skal have mulighed for, at vælge nogle attraktioner til deres rute. Gruppen vil ikke diktere hvad en interessant rute er for brugeren, derfor skal de have muligheden for at vælge de foreslåede attraktioner til eller fra. 
-Der tages nu udgangspunkt i figur X. En del af brugerens rute ligger fra attraktion a til attraktion b. Der skal nu tjekkes om der ligger andre attraktioner mellem afstanden fra a til b (eller AB), og med bredden AD hvor brugeren vil blive spurgt om denne attraktion skal tilføjes til ruten. AD er i projektets program sat til at være %V ∙ 2.% Dette vil blive udregnet vha. vektorer 
+\subsection{Matematikteori}
+Essensen i dette projekt er at finde en flerpunktsrute mellem nogle valgte attraktioner, hvor brugeren skal have mulighed for, at vælge nogle attraktioner til deres rute. Gruppen vil ikke diktere hvad en interessant rute er for brugeren, derfor skal de have muligheden for at vælge de foreslåede attraktioner til eller fra.
+
+\begin{wrapfigure}{}{0.4\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[scale=0.6]{matematikteori1} \newline
+    \textit{Figur 3.1: Brugergrænseflade}\newline
+  \end{center}
+  \vspace{-20pt}
+\end{wrapfigure}
+ 
+Der tages nu udgangspunkt i figur X. En del af brugerens rute ligger fra attraktion a til attraktion b. Der skal nu tjekkes om der ligger andre attraktioner mellem afstanden fra a til b (eller AB), og med bredden AD hvor brugeren vil blive spurgt om denne attraktion skal tilføjes til ruten. AD er i projektets program sat til at være %V ∙ 2. Dette vil blive udregnet vha. vektorer 
 Hvis der antages at punktet P er en attraktion som programmet skal tjekke, ligger denne inden for længden af ruten AB og bredden AD. Dette tjekkes med følgende formel:
-%0 < AP ∙ AB < AB ∙ AB ᴧ 0 < AP ∙ AD < AD ∙ AD%
+%0 < AP ∙ AB < AB ∙ AB ᴧ 0 < AP ∙ AD < AD ∙ AD
 Hvor prikproduktet af vektorerne AP og AB, skal være større end 0 og mindre end prikproduktet af vektorerne AB og AB. Det samme vil gælde for AD i stedet for AB.
-%Formel 1%
-%Formel 2%
-%Formel 3%
-%Figur fra dokumentet mangler%
-For at projektere AP på AB skal følgende formel benyttes: %ba = ((a * b) / |a|2) * a.%
-Med denne formel vil vektoren b blive projekteret på vektoren a. I tælleren findes findes prikproduktet som:
-%Formel 4%
-%Formel 5%
+Dog vil der først findes en vektor AP mellem punkterne A og P med formlen:  %(AP) ⃗=■(X2-X1@Y2-Y1)
+Vektor AP: %A(1, 5) og P(5, 4): (AP) ⃗=■(5-1@4-5)= ■(4@-1)
+Vektor AB findes også da det næste trin er at projektere AP på AB. %A(1, 5) og B(7, 5): (AP) ⃗=■(7-1@5-5)= ■(6@0)
+For at projektere AP på AB skal følgende formel benyttes: %ba = ((a * b) / |a|2) * a.
+Med denne formel vil vektoren b blive projekteret på vektoren a. I tælleren findes prikproduktet som kan findes ved at: % a∙b=■(X1∙X2@Y1∙Y2)
+I nævneren findes længden på vektor a i anden, som kan regnes ved at sige: % 〖√(〖ax〗^2+〖ay〗^2 )〗^2
 Hvis der forsat kigges på eksemplet med figur X, vil projektionen af AP på AB se således ud:
-%Formel 6%
-%Formel 7%
-Ud fra dette kan vektoren fra projektionen
-%Formel 8%
-som også vil have startpunkt i A. Hvis der igen kigges på formlen
-%0 < AP ∙ AB < AB ∙ AB ᴧ 0 < AP ∙ AD < AD ∙ AD%
-overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på .
-%Formel 9%
+Prikproduktet af vektorerne AP og AB: % ■(   4&6@-1&0) = (4∙6)+(-1∙0)=24+0=24
+Længden af AB vil være: % 〖√(6^2+0^2 )〗^2= 〖√(36+0)〗^2=36
+Ud fra dette kan vektoren fra projektionen af AP på AB findes: % 24/36∙■(6@0)  24/36∙6=144/36=4 og 24/36∙0=0/36=0
+
+\begin{wrapfigure}{R}{0.4\textwidth}
+  \vspace{-45pt}
+  \begin{center}
+    \includegraphics[scale=0.6]{matematikteori2} \newline
+    \textit{Figur 3.1: Brugergrænseflade}\newline
+  \end{center}
+  \vspace{-60pt}
+\end{wrapfigure}
+
+Hvor resultatet vil give en ny vektor %■(4@0) som også vil have startpunkt i A. Hvis der igen kigges på formlen
+%0 < AP ∙ AB < AB ∙ AB ᴧ 0 < AP ∙ AD < AD ∙ AD
+overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde	% ■(   0@-1).
+
 
 \section{Implementering}
 I dette afsnit vil programmet blive beskrevet, både en overordnet programbeskrivelse og en dybdegående forklaring af programmets funktioner. Derudover vil der blive beskrevet hvordan brugeren interagere med programmet. 
@@ -161,13 +211,13 @@ Indsæt billede af ” valgafAttraktioner”.
 Funktionen ”findNaboRute” benytter NNA (Nearest Neighbour Algorithm, eller Nærmeste Nabo Algoritme), til at finde den korteste rute mellem en række attraktioner for et bestemt startsted, der er opgivet i inputparametrene. Efter at have fundet den korteste rute ud fra NNA som en beskrevet i teoriafsnittet X, returnere den et array med ruten og distancen for denne rute. 
 Indsæt billede af ”findNaboRute”.
 ”findKortesteNaboRute” benytter funktionen ”findNaboRute”, til at finde ud af hvilket startsted der giver den korteste rute. Dette gøres ved at sætte en variable til en stor værdi, som rutedistancen ikke vil gå over, og opdatere den hvis ”findNaboRute” returnere en distance for de givne attraktioner med en given start attraktion, der er lavere end de forgående ruter. ”findKortesteNaboRute” returnere et array der er en sorteret liste over attraktionerne, og den samlede længde mellem disse. 
-Indsæt billede af ”findKortesteNaboRute”. 
-Funktionen ”beregn_dist” er en implementering af Harasin formlen, der er beskrevet i teoriafsnittet X. Funktionen tager længde- og breddegrader for to attraktioner som inputparametre. Disse længde- og breddegrader bliver brugt i formlen til at udregne distancen mellem de to punkter. Funktionen returnere til sidst den beregnede distance mellem de to attraktioner.
-Indsæt billede af ”beregn_dist”.
-Funktionen ”udregn_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn_dist”, ved at sende længde- og breddegrader for attraktionerne, og opretter en kant. Dette gøres i en for løkke i en anden for løkke, hvor der for hvert punkt blive udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for i en tidligere itteration af løkkerne. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. 
-Indsæt billede af ”udregn_kanter”.
-Brugeren af programmet bliver præsenteret for ruten gennem funktionen ”output_liste”. Funktionen udskriver en liste med attraktionerne i den rækkefølge de skal besøges, hvis den korteste rute ønskes. Funktionen sørger også for at skrive distancen mellem attraktionerne. 
-Indsæt billede af ”output_liste”.
+Indsæt billede af ”findKortesteNaboRute”. \newline
+Funktionen ”beregn\_dist” er en implementering af Harasin formlen, der er beskrevet i teoriafsnittet X. Funktionen tager længde- og breddegrader for to attraktioner som inputparametre. Disse længde- og breddegrader bliver brugt i formlen til at udregne distancen mellem de to punkter. Funktionen returnere til sidst den beregnede distance mellem de to attraktioner.
+Indsæt billede af ”beregn\_dist”.
+Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn\_dist”, ved at sende længde- og breddegrader for attraktionerne, og opretter en kant. Dette gøres i en for løkke i en anden for løkke, hvor der for hvert punkt blive udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for i en tidligere itteration af løkkerne. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. 
+Indsæt billede af ”udregn\_kanter”.
+Brugeren af programmet bliver præsenteret for ruten gennem funktionen ”output\_liste”. Funktionen udskriver en liste med attraktionerne i den rækkefølge de skal besøges, hvis den korteste rute ønskes. Funktionen sørger også for at skrive distancen mellem attraktionerne. 
+Indsæt billede af ”output\_liste”.
 BESKRIV FUNKTIONEN ”findDist”.
 
 \subsection{Opsummering}
@@ -177,9 +227,9 @@ Her er en liste med de overstående funktioner, med en kort forklaring om hvad h
 	\item "valgafAttraktioner" – Lader brugeren vælge attraktioner
 	\item "findNaboRute" – Bestemmer den korteste rute mellem en række attraktioner, for en bestemt attraktion
 	\item "findKortesteNaboRute" – Finder det optimale startsted
-	\item "beregn_dist" – Beregner distancen mellem to attraktioner
-	\item "udregn_kanter" – Bruger ”beregn_dist” til at oprette kanter mellem attraktioner
-	\item "output_liste" – Udskriver den korteste rute til brugeren
+	\item "beregn\_dist" – Beregner distancen mellem to attraktioner
+	\item "udregn\_kanter" – Bruger ”beregn\_dist” til at oprette kanter mellem attraktioner
+	\item "output\_liste" – Udskriver den korteste rute til brugeren
 	\item "findDist" - ..
 \end{itemize}
 

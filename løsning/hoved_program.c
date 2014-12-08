@@ -7,7 +7,7 @@
 #define PI 3.141592653589793
 #define GRAD_TIL_RAD 0.017453292519943295769236907684886
 #define ANTAL_ATTRAKTIONER 5
-#define ANTAL_KANTER ANTAL_ATTRAKTIONER*(ANTAL_ATTRAKTIONER-1)/2
+#define ANTAL_KANTER ANTAL_ATTRAKTIONER*(ANTAL_ATTRAKTIONER-1)
 #define MAX_STRING 30
 
 typedef struct {
@@ -186,8 +186,6 @@ void udregn_kanter(attraktion *attraktioner, kant *kanter)
         kanter[indexTilKanter] = k;
         indexTilKanter++;
       }
-
-
     }
   }
 }

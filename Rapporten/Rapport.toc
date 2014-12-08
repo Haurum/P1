@@ -28,16 +28,16 @@
 \contentsline {section}{\numberline {4.2}Teorier}{14}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Grafteori}{14}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Matematikteori}{16}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Implementering}{16}{section.4.3}
+\contentsline {section}{\numberline {4.3}Implementering}{17}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Programbeskrivelse}{17}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Opsummering}{18}{subsection.4.3.2}
-\contentsline {chapter}{\chapternumberline {5}Konklusion}{19}{chapter.5}
-\contentsline {chapter}{Litteratur}{20}{section*.5}
-\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{22}{appendix.A}
-\contentsline {section}{\numberline {A.1}Teori}{22}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{22}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Formulering}{22}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}R\IeC {\ae }kkef\IeC {\o }lge}{23}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}R\IeC {\r a}data}{23}{section.A.2}
-\contentsline {appendix}{\chapternumberline {B}Interview}{26}{appendix.B}
-\contentsline {section}{\numberline {B.1}Teori}{26}{section.B.1}
+\contentsline {chapter}{\chapternumberline {5}Konklusion}{20}{chapter.5}
+\contentsline {chapter}{Litteratur}{21}{section*.5}
+\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{23}{appendix.A}
+\contentsline {section}{\numberline {A.1}Teori}{23}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{23}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Formulering}{23}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}R\IeC {\ae }kkef\IeC {\o }lge}{24}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}R\IeC {\r a}data}{24}{section.A.2}
+\contentsline {appendix}{\chapternumberline {B}Interview}{27}{appendix.B}
+\contentsline {section}{\numberline {B.1}Teori}{27}{section.B.1}

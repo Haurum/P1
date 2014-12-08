@@ -169,23 +169,24 @@ Essensen i dette projekt er at finde en flerpunktsrute mellem nogle valgte attra
   \vspace{-20pt}
 \end{wrapfigure}
  
-Der tages nu udgangspunkt i figur X. En del af brugerens rute ligger fra attraktion a til attraktion b. Der skal nu tjekkes om der ligger andre attraktioner mellem afstanden fra a til b (eller AB), og med bredden AD hvor brugeren vil blive spurgt om denne attraktion skal tilføjes til ruten. AD er i projektets program sat til at være %V ∙ 2. Dette vil blive udregnet vha. vektorer 
+Der tages nu udgangspunkt i figur X. En del af brugerens rute ligger fra attraktion a til attraktion b. Der skal nu tjekkes om der ligger andre attraktioner mellem afstanden fra a til b (eller AB), og med bredden AD hvor brugeren vil blive spurgt om denne attraktion skal tilføjes til ruten. AD er i projektets program sat til at være V * 2. Dette vil blive udregnet vha. vektorer 
 Hvis der antages at punktet P er en attraktion som programmet skal tjekke, ligger denne inden for længden af ruten AB og bredden AD. Dette tjekkes med følgende formel:
-%0 < AP ∙ AB < AB ∙ AB ᴧ 0 < AP ∙ AD < AD ∙ AD
+\[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 Hvor prikproduktet af vektorerne AP og AB, skal være større end 0 og mindre end prikproduktet af vektorerne AB og AB. Det samme vil gælde for AD i stedet for AB.
-Dog vil der først findes en vektor AP mellem punkterne A og P med formlen:  %(AP) ⃗=■(X2-X1@Y2-Y1)
-Vektor AP: %A(1, 5) og P(5, 4): (AP) ⃗=■(5-1@4-5)= ■(4@-1)
-Vektor AB findes også da det næste trin er at projektere AP på AB. %A(1, 5) og B(7, 5): (AP) ⃗=■(7-1@5-5)= ■(6@0)
-For at projektere AP på AB skal følgende formel benyttes: %ba = ((a * b) / |a|2) * a.
-Med denne formel vil vektoren b blive projekteret på vektoren a. I tælleren findes prikproduktet som kan findes ved at: % a∙b=■(X1∙X2@Y1∙Y2)
-I nævneren findes længden på vektor a i anden, som kan regnes ved at sige: % 〖√(〖ax〗^2+〖ay〗^2 )〗^2
+Dog vil der først findes en vektor AP mellem punkterne A og P med formlen: \[ \overrightarrow{AP} = \begin{matrix}X2-X1 \\ Y2-Y1\end{matrix} \]
+Vektor AP: A(1,5) og P(5,4): \[ \overrightarrow{AP} = \begin{matrix}5-1 \\ 4-5\end{matrix} = \begin{matrix} 4 \\ -1 \end{matrix} \]
+\[ \text{Vektor AB er allerede kendt, da det er det samme som } \overrightarrow{ab} \text{.} \]
+For at projektere AP på AB skal følgende formel benyttes: \[ b_{a} = (\frac{a*b}{|a|^2}) * a \]
+Med denne formel vil vektoren b blive projekteret på vektoren a. I tælleren findes prikproduktet som kan findes ved at: \[ a \cdot b = \begin{matrix}X1 * X2 \\ Y1 * Y2\end{matrix}  \]
+I nævneren findes længden på vektor a i anden, som kan regnes ved at sige: \[ \sqrt{ax^2+ay^2}^2 \]
 Hvis der forsat kigges på eksemplet med figur X, vil projektionen af AP på AB se således ud:
-Prikproduktet af vektorerne AP og AB: % ■(   4&6@-1&0) = (4∙6)+(-1∙0)=24+0=24
-Længden af AB vil være: % 〖√(6^2+0^2 )〗^2= 〖√(36+0)〗^2=36
-Ud fra dette kan vektoren fra projektionen af AP på AB findes: % 24/36∙■(6@0)  24/36∙6=144/36=4 og 24/36∙0=0/36=0
+Prikproduktet af vektorerne: \[ \overrightarrow{AP} \cdot \overrightarrow{AB} = \begin{matrix} 4 & 6 \\ -1 & 0 \end{matrix} = 4*6+(-1)*0 = 24 \]
+Længden af AB vil være: \[ \sqrt{6^2+0^2}^2 = 36 \]
+Ud fra dette kan vektoren fra projektionen af AP på AB findes: 
+\[ \frac{24}{36} * \begin{matrix} 6 \\ 0 \end{matrix} \rightarrow \frac{24}{36} * 6 \wedge \frac{24}{36} * 0 = \begin{matrix} 4 \\ 0 \end{matrix} \]
 
 \begin{wrapfigure}{R}{0.4\textwidth}
-  \vspace{-45pt}
+  \vspace{-60pt}
   \begin{center}
     \includegraphics[scale=0.6]{matematikteori2} \newline
     \textit{Figur 3.1: Brugergrænseflade}\newline
@@ -193,9 +194,9 @@ Ud fra dette kan vektoren fra projektionen af AP på AB findes: % 24/36∙■(6@
   \vspace{-60pt}
 \end{wrapfigure}
 
-Hvor resultatet vil give en ny vektor %■(4@0) som også vil have startpunkt i A. Hvis der igen kigges på formlen
-%0 < AP ∙ AB < AB ∙ AB ᴧ 0 < AP ∙ AD < AD ∙ AD
-overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde	% ■(   0@-1).
+Hvor resultatet vil give en ny vektor: \[ \begin{matrix} 4 \\ 0 \end{matrix} \text{ ,} \]  som også vil have startpunkt i A. Hvis der igen kigges på formlen:
+\[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
+overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde: \[ \begin{matrix} 0 \\ -1 \end{matrix} \text{ .} \]
 
 
 \section{Implementering}

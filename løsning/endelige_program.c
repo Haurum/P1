@@ -33,6 +33,7 @@ void findKortesteNaboRute(attraktion *valgteAttraktioner, attraktion *ruteAttrak
 void outputTilFil(attraktion *ruteAttraktioner);
 void findNaboRute(attraktion *valgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde);
 double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion);
+void output_liste(attraktion *attraktioner, int antalAttraktioner);
 
 int main()
 {
@@ -142,7 +143,7 @@ double findDist(attraktion start, attraktion slut, kant *kanter){
   int i;
   for (i = 0; i < ANTAL_KANTER; ++i)
   {
-    if(strcmp(kanter[i].start.navn, kanter[i].slut.navn) == 0 && strcmp(kanter[i].slut.navn, kanter[i].slut.navn) == 0){
+    if(strcmp(kanter[i].start.navn, kanter[i].slut.navn) == 0 && strcmp(kanter[i].slut.navn, kanter[i].slut.navn) == 0){ // Kig på denne funktion Mandag, Mark siger den ikke virker
       return kanter[i].laengde;
     }
   }
@@ -183,4 +184,32 @@ double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
   double andenDel = pow(sin((slutAttraktion.lndg - startAttraktion.lndg)/2 * GRAD_TIL_RAD),2);
   double a = sqrt(forsteDel + cos(startAttraktion.brdg * GRAD_TIL_RAD) * cos(slutAttraktion.brdg * GRAD_TIL_RAD) * andenDel);
   return 2 * JORDENS_RADIUS * asin(a);
+}
+
+void output_liste(attraktion *attraktioner, int antalAttraktioner)
+{
+  FILE *fp;
+  fp = fopen("KortesteRute.txt", "w");
+  
+  if (fp == NULL)
+  {
+    printf("Kunne ikke finde filen 'KortesteRute.txt'");
+    return;
+  }
+
+  int i;
+
+  for (i = 0; i < antalAttraktioner; i++)
+  {
+    fprintf(fp, "%i: %s", i + 1, attraktioner[i].navn);
+    if (i > 0)
+    {
+      double dist = beregn_dist(attraktioner[i].brdg, attraktioner[i].lndg, attraktioner[i-1].brdg, attraktioner[i-1].lndg);
+      fprintf(fp, ", distancen mellem attraktionere: %4.2f km\n", dist);
+    }
+    else 
+      fprintf(fp, "\n");
+  }
+  
+
 }

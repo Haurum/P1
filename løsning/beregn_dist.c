@@ -33,19 +33,19 @@ int main()
 	attraktion attraktioner[ANTAL_ATTRAKTIONER];
 	attraktioner[0].lndg = 9.875491000000011;
 	attraktioner[0].brdg = 57.041256;
-  strcpy(attraktioner[0].navn, "Nummer et er her");
+  strcpy(attraktioner[0].navn, "Mit hus");
 	attraktioner[1].lndg = 9.95243800000003;
 	attraktioner[1].brdg = 57.036041;
-  strcpy(attraktioner[1].navn, "Nummer to er her");
+  strcpy(attraktioner[1].navn, "Mikael bor her");
 	attraktioner[2].lndg = 9.675491000000011;
 	attraktioner[2].brdg = 56.041256;
-  strcpy(attraktioner[2].navn, "Nummer tre er her");
+  strcpy(attraktioner[2].navn, "Soerens lejlighed");
 	attraktioner[3].lndg = 10.005491000000011;
 	attraktioner[3].brdg = 56.541256;
-  strcpy(attraktioner[3].navn, "Nummer fire er her");
+  strcpy(attraktioner[3].navn, "Random sted");
 	attraktioner[4].lndg = 11.875491000000011;
 	attraktioner[4].brdg = 58.041256;
-  strcpy(attraktioner[4].navn, "Nummer fem er her");
+  strcpy(attraktioner[4].navn, "Endnu mere random sted");
 
 	udregn_kanter(attraktioner, kanter);
 	printf("antal kanter %i\n", ANTAL_KANTER);
@@ -111,7 +111,16 @@ void output_liste(attraktion *attraktioner, int antalAttraktioner)
   int i;
 
   for (i = 0; i < antalAttraktioner; i++)
-    fprintf(fp, "%i: %s\n", i + 1, attraktioner[i].navn);
+  {
+    fprintf(fp, "%i: %s", i + 1, attraktioner[i].navn);
+    if (i > 0)
+    {
+      double dist = beregn_dist(attraktioner[i].brdg, attraktioner[i].lndg, attraktioner[i-1].brdg, attraktioner[i-1].lndg);
+      fprintf(fp, ", distancen mellem attraktionere: %4.2f km\n", dist);
+    }
+    else 
+      fprintf(fp, "\n");
+  }
+  
 
 }
-

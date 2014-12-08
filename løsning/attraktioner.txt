@@ -10,4 +10,3 @@ Aalborg_Teater Jernbanegade_11 57.047013 9.916458
 Gaagade_1 Bispengade_22 57.049364 9.918534
 Gaagade_2 Bredgade_6 57.046738 9.924156
 Havnefronten Strandvejen_2 57.051162 9.922353
-

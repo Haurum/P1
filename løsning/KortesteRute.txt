@@ -3,3 +3,4 @@
 3: Soerens lejlighed, distancen mellem attraktionere: 111.95 km
 4: Random sted, distancen mellem attraktionere: 59.23 km
 5: Endnu mere random sted, distancen mellem attraktionere: 201.16 km
+6: Mit hus, distancen mellem attraktionere: 163.16 km

@@ -36,7 +36,6 @@ void udregn_kanter(attraktion *attraktioner, kant *kanter);
 double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion);
 void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ikkeValgteAttraktioner);
 void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde);
-void outputTilFil(attraktion *ruteAttraktioner);
 void findNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde);
 double findDist(attraktion start, attraktion slut, kant *kanter);
 void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, 
@@ -46,9 +45,8 @@ void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAt
                                   attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner);
 double prikProdukt(vektor vektor1, vektor vektor2);
 void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ekstraAttraktioner, int antalEsktraAttraktioner);
-
-
-
+void outputTilFil(attraktion *ruteAttraktioner, int antalValgteAttraktioner);
+void kopierFil(FILE *filSkabelon, FILE *filOutput);
 
 int main()
 {
@@ -71,7 +69,7 @@ int main()
   findKortesteNaboRute(valgteAttraktioner, antalValgteAttraktioner, ruteAttraktioner, kanter, &samletLaengde);
 
   findEkstraAttraktioner(ruteAttraktioner, valgteAttraktioner, &antalValgteAttraktioner, kanter, 
-                        ikkeValgteAttraktioner, 0.5, ekstraAttraktioner, &antalEsktraAttraktioner);
+                        ikkeValgteAttraktioner, 0.1, ekstraAttraktioner, &antalEsktraAttraktioner);
 
   if(antalEsktraAttraktioner > 0){
     valgAfEkstraAttraktioner(valgteAttraktioner, &antalValgteAttraktioner, ekstraAttraktioner, antalEsktraAttraktioner);
@@ -79,10 +77,7 @@ int main()
     findKortesteNaboRute(valgteAttraktioner, antalValgteAttraktioner, ruteAttraktioner, kanter, &samletLaengde);
   }
 
-  /*outputTilFil(ruteAttraktioner);*/
-
-  /*udskriv rækkefølgen på den hurtigste rute på skærmen*/
-  /*samt total længde*/
+  outputTilFil(ruteAttraktioner, antalValgteAttraktioner);
 
   int i, j;
   printf("din rute:\n");
@@ -96,8 +91,6 @@ int main()
 void initialiserAttraktioner(attraktion *attraktioner){
   FILE *input_file_pointer;
   int i = 0;
-  char nvn[MAX_STRING];
-  char adrs[MAX_STRING];
   double lndgrad;
   double brdgrad;
 
@@ -111,7 +104,7 @@ void initialiserAttraktioner(attraktion *attraktioner){
       i++;
     }
   }else{
-    printf("tom fil\n"); exit(1);
+    printf("kunne ikke aabne fil\n"); exit(1);
   }
   fclose(input_file_pointer);
 } 
@@ -308,7 +301,6 @@ void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAt
   punktVektor.y = attraktionAtTilfoeje.kmFraAekvator - mainHjoerne.y;
   if(0 < prikProdukt(punktVektor, side1Vektor) && prikProdukt(punktVektor, side1Vektor) < prikProdukt(side1Vektor, side1Vektor) &&
       0 < prikProdukt(punktVektor, side2Vektor) && prikProdukt(punktVektor, side2Vektor) < prikProdukt(side2Vektor, side2Vektor)){
-    printf("%s, %s, %s\n", startAttraktion.navn, slutAttraktion.navn, attraktionAtTilfoeje.navn);
     ekstraAttraktioner[*antalEsktraAttraktioner] = attraktionAtTilfoeje;
     *antalEsktraAttraktioner += 1;
   }
@@ -338,4 +330,52 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
     }
   } while(j < ANTAL_ATTRAKTIONER && k != 0);
   *antalValgteAttraktioner = j;
+}
+
+void outputTilFil(attraktion *ruteAttraktioner, int antalValgteAttraktioner){
+  FILE *filSkabelon, *filOutput;
+
+  kopierFil(filSkabelon, filOutput);
+
+  int i;
+  char buf[MAX_STRING];
+
+  filOutput = fopen("output.kml", "r+");
+
+  if(filOutput != NULL){
+    while(fscanf(filOutput, " %s", buf) == 1){
+      if(strcmp(buf, "<coordinates>") == 0){
+        fseek(filOutput, 0, SEEK_CUR);
+        fprintf(filOutput, "\n");
+        for (i = 0; i < antalValgteAttraktioner+1; ++i)
+        {
+          fprintf(filOutput, "%f,%f \n", ruteAttraktioner[i].kmFraGreenwich/KM_PR_LNDGRAD, ruteAttraktioner[i].kmFraAekvator/KM_PR_BRDGRAD);
+        }
+        fprintf(filOutput, "</coordinates>\n");
+        fprintf(filOutput, "</LineString>\n");
+        fprintf(filOutput, "</Placemark>\n");
+        fprintf(filOutput, "</Document>\n");
+        fprintf(filOutput, "</kml>\n");
+        fseek(filOutput, 0, SEEK_CUR);
+      }
+    }
+  }else{
+    printf("kunne ikke aabne fil\n"); exit(1);
+  }
+}
+
+void kopierFil(FILE *filSkabelon, FILE *filOutput){
+  char ch;
+  filSkabelon = fopen("outputSkabelon.kml", "r");
+  filOutput = fopen("output.kml", "w");
+
+  if(filSkabelon == NULL || filOutput == NULL){
+    printf("kunne ikke aabne fil\n"); exit(1);
+  }
+
+  while( ( ch = fgetc(filSkabelon) ) != EOF ){
+      fputc(ch, filOutput);
+  } 
+  fclose(filSkabelon);
+  fclose(filOutput);
 }

@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -46,7 +46,8 @@ void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAt
                                   attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner);
 double prikProdukt(vektor vektor1, vektor vektor2);
 void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ekstraAttraktioner, int antalEsktraAttraktioner);
-void output_liste(attraktion *attraktioner, int antalAttraktioner);
+
+
 
 
 int main()
@@ -70,7 +71,7 @@ int main()
   findKortesteNaboRute(valgteAttraktioner, antalValgteAttraktioner, ruteAttraktioner, kanter, &samletLaengde);
 
   findEkstraAttraktioner(ruteAttraktioner, valgteAttraktioner, &antalValgteAttraktioner, kanter, 
-                        ikkeValgteAttraktioner, 0.7, ekstraAttraktioner, &antalEsktraAttraktioner);
+                        ikkeValgteAttraktioner, 0.5, ekstraAttraktioner, &antalEsktraAttraktioner);
 
   if(antalEsktraAttraktioner > 0){
     valgAfEkstraAttraktioner(valgteAttraktioner, &antalValgteAttraktioner, ekstraAttraktioner, antalEsktraAttraktioner);
@@ -337,37 +338,4 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
     }
   } while(j < ANTAL_ATTRAKTIONER && k != 0);
   *antalValgteAttraktioner = j;
-}
-  double forsteDel = pow(sin((slutAttraktion.brdg - startAttraktion.brdg)/2 * GRAD_TIL_RAD),2);
-  double andenDel = pow(sin((slutAttraktion.lndg - startAttraktion.lndg)/2 * GRAD_TIL_RAD),2);
-  double a = sqrt(forsteDel + cos(startAttraktion.brdg * GRAD_TIL_RAD) * cos(slutAttraktion.brdg * GRAD_TIL_RAD) * andenDel);
-  return 2 * JORDENS_RADIUS * asin(a);
-}
-
-void output_liste(attraktion *attraktioner, int antalAttraktioner)
-{
-  FILE *fp;
-  fp = fopen("KortesteRute.txt", "w");
-  
-  if (fp == NULL)
-  {
-    printf("Kunne ikke finde filen 'KortesteRute.txt'");
-    return;
-  }
-
-  int i;
-
-  for (i = 0; i < antalAttraktioner; i++)
-  {
-    fprintf(fp, "%i: %s", i + 1, attraktioner[i].navn);
-    if (i > 0)
-    {
-      double dist = beregn_dist(attraktioner[i].brdg, attraktioner[i].lndg, attraktioner[i-1].brdg, attraktioner[i-1].lndg);
-      fprintf(fp, ", distancen mellem attraktionere: %4.2f km\n", dist);
-    }
-    else 
-      fprintf(fp, "\n");
-  }
-  
-
 }

@@ -144,12 +144,12 @@
   \renewcommand\printchaptertitle[1]{%
     \noindent
     \ifchapternonum
-    \begin{tabularx}{\textwidth}{X}
+    \begin{tabularx}{\textwidth}{XX}
     {\let\\\newline\chaptitlefont ##1\par} 
     \end{tabularx}
     \par\vskip-2.5mm\hrule
     \else
-    \begin{tabularx}{\textwidth}{Xl}
+    \begin{tabularx}{\textwidth}{XX}
     {\parbox[b]{\linewidth}{\chaptitlefont ##1}} & \raisebox{-15pt}{\chapnumfont \thechapter}
     \end{tabularx}
     \par\vskip2mm\hrule

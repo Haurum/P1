@@ -216,8 +216,6 @@ Længden af AB vil være: \[ \sqrt{6^2+0^2}^2 = 36 \]
 Ud fra dette kan vektoren fra projektionen af AP på AB findes: 
 \[ \frac{24}{36} * \begin{matrix} 6 \\ 0 \end{matrix} \rightarrow \frac{24}{36} * 6 \wedge \frac{24}{36} * 0 = \begin{matrix} 4 \\ 0 \end{matrix} \]
 
-
-
 Hvor resultatet vil give en ny vektor: \[ \begin{matrix} 4 \\ 0 \end{matrix} \text{ ,} \]  som også vil have startpunkt i A. Hvis der igen kigges på formlen:
 \[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 \begin{wrapfigure}{R}{0.4\textwidth}
@@ -239,32 +237,314 @@ I dette afsnit vil programmet blive beskrevet, både en overordnet programbeskri
 Programmet begynder med at indlæse alle de forudbestemte tilgængelige attraktioner fra en tekstfil. Alle disse attraktioner bliver vist på en liste for brugeren i kommandopromten med numre ud for hver attraktion. Brugeren vælger så hvilke attraktioner vedkommende har lyst til at besøge, ved at indtaste attraktionens nummer, hvor attraktionen så vil blive tilføjet til en liste. Denne liste kører gennem programmet, og den korteste rute bestemmes. Programmet tjekker derefter, for nærliggende attraktioner der kan tilføjes til ruten, på samme måde som i begyndelsen da de valgte attraktioner til deres rute. Hvis brugeren vælger ekstra attraktioner til deres rute, kører programmet igen, og den nye rute beregnes. Når ruten er beregnet, vil ruten være tilgængelig i tekstfilen ”KortesteRute.txt”, hvor brugeren kan se hvilken rækkefølge attraktionerne skal besøges i, og distancen mellem dem. 
 
 Attraktionerne til programmet bliver indlæst fra en .txt fil når prorammet køres. I programmet bliver filen indlæst i en funktion som hedder initialiserAttraktioner. Hvis filen ikke er tom vil elementerne, vha. funktionen fscanf, blive indlæst i grupper af 4, hvor de bliver indlæst som ”attraktion” hvilket er defineret som et struct. Hvis filen er tom, vil en advarsel blive vist i prompten og lukke programmet ned. Når alt information er indlæst fra filen, og den ikke længere er nødvendig, lukkes filen.
-Indsæt billede af ”initialiserAttraktioner”.
+
+\begin{lstlisting}
+void initialiserAttraktioner(attraktion *attraktioner){
+	FILE *input_file_pointer;
+	int i = 0;
+	double lndgrad;
+	double brdgrad;
+	
+	input_file_pointer = fopen("attraktioner.txt", "r");
+	
+	if(input_file_pointer != NULL){
+		while(fscanf(input_file_pointer, " %s %s %lf %lf", attraktioner[i].navn, attraktioner[i].adresse, &brdgrad, &lndgrad) == 4){
+		attraktioner[i].kmFraGreenwich = lndgrad * KM_PR_LNDGRAD;
+		attraktioner[i].kmFraAekvator = brdgrad * KM_PR_BRDGRAD;
+		attraktioner[i].besoegt = 0;
+		i++;
+	}
+	}else{
+		printf("kunne ikke aabne fil\n"); exit(1);
+	}
+	fclose(input_file_pointer);
+} 
+\end{lstlisting}
+
 Brugeren bliver præsenteret for en liste over alle tilgængelige attraktioner fra inputparameteren, og attraktionernes tilhørende nummer i funktionen ” valgafAttraktioner”. Brugeren bliver bedt om at indtaste attraktionernes matchende numre, hvilket vil blive tilføjet til en liste. Taster brugeren 0, bliver brugeren præsenteret for sine valg, og beregningen af den korteste rute igangsættes. Programmet returnere listen af valgte attraktioner.
-Indsæt billede af ” valgafAttraktioner”.	
+
+\begin{lstlisting}
+void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ikkeValgteAttraktioner){
+	int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, valgt = 0;
+	
+	for(i = 0; i < ANTAL_ATTRAKTIONER; i++){
+		printf("%d: %s\n", i+1, attraktioner[i].navn);
+	}
+	
+	printf("vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
+	printf("vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal\n");
+	printf("indtast ikke samme tal 2 gange\n");
+	do{
+		if(scanf("%d", &k) != 1){
+		printf("Fejl i indlaesning. Farvel.\n"); exit(0);
+		}
+		if(k != 0){
+			valgteAttraktioner[j] = attraktioner[k-1];
+			j++;
+		}
+	} while(j < ANTAL_ATTRAKTIONER && k != 0);
+	
+	for (l = 0; l < ANTAL_ATTRAKTIONER; ++l)
+	{
+		valgt = 0;
+		for (m = 0; m < j; ++m)
+		{
+			if(strcmp(attraktioner[l].navn, valgteAttraktioner[m].navn) == 0){
+				m = j;
+				valgt = 1;
+			}	
+		}
+		if(valgt != 1){
+			ikkeValgteAttraktioner[n] = attraktioner[l];
+			n++;
+		}
+	}
+	*antalValgteAttraktioner = j;
+}
+\end{lstlisting}
+	
 Funktionen ”findNaboRute” benytter NNA (Nearest Neighbour Algorithm, eller Nærmeste Nabo Algoritme), til at finde den korteste rute mellem en række attraktioner for et bestemt startsted, der er opgivet i inputparametrene. Efter at have fundet den korteste rute ud fra NNA som en beskrevet i teoriafsnittet X, returnere den et array med ruten og distancen for denne rute. 
-Indsæt billede af ”findNaboRute”.
+
+\begin{lstlisting}
+void findNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde){
+	int i = 0;
+	double lavesteLaengde = 10000;
+	*ruteLaengde = 0;
+
+	tempRute[i] = startAttraktion;
+
+	for(i = 0; i < antalValgteAttraktioner-1; ++i){ /*da der f.eks. kun er 4 kanter imellem 5 punkter*/
+		tempRute[i]->besoegt = 1;
+		int j = 0;
+		for (j = 0; j < antalValgteAttraktioner; ++j)
+		{
+			if(valgteAttraktioner[j].besoegt != 1 && findDist(*tempRute[i], valgteAttraktioner[j], kanter) < lavesteLaengde){
+				lavesteLaengde = findDist(*tempRute[i], valgteAttraktioner[j], kanter);
+				tempRute[i+1] = &valgteAttraktioner[j];
+			}
+		}
+		*ruteLaengde += lavesteLaengde;
+		lavesteLaengde = 10000;
+	}
+	tempRute[antalValgteAttraktioner] = startAttraktion;
+	*ruteLaengde += findDist(*tempRute[antalValgteAttraktioner-1], *tempRute[antalValgteAttraktioner], kanter);
+}
+\end{lstlisting}
+
 ”findKortesteNaboRute” benytter funktionen ”findNaboRute”, til at finde ud af hvilket startsted der giver den korteste rute. Dette gøres ved at sætte en variable til en stor værdi, som rutedistancen ikke vil gå over, og opdatere den hvis ”findNaboRute” returnere en distance for de givne attraktioner med en given start attraktion, der er lavere end de forgående ruter. ”findKortesteNaboRute” returnere et array der er en sorteret liste over attraktionerne, og den samlede længde mellem disse. 
-Indsæt billede af ”findKortesteNaboRute”. \newline
+
+\begin{lstlisting}
+void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde){
+	/* indput er valgteAttraktioner arrayet, og kanter arrayet*/
+	/*output er ruteAttraktioner og samletLaengde*/
+	double ruteLaengde;
+	attraktion *tempRute[antalValgteAttraktioner+1];
+	*samletLaengde = 100000;
+	
+	int i;
+	int h;
+	int j;
+	for (i = 0; i < antalValgteAttraktioner; ++i)
+	{
+		for (h = 0; h < antalValgteAttraktioner; ++h)
+		{
+			valgteAttraktioner[h].besoegt = 0;
+		}
+		findNaboRute(valgteAttraktioner, antalValgteAttraktioner, &valgteAttraktioner[i], kanter, tempRute, &ruteLaengde);
+		if(ruteLaengde < *samletLaengde){
+			*samletLaengde = ruteLaengde;
+			for (j = 0; j < antalValgteAttraktioner+1; ++j)
+			{
+				ruteAttraktioner[j] = *tempRute[j];
+			}
+		}
+	}
+}
+\end{lstlisting}
+
 Funktionen ”beregn\_dist” er en implementering af Harasin formlen, der er beskrevet i teoriafsnittet X. Funktionen tager længde- og breddegrader for to attraktioner som inputparametre. Disse længde- og breddegrader bliver brugt i formlen til at udregne distancen mellem de to punkter. Funktionen returnere til sidst den beregnede distance mellem de to attraktioner.
-Indsæt billede af ”beregn\_dist”.
+
+\begin{lstlisting}
+double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
+{
+	return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
+	pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
+}
+\end{lstlisting}
+
 Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn\_dist”, ved at sende længde- og breddegrader for attraktionerne, og opretter en kant. Dette gøres i en for løkke i en anden for løkke, hvor der for hvert punkt blive udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for i en tidligere itteration af løkkerne. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. 
-Indsæt billede af ”udregn\_kanter”.
-Brugeren af programmet bliver præsenteret for ruten gennem funktionen ”output\_liste”. Funktionen udskriver en liste med attraktionerne i den rækkefølge de skal besøges, hvis den korteste rute ønskes. Funktionen sørger også for at skrive distancen mellem attraktionerne. 
-Indsæt billede af ”output\_liste”.
-BESKRIV FUNKTIONEN ”findDist”.
+
+\begin{lstlisting}
+void udregn_kanter(attraktion *attraktioner, kant *kanter)
+{
+	int i;
+	int y;
+	int indexTilKanter = 0;
+	for (i = 0; i < ANTAL_ATTRAKTIONER; i++)
+	{
+		for (y = i; y < ANTAL_ATTRAKTIONER; y++)
+		{
+			if (strcmp(attraktioner[i].navn, attraktioner[y].navn) != 0)
+			{
+				kant k, j;
+				k.start = attraktioner[i];
+				j.slut = k.start;
+				k.slut = attraktioner[y];
+				j.start = k.slut;
+				k.laengde = beregn_dist(k.start, k.slut);
+				j.laengde = k.laengde;
+				kanter[indexTilKanter] = k;
+				kanter[indexTilKanter+1] = j;
+				indexTilKanter += 2;
+			}
+		}
+	}
+}
+\end{lstlisting}
+
+Funktionen ”findDist” gennemgår alle kanter der allerede er oprettet, for at returnere distancen mellem to attraktioner, uden at skulle beregne den igen.
+
+\begin{lstlisting}
+double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
+{
+	return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
+	pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
+}
+\end{lstlisting}
+
+Funktionen ”attraktionErTilfoejet” bruges til at finde ud af, om en attraktioner allerede er tilføjet til ens liste over ekstra attraktioner, og returnere enten true eller false.
+
+\begin{lstlisting}
+int attraktionErTilfoejet(attraktion *ekstraAttraktioner, int antalEsktraAttraktioner, attraktion attraktionAtTilfoeje){
+	int i;
+	for (i = 0; i < antalEsktraAttraktioner; ++i)
+	{
+		if(strcmp(ekstraAttraktioner[i].navn, attraktionAtTilfoeje.navn) == 0){
+			return 1;
+		}
+	}
+	return 0;
+}
+\end{lstlisting}
+
+Funktionen ”prikProdukt” bruges til at finde prikproduktet mellem to vektorer, hvilket også er det funktionen returnere.
+
+\begin{lstlisting}
+double prikProdukt(vektor vektor1, vektor vektor2){
+	return (vektor1.x * vektor2.x) + (vektor1.y * vektor2.y);
+}
+\end{lstlisting}
+
+Mangler at skrive om ”findEkstraAttraktionerFirkant”.
+
+\begin{lstlisting}
+void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, attraktion *valgteAttraktioner, 
+int *antalValgteAttraktioner, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist, 
+attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner){
+	int i, j;
+	double vektorLaengde;
+	vektor ruteVektor, ruteVinkelretVektor, ruteEnhedsVinkelretVektor, mainHjoerne, side1Vektor, side2Vektor, punktVektor;
+	
+	vektorLaengde = findDist(startAttraktion, slutAttraktion, kanter);
+	ruteVektor.x = slutAttraktion.kmFraGreenwich - startAttraktion.kmFraGreenwich;
+	ruteVektor.y = slutAttraktion.kmFraAekvator - startAttraktion.kmFraAekvator;
+	ruteVinkelretVektor.x = -ruteVektor.y;
+	ruteVinkelretVektor.y = ruteVektor.x;
+	ruteEnhedsVinkelretVektor.x = ruteVinkelretVektor.x / vektorLaengde;
+	ruteEnhedsVinkelretVektor.y = ruteVinkelretVektor.y / vektorLaengde;
+	mainHjoerne.x = startAttraktion.kmFraGreenwich + ruteEnhedsVinkelretVektor.x * maxDist;
+	mainHjoerne.y = startAttraktion.kmFraAekvator + ruteEnhedsVinkelretVektor.y * maxDist;
+	side1Vektor.x = ruteVektor.x;
+	side1Vektor.y = ruteVektor.y;
+	side2Vektor.x = -2 * ruteEnhedsVinkelretVektor.x * maxDist;
+	side2Vektor.y = -2 * ruteEnhedsVinkelretVektor.y * maxDist;
+	
+	punktVektor.x = attraktionAtTilfoeje.kmFraGreenwich - mainHjoerne.x;
+	punktVektor.y = attraktionAtTilfoeje.kmFraAekvator - mainHjoerne.y;
+	if(0 < prikProdukt(punktVektor, side1Vektor) && prikProdukt(punktVektor, side1Vektor) < prikProdukt(side1Vektor, side1Vektor) &&
+	0 < prikProdukt(punktVektor, side2Vektor) && prikProdukt(punktVektor, side2Vektor) < prikProdukt(side2Vektor, side2Vektor)){
+		ekstraAttraktioner[*antalEsktraAttraktioner] = attraktionAtTilfoeje;
+		*antalEsktraAttraktioner += 1;
+	}
+}
+\end{lstlisting}
+
+For at foreslå ekstra attraktioner til den valgte rute, bruges funktionen ”findEkstraAttraktioner”, hvor dette vil udgøre den interessante rute. Dette gøres den ved at først at bruge funktionen ”findDist”, til at finde ikke valgte attraktioner inden for en bestemt distance af de valgte attraktioner. Er en attraktion ikke inden for denne radius, bruges funktionen ”findEkstraAttraktionerFirkant” for at finde ud af, om attraktionen ligger tæt på ruten mellem to attraktioner. De attraktioner der enten er inden ...(line truncated)...
+
+\begin{lstlisting}
+void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, 
+kant *kanter, attraktion *ikkeValgteAttraktioner, double maxDist, attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner){
+	
+	int i, j, antalIkkeValgteAttraktioner = ANTAL_ATTRAKTIONER - *antalValgteAttraktioner;
+	
+	for (i = 0; i < *antalValgteAttraktioner; ++i)
+	{
+		for (j = 0; j < antalIkkeValgteAttraktioner; ++j)
+		{
+			
+			if(attraktionErTilfoejet(ekstraAttraktioner, *antalEsktraAttraktioner, ikkeValgteAttraktioner[j])){
+			}else if(findDist(ruteAttraktioner[i], ikkeValgteAttraktioner[j], kanter) < maxDist || 
+			findDist(ruteAttraktioner[i+1], ikkeValgteAttraktioner[j], kanter) < maxDist){
+				ekstraAttraktioner[*antalEsktraAttraktioner] = ikkeValgteAttraktioner[j];
+				*antalEsktraAttraktioner += 1;
+			}else{
+				findEkstraAttraktionerFirkant(ruteAttraktioner[i], ruteAttraktioner[i+1], valgteAttraktioner, antalValgteAttraktioner,
+			kanter, ikkeValgteAttraktioner[j], maxDist, ekstraAttraktioner, antalEsktraAttraktioner);
+		}
+	}
+}
+}
+\end{lstlisting}
+
+Funktionen ”andre\_startsted”, tager en rute som inputparameter, sammen med det startsted der ønskes. Funktionen laver derefter et nyt array, der har det nye startsted som første og sidste element, så ruten starter i startstedet, og vender tilbage dertil. Dette array er hvad funktionen returnere. 
+
+\begin{lstlisting}
+void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttraktioner, attraktion *outputRute)
+{
+	int i = 0, startStedIndex = 0;
+	
+	for (i = 0; i < antalAttraktioner; i++)
+	{
+		if (strcmp(ruten[i].navn, nytStartSted.navn) == 0)
+		startStedIndex = i;
+	}
+	
+	for (i = 0; i < antalAttraktioner; i++)
+	{
+		
+		if (startStedIndex == antalAttraktioner-1)
+		{
+			startStedIndex = 1;
+			outputRute[i] = ruten[0];
+		}
+		else
+		{
+			outputRute[i] = ruten[startStedIndex];
+			startStedIndex++;
+		}
+	}
+}
+\end{lstlisting}
 
 \subsection{Opsummering}
 Her er en liste med de overstående funktioner, med en kort forklaring om hvad hver funktions opgave i programmet er.
 \begin{itemize}
-	\item "InitialiserAttraktioner" – Initialisere attraktioner fra en tekstfil
-	\item "valgafAttraktioner" – Lader brugeren vælge attraktioner
-	\item "findNaboRute" – Bestemmer den korteste rute mellem en række attraktioner, for en bestemt attraktion
-	\item "findKortesteNaboRute" – Finder det optimale startsted
-	\item "beregn\_dist" – Beregner distancen mellem to attraktioner
-	\item "udregn\_kanter" – Bruger ”beregn\_dist” til at oprette kanter mellem attraktioner
-	\item "output\_liste" – Udskriver den korteste rute til brugeren
-	\item "findDist" - ..
+	\item InitialiserAttraktioner – Initialisere attraktioner fra en tekstfil
+	\item valgafAttraktioner – Lader brugeren vælge attraktioner
+	\item findNaboRute – Bestemmer den korteste rute mellem en række attraktioner, for en bestemt attraktion
+	\item findKortesteNaboRute – Finder det optimale startsted
+	\item beregn\_dist – Beregner distancen mellem to attraktioner
+	\item udregn\_kanter – Bruger ”beregn\_dist” til at oprette kanter mellem attraktioner
+	\item output\_liste – Udskriver den korteste rute til brugeren
+	\item findDist – Returnere en allerede beregnet distance mellem to attraktioner
+	\item attraktionErTilfoejet – Finder ud af om attraktionen allerede er tilføjet til ens liste over attraktioner
+	\item prikProdukt – Udregner prikproduktet mellem to vektorer
+	\item findEkstraAttraktionerFirkant – Finder ekstra attraktioner tæt på ruten mellem attraktionerne
+	\item findEkstraAttraktioner – Forslår ekstra attraktioner til ruten
+	\item valgAfEkstraAttraktioner – Lader brugeren vælge mellem hvilke ekstra attraktioner der ønskes besøgt
+	\item aendre\_startsted – Ændre rutens startsted
 \end{itemize}
+
+
 
 

@@ -45,6 +45,7 @@ void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAt
                                   attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner);
 double prikProdukt(vektor vektor1, vektor vektor2);
 void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ekstraAttraktioner, int antalEsktraAttraktioner);
+void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttraktioner, attraktion *outputRute);
 void outputTilFil(attraktion *ruteAttraktioner, int antalValgteAttraktioner);
 void kopierFil(FILE *filSkabelon, FILE *filOutput);
 
@@ -54,6 +55,7 @@ int main()
   attraktion valgteAttraktioner[ANTAL_ATTRAKTIONER];
   attraktion ikkeValgteAttraktioner[ANTAL_ATTRAKTIONER];
   attraktion ruteAttraktioner[ANTAL_ATTRAKTIONER+1];
+  attraktion endeligRute[ANTAL_ATTRAKTIONER+1];
   attraktion ekstraAttraktioner[ANTAL_ATTRAKTIONER];
   kant kanter[ANTAL_KANTER];
   double samletLaengde = 0;
@@ -77,14 +79,16 @@ int main()
     findKortesteNaboRute(valgteAttraktioner, antalValgteAttraktioner, ruteAttraktioner, kanter, &samletLaengde);
   }
 
-  outputTilFil(ruteAttraktioner, antalValgteAttraktioner);
+  aendre_startsted(ruteAttraktioner, valgteAttraktioner[0], antalValgteAttraktioner+1, endeligRute);
 
-  int i, j;
-  printf("din rute:\n");
+  outputTilFil(endeligRute, antalValgteAttraktioner);
+
+  int i;
+  printf("\ndin rute:\n");
   for(i = 0; i < antalValgteAttraktioner+1; ++i){
-  printf("%s\n", ruteAttraktioner[i].navn);
+  printf("%s\n", endeligRute[i].navn);
   }
-  printf("%lf\n", samletLaengde);
+  printf("\nsamlet laengde: %.2lfkm\n", samletLaengde);
   return 0;
 }
 
@@ -330,6 +334,32 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
     }
   } while(j < ANTAL_ATTRAKTIONER && k != 0);
   *antalValgteAttraktioner = j;
+}
+
+void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttraktioner, attraktion *outputRute)
+{
+  int i = 0, startStedIndex = 0;
+
+  for (i = 0; i < antalAttraktioner; i++)
+  {
+    if (strcmp(ruten[i].navn, nytStartSted.navn) == 0)
+      startStedIndex = i;
+  }
+
+  for (i = 0; i < antalAttraktioner; i++)
+  {
+
+    if (startStedIndex == antalAttraktioner-1)
+    {
+      startStedIndex = 1;
+      outputRute[i] = ruten[0];
+    }
+    else
+    {
+      outputRute[i] = ruten[startStedIndex];
+      startStedIndex++;
+    }
+  }
 }
 
 void outputTilFil(attraktion *ruteAttraktioner, int antalValgteAttraktioner){

@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: Rapport.aux
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Rapport.aux
 The style file: bibtex/harvard.bst
 A level-1 auxiliary file: formalia/forside.aux
 url: is an unknown function---line 320 of file bibtex/harvard.bst
@@ -28,8 +30,6 @@ while executing---line 1485 of file bibtex/harvard.bst
 Warning--empty  in metodeogprojektskrivning
 1 is an integer literal, not a string, for entry PengeloseButikker
 while executing---line 1485 of file bibtex/harvard.bst
-1 is an integer literal, not a string, for entry VisitAalborg
-while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry TDC
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry VA
@@ -50,4 +50,47 @@ Warning--empty year in YouthCentral
 1 is an integer literal, not a string, for entry YouthCentral
 while executing---line 1485 of file bibtex/harvard.bst
 Warning--empty  in YouthCentral
+1 is an integer literal, not a string, for entry VisitAalborg
+while executing---line 1485 of file bibtex/harvard.bst
+You've used 13 entries,
+            2921 wiz_defined-function locations,
+            680 strings with 6922 characters,
+and the built_in function-call counts, 4412 in all, are:
+= -- 405
+> -- 154
+< -- 26
++ -- 55
+- -- 42
+* -- 280
+:= -- 721
+add.period$ -- 61
+call.type$ -- 13
+change.case$ -- 27
+chr.to.int$ -- 13
+cite$ -- 39
+duplicate$ -- 276
+empty$ -- 398
+format.name$ -- 72
+if$ -- 891
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 2
+newline$ -- 95
+num.names$ -- 65
+pop$ -- 103
+preamble$ -- 1
+purify$ -- 27
+quote$ -- 0
+skip$ -- 163
+stack$ -- 0
+substring$ -- 26
+swap$ -- 51
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 138
+warning$ -- 13
+while$ -- 39
+width$ -- 0
+write$ -- 214
 (There were 16 error messages)

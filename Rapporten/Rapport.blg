@@ -5,14 +5,12 @@ The style file: bibtex/harvard.bst
 A level-1 auxiliary file: formalia/forside.aux
 url: is an unknown function---line 320 of file bibtex/harvard.bst
 Database file #1: bibtex/litteratur.bib
-Repeated entry---line 144 of file bibtex/litteratur.bib
- : @misc{metodeogprojektskrivning
- :                               ,
+I was expecting a `,' or a `}'---line 177 of file bibtex/litteratur.bib
+ :  
+ :  publisher = {Samfundslitteratur} ,
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Illegal end of database file---line 159 of file bibtex/litteratur.bib
- :  note = {Set d. 18/11-2014}
- :                            
-I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Projektskrivning"
 1 is an integer literal, not a string, for entry Turismen
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry ftbr
@@ -21,13 +19,17 @@ while executing---line 1485 of file bibtex/harvard.bst
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry googleapi
 while executing---line 1485 of file bibtex/harvard.bst
-Warning--empty year in metodeogprojektskrivning
-Warning--empty year in metodeogprojektskrivning
 Warning--empty publisher in metodeogprojektskrivning
-Warning--empty year in metodeogprojektskrivning
 1 is an integer literal, not a string, for entry metodeogprojektskrivning
 while executing---line 1485 of file bibtex/harvard.bst
-Warning--empty  in metodeogprojektskrivning
+1 is an integer literal, not a string, for entry GraphTheory
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry TSP
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry Dijkstra
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry NNA
+while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry PengeloseButikker
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry TDC
@@ -52,45 +54,45 @@ while executing---line 1485 of file bibtex/harvard.bst
 Warning--empty  in YouthCentral
 1 is an integer literal, not a string, for entry VisitAalborg
 while executing---line 1485 of file bibtex/harvard.bst
-You've used 13 entries,
+You've used 17 entries,
             2921 wiz_defined-function locations,
-            680 strings with 6922 characters,
-and the built_in function-call counts, 4412 in all, are:
-= -- 405
-> -- 154
-< -- 26
-+ -- 55
-- -- 42
-* -- 280
-:= -- 721
-add.period$ -- 61
-call.type$ -- 13
-change.case$ -- 27
-chr.to.int$ -- 13
-cite$ -- 39
-duplicate$ -- 276
-empty$ -- 398
-format.name$ -- 72
-if$ -- 891
-int.to.chr$ -- 1
+            704 strings with 7426 characters,
+and the built_in function-call counts, 5746 in all, are:
+= -- 538
+> -- 198
+< -- 34
++ -- 72
+- -- 54
+* -- 353
+:= -- 946
+add.period$ -- 83
+call.type$ -- 17
+change.case$ -- 35
+chr.to.int$ -- 16
+cite$ -- 43
+duplicate$ -- 360
+empty$ -- 518
+format.name$ -- 92
+if$ -- 1168
+int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 2
-newline$ -- 95
-num.names$ -- 65
-pop$ -- 103
+newline$ -- 125
+num.names$ -- 85
+pop$ -- 121
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 35
 quote$ -- 0
-skip$ -- 163
+skip$ -- 215
 stack$ -- 0
-substring$ -- 26
-swap$ -- 51
+substring$ -- 34
+swap$ -- 69
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
-warning$ -- 13
-while$ -- 39
+type$ -- 182
+warning$ -- 9
+while$ -- 51
 width$ -- 0
-write$ -- 214
-(There were 16 error messages)
+write$ -- 287
+(There were 19 error messages)

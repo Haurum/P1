@@ -147,22 +147,36 @@ double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
 }
 
 void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ikkeValgteAttraktioner){
-  int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, valgt = 0;
+  int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, valgt = 0, y = 0;
+  int opretNy = 1;
 
   for(i = 0; i < ANTAL_ATTRAKTIONER; i++){
     printf("%d: %s\n", i+1, attraktioner[i].navn);
   }
 
-  printf("vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
-  printf("vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal\n");
-  printf("indtast ikke samme tal 2 gange\n");
+  printf("Vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
+  printf("Vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal.\n");
+  printf("Indtast ikke samme tal 2 gange\n");
   do{
+    opretNy = 1;
     if(scanf("%d", &k) != 1){
-      printf("Fejl i indlaesning. Farvel.\n"); exit(0);
+      printf("Fejl i indlaesning.\n");
+      exit(0);
     }
     if(k != 0){
-      valgteAttraktioner[j] = attraktioner[k-1];
-      j++;
+      for (y = 0; y < j; y++)
+      {
+        if (strcmp(valgteAttraktioner[y].navn, attraktioner[k-1].navn) == 0)
+        {
+          printf("Du har allerede indtastet denne attraktion. Proev igen.\n");
+          opretNy = 0;
+        }
+      }
+      if (opretNy)
+      {
+        valgteAttraktioner[j] = attraktioner[k-1];
+        j++;
+      }
     }
   } while(j < ANTAL_ATTRAKTIONER && k != 0);
 
@@ -243,7 +257,7 @@ double findDist(attraktion start, attraktion slut, kant *kanter){
       return kanter[i].laengde;
     }
   }
-  printf("kunne ikke finde passende kant\n"); exit(0);
+  printf("Kunne ikke finde passende kant\n"); exit(0);
 }
 
 void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, 
@@ -315,22 +329,37 @@ double prikProdukt(vektor vektor1, vektor vektor2){
 }
 
 void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ekstraAttraktioner, int antalEsktraAttraktioner){
-  int i, j = *antalValgteAttraktioner, k;
-  printf("\nvaelg de attraktioner du oensker at tilfoeje til ruten ved at skrive det tilhoerende tal.\n");
-  printf("vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal\n");
-  printf("indtast ikke samme tal 2 gange\n");
+  int i, j = *antalValgteAttraktioner, k, y = 0;
+  int opretNy = 1;
+
+  printf("\nVaelg de attraktioner du oensker at tilfoeje til ruten ved at skrive det tilhoerende tal.\n");
+  printf("Vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal\n");
+  printf("Indtast ikke samme tal 2 gange\n");
   for (i = 0; i < antalEsktraAttraktioner; ++i)
   {
     printf("%d: %s\n", i+1, ekstraAttraktioner[i].navn);
   }
 
   do{
+    opretNy = 1;
     if(scanf("%d", &k) != 1){
-      printf("Fejl i indlaesning. Farvel.\n"); exit(0);
+      printf("Fejl i indlaesning.\n"); exit(0);
     }
+
     if(k != 0){
-      valgteAttraktioner[j] = ekstraAttraktioner[k-1];
-      j++;
+      for (y = 0; y < j; y++)
+      {
+        if (strcmp(valgteAttraktioner[y].navn, ekstraAttraktioner[k-1].navn) == 0)
+        {
+          printf("Du har allerede indtastet denne attraktion. Proev igen.\n");
+          opretNy = 0;
+        }
+      }
+      if (opretNy)
+      {
+        valgteAttraktioner[j] = ekstraAttraktioner[k-1];
+        j++;
+      }
     }
   } while(j < ANTAL_ATTRAKTIONER && k != 0);
   *antalValgteAttraktioner = j;

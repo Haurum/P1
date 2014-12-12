@@ -164,11 +164,7 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
   printf("Tast 0, efterfulgt af enter, for at gaa videre. Indtast ikke samme tal 2 gange.\n");
   do{
     opretNy = 1;
-    if(scanf("%d", &k) != 1){
-      printf("Fejl i indlaesning.\n");
-      exit(0);
-    }
-    if(k != 0){
+    if (scanf("%d", &k) ==  1){
       for (y = 0; y < j; y++)
       {
         if (strcmp(valgteAttraktioner[y].navn, attraktioner[k-1].navn) == 0)
@@ -177,13 +173,27 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
           opretNy = 0;
         }
       }
-      if (opretNy)
+      if (k == 0)
+        break;
+      else if (k > ANTAL_ATTRAKTIONER)
+        printf("Tallet svarer ikke til en attraktion\n");
+      else if (opretNy && (k <= ANTAL_ATTRAKTIONER))
       {
         valgteAttraktioner[j] = attraktioner[k-1];
+        printf("Tilfoejet attraktion: %s\n", attraktioner[k-1].navn);
         j++;
       }
     }
+    else
+    {
+      printf("Fejlindtastning - proev igen\n");
+      char e[MAX_STRING];
+      scanf("%s", e);
+      k = 1;
+    }
   } while(j < ANTAL_ATTRAKTIONER && k != 0);
+
+
 
   for (l = 0; l < ANTAL_ATTRAKTIONER; ++l)
   {
@@ -355,11 +365,8 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
 
   do{
     opretNy = 1;
-    if(scanf("%d", &k) != 1){
-      printf("Fejl i indlaesning.\n"); exit(0);
-    }
 
-    if(k != 0){
+    if(scanf("%d", &k) == 1){
       for (y = 0; y < j; y++)
       {
         if (strcmp(valgteAttraktioner[y].navn, ekstraAttraktioner[k-1].navn) == 0)
@@ -368,11 +375,22 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
           opretNy = 0;
         }
       }
-      if (opretNy)
+      if (k == 0)
+        break;
+      else if (k > antalEkstraAttraktioner)
+        printf("Tallet svarer ikke til en attraktion\n");
+      else if (opretNy)
       {
         valgteAttraktioner[j] = ekstraAttraktioner[k-1];
         j++;
       }
+    }
+    else
+    {
+      printf("Fejl i indlaesning  - proev igen\n");
+      char e;
+      scanf("%c", &e);
+      k = 1;
     }
   } while(j < ANTAL_ATTRAKTIONER && k != 0);
   *antalValgteAttraktioner = j;

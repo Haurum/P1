@@ -77,6 +77,15 @@
 \newblock \url{http://www.information.dk/telegram/496765}, 2014.
 \newblock Set d. 20/11-2014.
 
+\bibitem[Østergaard og Lubson(2013)]{VisitAalborg}
+\textbf{Østergaard og Lubson}, \textbf{2013}.
+\newblock Mads~Zahle Østergaard og Paul Lubson.
+\newblock \textit{Turismens økonomiske betydning i Danmark 2011}.
+\newblock
+  \url{http://www.visitdenmark.dk/sites/default/files/vdk_images/PDF-and-other-files/Analyser/2013/turismens_oekonomiske_betydning_i_danmark_2011_revideret_udgave.pdf},
+  2013.
+\newblock Set d. 20/11-2014.
+
 \bibitem[TDC(2014)]{TDC}
 \textbf{TDC}, \textbf{2014}.
 \newblock TDC.
@@ -126,14 +135,5 @@
 \newblock
   \url{https://www.youthcentral.vic.gov.au/travel-transport/travelling-overseas/planning-your-trip}.
 \newblock Set d. 27/10-2014.
-
-\bibitem[Østergaard og Lubson(2013)]{VisitAalborg}
-\textbf{Østergaard og Lubson}, \textbf{2013}.
-\newblock Mads~Zahle Østergaard og Paul Lubson.
-\newblock \textit{Turismens økonomiske betydning i Danmark 2011}.
-\newblock
-  \url{http://www.visitdenmark.dk/sites/default/files/vdk_images/PDF-and-other-files/Analyser/2013/turismens_oekonomiske_betydning_i_danmark_2011_revideret_udgave.pdf},
-  2013.
-\newblock Set d. 20/11-2014.
 
 \end{thebibliography}

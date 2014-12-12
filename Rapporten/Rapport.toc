@@ -30,7 +30,8 @@
 \contentsline {subsection}{\numberline {4.2.2}Matematikteori}{16}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Implementering}{18}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Programbeskrivelse}{18}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Opsummering}{24}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Beskrivelse af funktioner}{19}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Opsummering}{24}{subsection.4.3.3}
 \contentsline {chapter}{\chapternumberline {5}Diskussion}{25}{chapter.5}
 \contentsline {chapter}{\chapternumberline {6}Konklusion}{26}{chapter.6}
 \contentsline {chapter}{\chapternumberline {7}Perspektivering}{27}{chapter.7}

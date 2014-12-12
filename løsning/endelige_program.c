@@ -5,7 +5,7 @@
 
 #define KM_PR_LNDGRAD 60.7722
 #define KM_PR_BRDGRAD 111.36
-#define ANTAL_ATTRAKTIONER 12
+#define ANTAL_ATTRAKTIONER 22
 #define ANTAL_KANTER ANTAL_ATTRAKTIONER*(ANTAL_ATTRAKTIONER-1)
 #define MAX_STRING 50
 
@@ -38,10 +38,9 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
 void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde);
 void findNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde);
 double findDist(attraktion start, attraktion slut, kant *kanter);
-void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, 
+void findEkstraAttraktioner(attraktion *ruteAttraktioner, int *antalValgteAttraktioner, 
                             kant *kanter, attraktion *ikkeValgteAttraktioner, double maxDist, attraktion *ekstraAttraktioner, int *antalEkstraAttraktioner);
-void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, attraktion *valgteAttraktioner, 
-                                  int *antalValgteAttraktioner, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist,
+void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist,
                                   attraktion *ekstraAttraktioner, int *antalEkstraAttraktioner);
 double prikProdukt(vektor vektor1, vektor vektor2);
 void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ekstraAttraktioner, int antalEkstraAttraktioner);
@@ -71,7 +70,7 @@ int main()
 
   findKortesteNaboRute(valgteAttraktioner, antalValgteAttraktioner, ruteAttraktioner, kanter, &samletLaengde);
 
-  findEkstraAttraktioner(ruteAttraktioner, valgteAttraktioner, &antalValgteAttraktioner, kanter, 
+  findEkstraAttraktioner(ruteAttraktioner, &antalValgteAttraktioner, kanter, 
                         ikkeValgteAttraktioner, 0.1, ekstraAttraktioner, &antalEkstraAttraktioner);
 
   if(antalEkstraAttraktioner > 0){
@@ -155,8 +154,10 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
   printf("Dette program vil, ud fra dine oenskede attraktioner, bestemme den korteste rute.\n");
   printf("Du kan se de attraktioner du kan vaelge her:\n");
 
-  for(i = 0; i < ANTAL_ATTRAKTIONER; i++){
-    printf("%d: %s\n", i+1, attraktioner[i].navn);
+  int halvdelen = ANTAL_ATTRAKTIONER/2;
+
+  for(i = 0; i < halvdelen; i++){
+    printf("%d: %-40s\t \t \t%d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
   }
 
   printf("Vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
@@ -175,7 +176,7 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
       }
       if (k == 0)
         break;
-      else if (k > ANTAL_ATTRAKTIONER)
+      else if (k > ANTAL_ATTRAKTIONER || k < 0)
         printf("Tallet svarer ikke til en attraktion\n");
       else if (opretNy && (k <= ANTAL_ATTRAKTIONER))
       {
@@ -275,7 +276,7 @@ double findDist(attraktion start, attraktion slut, kant *kanter){
   printf("Kunne ikke finde passende kant\n"); exit(0);
 }
 
-void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, 
+void findEkstraAttraktioner(attraktion *ruteAttraktioner, int *antalValgteAttraktioner, 
                             kant *kanter, attraktion *ikkeValgteAttraktioner, double maxDist, attraktion *ekstraAttraktioner, int *antalEkstraAttraktioner){
 
   int i, j, antalIkkeValgteAttraktioner = ANTAL_ATTRAKTIONER - *antalValgteAttraktioner;
@@ -291,7 +292,7 @@ void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttr
         ekstraAttraktioner[*antalEkstraAttraktioner] = ikkeValgteAttraktioner[j];
         *antalEkstraAttraktioner += 1;
       }else{
-        findEkstraAttraktionerFirkant(ruteAttraktioner[i], ruteAttraktioner[i+1], valgteAttraktioner, antalValgteAttraktioner,
+        findEkstraAttraktionerFirkant(ruteAttraktioner[i], ruteAttraktioner[i+1], 
                                       kanter, ikkeValgteAttraktioner[j], maxDist, ekstraAttraktioner, antalEkstraAttraktioner);
       }
     }
@@ -309,8 +310,7 @@ int attraktionErTilfoejet(attraktion *ekstraAttraktioner, int antalEkstraAttrakt
   return 0;
 }
 
-void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, attraktion *valgteAttraktioner, 
-                                  int *antalValgteAttraktioner, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist, 
+void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist, 
                                   attraktion *ekstraAttraktioner, int *antalEkstraAttraktioner){
   int i, j;
   double vektorLaengde;
@@ -377,11 +377,12 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
       }
       if (k == 0)
         break;
-      else if (k > antalEkstraAttraktioner)
+      else if (k > antalEkstraAttraktioner || k < 0)
         printf("Tallet svarer ikke til en attraktion\n");
       else if (opretNy)
       {
         valgteAttraktioner[j] = ekstraAttraktioner[k-1];
+        printf("Tilfoejet attraktion: %s\n", ekstraAttraktioner[k-1].navn);
         j++;
       }
     }

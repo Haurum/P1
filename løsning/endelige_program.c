@@ -147,7 +147,7 @@ double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
 }
 
 void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ikkeValgteAttraktioner){
-  int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, valgt = 0, y = 0;
+  int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, valgt = 0, y = 0;
   int opretNy = 1;
 
   printf("Rutevejledning - A401 - P1\n");
@@ -312,7 +312,6 @@ int attraktionErTilfoejet(attraktion *ekstraAttraktioner, int antalEkstraAttrakt
 
 void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist, 
                                   attraktion *ekstraAttraktioner, int *antalEkstraAttraktioner){
-  int i, j;
   double vektorLaengde;
   vektor ruteVektor, ruteVinkelretVektor, ruteEnhedsVinkelretVektor, mainHjoerne, side1Vektor, side2Vektor, punktVektor;
 

@@ -243,7 +243,45 @@ overholder punktet P første del, og ovenstående metode skal derfor gentages me
 I dette afsnit vil programmet blive beskrevet, både en overordnet programbeskrivelse og en dybdegående forklaring af programmets funktioner. Derudover vil der blive beskrevet hvordan brugeren interagere med programmet. 
 
 \subsection{Programbeskrivelse}
-Programmet begynder med at indlæse alle de forudbestemte tilgængelige attraktioner fra en tekstfil. Alle disse attraktioner bliver vist på en liste for brugeren i kommandopromten med numre ud for hver attraktion. Brugeren vælger så hvilke attraktioner vedkommende har lyst til at besøge, ved at indtaste attraktionens nummer, hvor attraktionen så vil blive tilføjet til en liste. Denne liste kører gennem programmet, og den korteste rute bestemmes. Programmet tjekker derefter, for nærliggende attraktioner der kan tilføjes til ruten, på samme måde som i begyndelsen da de valgte attraktioner til deres rute. Hvis brugeren vælger ekstra attraktioner til deres rute, kører programmet igen, og den nye rute beregnes. Når ruten er beregnet, vil ruten være tilgængelig i tekstfilen ”KortesteRute.txt”, hvor brugeren kan se hvilken rækkefølge attraktionerne skal besøges i, og distancen mellem dem. 
+Programmet begynder med at indlæse alle de forudbestemte tilgængelige attraktioner fra en tekstfil. Alle disse attraktioner bliver vist på en liste for brugeren i kommandopromten med numre ud for hver attraktion. Brugeren vælger så hvilke attraktioner vedkommende har lyst til at besøge, ved at indtaste attraktionens nummer, hvor attraktionen så vil blive tilføjet til en liste. Denne liste kører gennem programmet, og den korteste rute bestemmes. Programmet tjekker derefter, for nærliggende attraktioner der kan tilføjes til ruten, på samme måde som i begyndelsen da de valgte attraktioner til deres rute. Hvis brugeren vælger ekstra attraktioner til deres rute, kører programmet igen, og den nye rute beregnes.  Når ruten er beregnet, vil ruten blive vist på skærmen, i den beregnede rækkefølge. Den samlede længde af ruten vil også blive vist.
+
+Til programmet bruges fire forskellige structs. Den første struct er "attraktion", som indeholder to strings, "navn" og "adresse", to doubles, "kmFraGreenwich" og "kmFraAekvator", og en int, "besoegt", der beskriver om attraktionen er besøgt eller ej. Denne struct bruges til at opdele og gamme de enkelte attraktioners data i programmet.
+
+\begin{lstlisting}
+typedef struct {
+	char navn[MAX_STRING];
+	char adresse[MAX_STRING]; 
+	double kmFraGreenwich, kmFraAekvator;
+	int besoegt;
+} attraktion;
+\end{lstlisting} 
+
+Næste struct er "naboRute", som indeholder en double, "ruteLaengde", og et array af attraktioner, "rute". Denne struct bruges til at lave ruter, hvor "rutelaengde" er længden af ruten og arrayet indeholder rækkefølgen af attraktioner på ruten.
+
+\begin{lstlisting}
+typedef struct {
+	double ruteLaengde;
+	attraktion rute[ANTAL_ATTRAKTIONER];
+} naboRute;
+\end{lstlisting}
+
+Næste struct er "kant", som indeholder to attraktioer, "startAttraktion" og "slutAttraktion", og en double, "laengde". Denne struct bliver brugt til at gemme data omkring afstanden mellem to punkter.
+
+\begin{lstlisting}
+typedef struct {
+  attraktion start;
+  attraktion slut;
+  double laengde;
+} kant;
+\end{lstlisting}
+
+Sidste struct er "vektor", som indeholder to doubles, "x" og "y". Denne struct bruges til at gemme x og y koordinater for vektorer (og i nogle tilfælde punkter) under et navn.
+
+\begin{lstlisting}
+typedef struct {
+  double x, y;
+} vektor;
+\end{lstlisting}
 
 \subsection{Beskrivelse af funktioner}
 Attraktionerne til programmet bliver indlæst fra en .txt fil når prorammet køres. I programmet bliver filen indlæst i en funktion som hedder initialiserAttraktioner. Hvis filen ikke er tom vil elementerne, vha. funktionen fscanf, blive indlæst i grupper af 4, hvor de bliver indlæst som ”attraktion” hvilket er defineret som et struct. Hvis filen er tom, vil en advarsel blive vist i prompten og lukke programmet ned. Når alt information er indlæst fra filen, og den ikke længere er nødvendig, lukkes filen.
@@ -341,7 +379,7 @@ void findNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, a
 }
 \end{lstlisting}
 
-”findKortesteNaboRute” benytter funktionen ”findNaboRute”, til at finde ud af hvilket startsted der giver den korteste rute. Dette gøres ved at sætte en variable til en stor værdi, som rutedistancen ikke vil gå over, og opdatere den hvis ”findNaboRute” returnere en distance for de givne attraktioner med en given start attraktion, der er lavere end de forgående ruter. ”findKortesteNaboRute” returnere et array der er en sorteret liste over attraktionerne, og den samlede længde mellem disse. 
+”findKortesteNaboRute” benytter funktionen ”findNaboRute”, til at finde ud af hvilket startsted der giver den korteste rute. Dette gøres ved at sætte en variable til en stor værdi, som rutedistancen ikke vil gå over, og opdatere den hvis ”findNaboRute” returnere en distance for ruten gennem de givne attraktioner med en given start attraktion, der er lavere end de forgående ruter. ”findKortesteNaboRute” returnere et array med en korteste rute, og den samlede længde af denne rute. 
 
 \begin{lstlisting}
 void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde){
@@ -372,17 +410,17 @@ void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttrakt
 }
 \end{lstlisting}
 
-Funktionen ”beregn\_dist” er en implementering af Harasin formlen, der er beskrevet i teoriafsnittet X. Funktionen tager længde- og breddegrader for to attraktioner som inputparametre. Disse længde- og breddegrader bliver brugt i formlen til at udregne distancen mellem de to punkter. Funktionen returnere til sidst den beregnede distance mellem de to attraktioner.
+Funktionen ”beregn\_dist” er en implementering af pythagoras's sætning til at finde længden imellem 2 punkter. Funktionen returnere den beregnede distance mellem de to attraktioner.
 
 \begin{lstlisting}
 double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
 {
-	return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
-	pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
+  return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
+          pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
 }
 \end{lstlisting}
 
-Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn\_dist”, ved at sende længde- og breddegrader for attraktionerne, og opretter en kant. Dette gøres i en for løkke i en anden for løkke, hvor der for hvert punkt blive udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for i en tidligere itteration af løkkerne. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. 
+Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn\_dist”, ved at sende en start og slut attraktion. Derefter bliver start- og slut attraktionen plus længden imellem dem lagt ind som en kant i kanter arrayet. Dette gøres i en for løkke i en anden for løkke, hvor der for hvert punkt blive udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for i en tidligere itteration af løkkerne. For hver kant der bliver oprettet, oprettes en ekstra kant som har samme længde, men har modsat start og slut attraktion. Så hvis det oprettes en kant fra x til y, vil der også blive oprettet en kant fra y til x med samme længde. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. 
 
 \begin{lstlisting}
 void udregn_kanter(attraktion *attraktioner, kant *kanter)
@@ -412,13 +450,18 @@ void udregn_kanter(attraktion *attraktioner, kant *kanter)
 }
 \end{lstlisting}
 
-Funktionen ”findDist” gennemgår alle kanter der allerede er oprettet, for at returnere distancen mellem to attraktioner, uden at skulle beregne den igen.
+Funktionen ”findDist” gennemgår alle kanter der allerede er oprettet, og returnere distancen mellem to attraktioner, som er sendt med kaldet af funktionen, uden at skulle beregne den igen.
 
 \begin{lstlisting}
-double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
-{
-	return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
-	pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
+double findDist(attraktion start, attraktion slut, kant *kanter){
+  int i;
+  for (i = 0; i < ANTAL_KANTER; ++i)
+  {
+    if(strcmp(kanter[i].start.navn, start.navn) == 0 && strcmp(kanter[i].slut.navn, slut.navn) == 0){
+      return kanter[i].laengde;
+    }
+  }
+  printf("Kunne ikke finde passende kant\n"); exit(0);
 }
 \end{lstlisting}
 
@@ -479,7 +522,7 @@ attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner){
 }
 \end{lstlisting}
 
-For at foreslå ekstra attraktioner til den valgte rute, bruges funktionen ”findEkstraAttraktioner”, hvor dette vil udgøre den interessante rute. Dette gøres den ved at først at bruge funktionen ”findDist”, til at finde ikke valgte attraktioner inden for en bestemt distance af de valgte attraktioner. Er en attraktion ikke inden for denne radius, bruges funktionen ”findEkstraAttraktionerFirkant” for at finde ud af, om attraktionen ligger tæt på ruten mellem to attraktioner. De attraktioner der enten er inden ...(line truncated)...
+For at foreslå ekstra attraktioner til den valgte rute, bruges funktionen ”findEkstraAttraktioner”, hvor dette vil udgøre den interessante rute. Dette gøres den ved først at bruge funktionen ”findDist”, til at finde ikke valgte attraktioner inden for en bestemt distance af de valgte attraktioner. Er en attraktion ikke inden for denne radius, bruges funktionen ”findEkstraAttraktionerFirkant” for at finde ud af, om attraktionen ligger tæt på ruten mellem to attraktioner. De attraktioner der enten er inden for den bestemte distance af enten attraktionerne eller ruterne derimellem, tilføjes til et array der returneres fra funktionen.
 
 \begin{lstlisting}
 void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, 
@@ -506,7 +549,7 @@ kant *kanter, attraktion *ikkeValgteAttraktioner, double maxDist, attraktion *ek
 }
 \end{lstlisting}
 
-Funktionen ”andre\_startsted”, tager en rute som inputparameter, sammen med det startsted der ønskes. Funktionen laver derefter et nyt array, der har det nye startsted som første og sidste element, så ruten starter i startstedet, og vender tilbage dertil. Dette array er hvad funktionen returnere. 
+Funktionen ”aendre\_startsted”, tager en rute som inputparameter, sammen med det startsted der ønskes. Funktionen laver derefter et nyt array, der har det nye startsted som første og sidste element, så ruten starter i startstedet, og vender tilbage dertil. Dette array er hvad funktionen returnere. 
 
 \begin{lstlisting}
 void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttraktioner, attraktion *outputRute)
@@ -535,26 +578,3 @@ void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttra
 	}
 }
 \end{lstlisting}
-
-\subsection{Opsummering}
-Her er en liste med de overstående funktioner, med en kort forklaring om hvad hver funktions opgave i programmet er.
-\begin{itemize}
-	\item InitialiserAttraktioner – Initialisere attraktioner fra en tekstfil
-	\item valgafAttraktioner – Lader brugeren vælge attraktioner
-	\item findNaboRute – Bestemmer den korteste rute mellem en række attraktioner, for en bestemt attraktion
-	\item findKortesteNaboRute – Finder det optimale startsted
-	\item beregn\_dist – Beregner distancen mellem to attraktioner
-	\item udregn\_kanter – Bruger ”beregn\_dist” til at oprette kanter mellem attraktioner
-	\item output\_liste – Udskriver den korteste rute til brugeren
-	\item findDist – Returnere en allerede beregnet distance mellem to attraktioner
-	\item attraktionErTilfoejet – Finder ud af om attraktionen allerede er tilføjet til ens liste over attraktioner
-	\item prikProdukt – Udregner prikproduktet mellem to vektorer
-	\item findEkstraAttraktionerFirkant – Finder ekstra attraktioner tæt på ruten mellem attraktionerne
-	\item findEkstraAttraktioner – Forslår ekstra attraktioner til ruten
-	\item valgAfEkstraAttraktioner – Lader brugeren vælge mellem hvilke ekstra attraktioner der ønskes besøgt
-	\item aendre\_startsted – Ændre rutens startsted
-\end{itemize}
-
-
-
-

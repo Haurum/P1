@@ -288,26 +288,67 @@ Attraktionerne til programmet bliver indlæst fra en .txt fil når prorammet kø
 
 \begin{lstlisting}
 void initialiserAttraktioner(attraktion *attraktioner){
-	FILE *input_file_pointer;
-	int i = 0;
-	double lndgrad;
-	double brdgrad;
-	
-	input_file_pointer = fopen("attraktioner.txt", "r");
-	
-	if(input_file_pointer != NULL){
-		while(fscanf(input_file_pointer, " %s %s %lf %lf", attraktioner[i].navn, attraktioner[i].adresse, &brdgrad, &lndgrad) == 4){
-		attraktioner[i].kmFraGreenwich = lndgrad * KM_PR_LNDGRAD;
-		attraktioner[i].kmFraAekvator = brdgrad * KM_PR_BRDGRAD;
-		attraktioner[i].besoegt = 0;
-		i++;
-	}
-	}else{
-		printf("kunne ikke aabne fil\n"); exit(1);
-	}
-	fclose(input_file_pointer);
+  FILE *input_file_pointer;
+  int i = 0;
+  double lndgrad;
+  double brdgrad;
+
+  input_file_pointer = fopen("attraktioner.txt", "r");
+
+  if(input_file_pointer != NULL){
+    while(fscanf(input_file_pointer, " %s %s %lf %lf", attraktioner[i].navn, attraktioner[i].adresse, &brdgrad, &lndgrad) == 4){
+      attraktioner[i].kmFraGreenwich = lndgrad * KM_PR_LNDGRAD;
+      attraktioner[i].kmFraAekvator = brdgrad * KM_PR_BRDGRAD;
+      attraktioner[i].besoegt = 0;
+      i++;
+    }
+  }else{
+    printf("kunne ikke aabne fil\n"); exit(1);
+  }
+  fclose(input_file_pointer);
 } 
 \end{lstlisting}
+
+Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn\_dist”, ved at sende en start og slut attraktion. Derefter bliver start- og slut attraktionen plus længden imellem dem lagt ind som en kant i kanter arrayet. Dette gøres i en for løkke i en anden for løkke, hvor der for hvert punkt blive udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for i en tidligere itteration af løkkerne. For hver kant der bliver oprettet, oprettes en ekstra kant som har samme længde, men har modsat start og slut attraktion. Så hvis det oprettes en kant fra x til y, vil der også blive oprettet en kant fra y til x med samme længde. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. 
+
+\begin{lstlisting}
+void udregn_kanter(attraktion *attraktioner, kant *kanter)
+{
+	int i;
+	int y;
+	int indexTilKanter = 0;
+	for (i = 0; i < ANTAL_ATTRAKTIONER; i++)
+	{
+		for (y = i; y < ANTAL_ATTRAKTIONER; y++)
+		{
+			if (strcmp(attraktioner[i].navn, attraktioner[y].navn) != 0)
+			{
+				kant k, j;
+				k.start = attraktioner[i];
+				j.slut = k.start;
+				k.slut = attraktioner[y];
+				j.start = k.slut;
+				k.laengde = beregn_dist(k.start, k.slut);
+				j.laengde = k.laengde;
+				kanter[indexTilKanter] = k;
+				kanter[indexTilKanter+1] = j;
+				indexTilKanter += 2;
+			}
+		}
+	}
+}
+\end{lstlisting}
+
+Funktionen ”beregn\_dist” er en implementering af pythagoras's sætning til at finde længden imellem 2 punkter. Funktionen returnere den beregnede distance mellem de to attraktioner.
+
+\begin{lstlisting}
+double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
+{
+  return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
+          pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
+}
+\end{lstlisting}
+
 
 Brugeren bliver præsenteret for en liste over alle tilgængelige attraktioner fra inputparameteren, og attraktionernes tilhørende nummer i funktionen ” valgafAttraktioner”. Brugeren bliver bedt om at indtaste attraktionernes matchende numre, hvilket vil blive tilføjet til en liste. Taster brugeren 0, bliver brugeren præsenteret for sine valg, og beregningen af den korteste rute igangsættes. Programmet returnere listen af valgte attraktioner.
 
@@ -404,46 +445,6 @@ void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttrakt
 			for (j = 0; j < antalValgteAttraktioner+1; ++j)
 			{
 				ruteAttraktioner[j] = *tempRute[j];
-			}
-		}
-	}
-}
-\end{lstlisting}
-
-Funktionen ”beregn\_dist” er en implementering af pythagoras's sætning til at finde længden imellem 2 punkter. Funktionen returnere den beregnede distance mellem de to attraktioner.
-
-\begin{lstlisting}
-double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
-{
-  return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
-          pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
-}
-\end{lstlisting}
-
-Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn\_dist”, ved at sende en start og slut attraktion. Derefter bliver start- og slut attraktionen plus længden imellem dem lagt ind som en kant i kanter arrayet. Dette gøres i en for løkke i en anden for løkke, hvor der for hvert punkt blive udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for i en tidligere itteration af løkkerne. For hver kant der bliver oprettet, oprettes en ekstra kant som har samme længde, men har modsat start og slut attraktion. Så hvis det oprettes en kant fra x til y, vil der også blive oprettet en kant fra y til x med samme længde. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. 
-
-\begin{lstlisting}
-void udregn_kanter(attraktion *attraktioner, kant *kanter)
-{
-	int i;
-	int y;
-	int indexTilKanter = 0;
-	for (i = 0; i < ANTAL_ATTRAKTIONER; i++)
-	{
-		for (y = i; y < ANTAL_ATTRAKTIONER; y++)
-		{
-			if (strcmp(attraktioner[i].navn, attraktioner[y].navn) != 0)
-			{
-				kant k, j;
-				k.start = attraktioner[i];
-				j.slut = k.start;
-				k.slut = attraktioner[y];
-				j.start = k.slut;
-				k.laengde = beregn_dist(k.start, k.slut);
-				j.laengde = k.laengde;
-				kanter[indexTilKanter] = k;
-				kanter[indexTilKanter+1] = j;
-				indexTilKanter += 2;
 			}
 		}
 	}

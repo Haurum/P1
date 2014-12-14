@@ -157,7 +157,7 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
   int halvdelen = ANTAL_ATTRAKTIONER/2;
 
   for(i = 0; i < halvdelen; i++){
-    printf("%d: %-40s\t \t \t%d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
+    printf("%d: %-40s\t %d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
   }
 
   printf("Vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");

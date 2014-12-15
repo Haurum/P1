@@ -32,25 +32,26 @@
 \contentsline {subsection}{\numberline {4.3.1}Programbeskrivelse}{18}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Beskrivelse af structs}{19}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Beskrivelse af funktioner}{19}{subsection.4.3.3}
-\contentsline {chapter}{\chapternumberline {5}Diskussion}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Sp\IeC {\o }rgeskema}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Interview}{25}{section.5.2}
-\contentsline {section}{\numberline {5.3}Programmet}{26}{section.5.3}
-\contentsline {chapter}{\chapternumberline {6}Konklusion}{27}{chapter.6}
-\contentsline {chapter}{\chapternumberline {7}Perspektivering}{28}{chapter.7}
-\contentsline {chapter}{Litteratur}{29}{section*.5}
-\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{32}{appendix.A}
-\contentsline {section}{\numberline {A.1}Teori}{32}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{32}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Formulering}{32}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}R\IeC {\ae }kkef\IeC {\o }lge}{33}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}R\IeC {\r a}data}{33}{section.A.2}
-\contentsline {appendix}{\chapternumberline {B}Interview}{36}{appendix.B}
-\contentsline {section}{\numberline {B.1}Teori}{36}{section.B.1}
-\contentsline {subsection}{\numberline {B.1.1}Enkeltinterview}{36}{subsection.B.1.1}
-\contentsline {subsection}{\numberline {B.1.2}Telefoninterview}{36}{subsection.B.1.2}
-\contentsline {subsection}{\numberline {B.1.3}Sp\IeC {\o }rgeteknikker og metoder til interview}{37}{subsection.B.1.3}
-\contentsline {subsection}{\numberline {B.1.4}Lukkede og \IeC {\r a}bne sp\IeC {\o }rgsm\IeC {\r a}l}{37}{subsection.B.1.4}
-\contentsline {subsection}{\numberline {B.1.5}Passive teknikker}{37}{subsection.B.1.5}
-\contentsline {subsection}{\numberline {B.1.6}Aktiv sp\IeC {\o }rgeteknik}{37}{subsection.B.1.6}
-\contentsline {section}{\numberline {B.2}Transskribering}{38}{section.B.2}
+\contentsline {section}{\numberline {4.4}Test}{25}{section.4.4}
+\contentsline {chapter}{\chapternumberline {5}Diskussion}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Sp\IeC {\o }rgeskema}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}Interview}{27}{section.5.2}
+\contentsline {section}{\numberline {5.3}Programmet}{28}{section.5.3}
+\contentsline {chapter}{\chapternumberline {6}Konklusion}{29}{chapter.6}
+\contentsline {chapter}{\chapternumberline {7}Perspektivering}{30}{chapter.7}
+\contentsline {chapter}{Litteratur}{31}{section*.5}
+\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{34}{appendix.A}
+\contentsline {section}{\numberline {A.1}Teori}{34}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{34}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Formulering}{34}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}R\IeC {\ae }kkef\IeC {\o }lge}{35}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}R\IeC {\r a}data}{35}{section.A.2}
+\contentsline {appendix}{\chapternumberline {B}Interview}{38}{appendix.B}
+\contentsline {section}{\numberline {B.1}Teori}{38}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}Enkeltinterview}{38}{subsection.B.1.1}
+\contentsline {subsection}{\numberline {B.1.2}Telefoninterview}{38}{subsection.B.1.2}
+\contentsline {subsection}{\numberline {B.1.3}Sp\IeC {\o }rgeteknikker og metoder til interview}{39}{subsection.B.1.3}
+\contentsline {subsection}{\numberline {B.1.4}Lukkede og \IeC {\r a}bne sp\IeC {\o }rgsm\IeC {\r a}l}{39}{subsection.B.1.4}
+\contentsline {subsection}{\numberline {B.1.5}Passive teknikker}{39}{subsection.B.1.5}
+\contentsline {subsection}{\numberline {B.1.6}Aktiv sp\IeC {\o }rgeteknik}{39}{subsection.B.1.6}
+\contentsline {section}{\numberline {B.2}Transskribering}{40}{section.B.2}

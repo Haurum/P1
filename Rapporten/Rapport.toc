@@ -37,6 +37,7 @@
 \contentsline {section}{\numberline {5.1}Sp\IeC {\o }rgeskema}{27}{section.5.1}
 \contentsline {section}{\numberline {5.2}Interview}{27}{section.5.2}
 \contentsline {section}{\numberline {5.3}Programmet}{28}{section.5.3}
+\contentsline {section}{\numberline {5.4}Algoritmer}{28}{section.5.4}
 \contentsline {chapter}{\chapternumberline {6}Konklusion}{29}{chapter.6}
 \contentsline {chapter}{\chapternumberline {7}Perspektivering}{30}{chapter.7}
 \contentsline {chapter}{Litteratur}{31}{section*.5}

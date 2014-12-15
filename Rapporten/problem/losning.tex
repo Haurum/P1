@@ -505,7 +505,9 @@ kant *kanter, attraktion *ikkeValgteAttraktioner, double maxDist, attraktion *ek
 }
 \end{lstlisting}
 
-Funktionen ”andre\_startsted”, tager en rute som inputparameter, sammen med det startsted der ønskes. Funktionen laver derefter et nyt array, der har det nye startsted som første og sidste element, så ruten starter i startstedet, og vender tilbage dertil. Dette array er hvad funktionen returnere. 
+Funktionen ”andre\_startsted”, tager en rute som inputparameter, sammen med det startsted der ønskes. Funktionen laver derefter et nyt array, der har det nye startsted som første og sidste element, så ruten starter i startstedet, og vender tilbage dertil. Dette array er hvad funktionen returnere.
+
+ 
 
 \begin{lstlisting}
 void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttraktioner, attraktion *outputRute)
@@ -534,6 +536,42 @@ void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttra
 	}
 }
 \end{lstlisting}
+
+Funktionen ”findEkstraAttraktionerFirkant” benytter beregningerne fra \textbf{teoriafsnit xXx}, til at finde ud af om der findes en evt. interessant attraktion på brugerens rute. Der tjekkes om attraktionAtTilfoeje ligger inden for en bestemt distance til linjen mellem start og slut punkter. Vis attraktionAtTilfoeje ligger indenfor, bliver den lagt i ekstraAttraktioner arrayet. 
+
+\begin{lstlisting}
+void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, attraktion *valgteAttraktioner, 
+                                  int *antalValgteAttraktioner, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist, 
+                                  attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner){
+  int i, j;
+  double vektorLaengde;
+  vektor ruteVektor, ruteVinkelretVektor, ruteEnhedsVinkelretVektor, mainHjoerne, side1Vektor, side2Vektor, punktVektor;
+
+  vektorLaengde = findDist(startAttraktion, slutAttraktion, kanter);
+  ruteVektor.x = slutAttraktion.kmFraGreenwich - startAttraktion.kmFraGreenwich;
+  ruteVektor.y = slutAttraktion.kmFraAekvator - startAttraktion.kmFraAekvator;
+  ruteVinkelretVektor.x = -ruteVektor.y;
+  ruteVinkelretVektor.y = ruteVektor.x
+  ruteEnhedsVinkelretVektor.x = ruteVinkelretVektor.x / vektorLaengde;
+  ruteEnhedsVinkelretVektor.y = ruteVinkelretVektor.y / vektorLaengde;
+  mainHjoerne.x = startAttraktion.kmFraGreenwich + ruteEnhedsVinkelretVektor.x * maxDist;
+  mainHjoerne.y = startAttraktion.kmFraAekvator + ruteEnhedsVinkelretVektor.y * maxDist;
+  side1Vektor.x = ruteVektor.x;
+  side1Vektor.y = ruteVektor.y;
+  side2Vektor.x = -2 * ruteEnhedsVinkelretVektor.x * maxDist; 
+  side2Vektor.y = -2 * ruteEnhedsVinkelretVektor.y * maxDist;
+
+  punktVektor.x = attraktionAtTilfoeje.kmFraGreenwich - mainHjoerne.x;
+  punktVektor.y = attraktionAtTilfoeje.kmFraAekvator - mainHjoerne.y;
+  if(0 < prikProdukt(punktVektor, side1Vektor) && prikProdukt(punktVektor, side1Vektor) < prikProdukt(side1Vektor, side1Vektor) &&
+      0 < prikProdukt(punktVektor, side2Vektor) && prikProdukt(punktVektor, side2Vektor) < prikProdukt(side2Vektor, side2Vektor)){
+    ekstraAttraktioner[*antalEsktraAttraktioner] = attraktionAtTilfoeje;
+    *antalEsktraAttraktioner += 1;
+  }
+}
+\end{lstlisting}
+
+
 
 \subsection{Opsummering}
 Her er en liste med de overstående funktioner, med en kort forklaring om hvad hver funktions opgave i programmet er.

@@ -170,7 +170,7 @@ Den korteste rute er altså AECDB, hvilket er 1 kortere end den antagede rute. D
 Udover NNA, findes også Dijkstra’s algoritme, hvor første step er, at bestemme ende-knuden, og sætte dens distance til nul. Denne knude sættes til at være den første knude, som behandles. I det en knude er checket færdig, vil denne knude markeres som ”besøgt”, og kanten med den mindste værdi følges, og næste knude markeres som ”nuværende” knude. En kant bliver kun fulgt, hvis det er den korteste rute, tilregnet tidligere kanter.
 Problematikken med Dijkstra’s algoritme i forhold til dette projekt er, at den checker den korteste rute fra start-knude til slut-knude, men den indkluderer ikke nødvendigvis alle knuder som oplyses. I det denne rapport er afgrænset til fugleflugtslinjer, vil Dijkstra’s ikke være den optimale. Hvis en rute igennem en by, hvor der er tilregnet veje, stier og andre knuder, vil Dijkstra’s være det bedste valg. Denne algoritme vil også være i brug ved den optimale løsning. Ved brug af Dijkstra’s algoritme, vil den nuværende rute altid blive testet for, hvorvidt ruten der undersøges efter, er kortere eller længere end den hidtil korteste rute. Hvis den er kortere, vil denne rute blive sat som den hidtil korteste rute.\citep{Dijkstra}
 
-\subsection{Matematikteori}
+\subsection{Vektorteori}
 Essensen i dette projekt er at finde en flerpunktsrute mellem nogle valgte attraktioner, hvor brugeren skal have mulighed for, at vælge nogle attraktioner til deres rute. Gruppen vil ikke diktere hvad en interessant rute er for brugeren, derfor skal de have muligheden for at vælge de foreslåede attraktioner til eller fra.
 
 \begin{wrapfigure}{}{0.4\textwidth}
@@ -244,7 +244,7 @@ I dette afsnit vil programmet blive beskrevet, både en overordnet programbeskri
 
 \subsection{Programbeskrivelse}
 Programmet begynder med at indlæse alle de forudbestemte tilgængelige attraktioner fra en tekstfil. Alle disse attraktioner bliver vist på en liste for brugeren i kommandopromten med numre ud for hver attraktion. Brugeren vælger så hvilke attraktioner vedkommende har lyst til at besøge, ved at indtaste attraktionens nummer, hvor attraktionen så vil blive tilføjet til en liste. Denne liste kører gennem programmet, og den korteste rute bestemmes. Programmet tjekker derefter, for nærliggende attraktioner der kan tilføjes til ruten, på samme måde som i begyndelsen da de valgte attraktioner til deres rute. Hvis brugeren vælger ekstra attraktioner til deres rute, kører programmet igen, og den nye rute beregnes.  Når ruten er beregnet, vil ruten blive vist på skærmen, i den beregnede rækkefølge. Den samlede længde af ruten vil også blive vist.
-
+\subsection{Beskrivelse af structs}
 Til programmet bruges fire forskellige structs. Den første struct er "attraktion", som indeholder to strings, "navn" og "adresse", to doubles, "kmFraGreenwich" og "kmFraAekvator", og en int, "besoegt", der beskriver om attraktionen er besøgt eller ej. Denne struct bruges til at opdele og gamme de enkelte attraktioners data i programmet.
 
 \begin{lstlisting}
@@ -489,7 +489,9 @@ double prikProdukt(vektor vektor1, vektor vektor2){
 }
 \end{lstlisting}
 
-Mangler at skrive om ”findEkstraAttraktionerFirkant”.
+Funktionen ”findEkstraAttraktionerFirkant” benytter beregningerne fra teoriafsnittet "Vektorteori", til at finde ud af om der findes en evt. interessant attraktion på brugerens rute. Der tjekkes om attraktionAtTilfoeje ligger inden for en bestemt distance til linjen mellem start og slut punkter. Vis attraktionAtTilfoeje ligger indenfor, bliver den lagt i ekstraAttraktioner arrayet.
+
+MANGLER LISTING
 
 \begin{lstlisting}
 void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, attraktion *valgteAttraktioner, 

@@ -81,7 +81,7 @@
 \pdfoptionpdfminorversion=6					% Muliggoer inkludering af pdf dokumenter, af version 1.6 og hoejere
 \pretolerance=2500 							% Justering af afstand mellem ord (hoejt tal, mindre orddeling og mere luft mellem ord)
 
-% Kommentarer og rettelser med \fxnote. Med 'final' i stedet for 'draft' udloeser hver note en error i den faerdige rapport.
+% Kommentarer og rettelser  med \fxnote. Med 'final' i stedet for 'draft' udloeser hver note en error i den faerdige rapport.
 \usepackage[footnote,draft,danish,silent,nomargin]{fixme}		
 
 
@@ -165,8 +165,8 @@
 
 \makechapterstyle{jenor}{					% Definerer kapiteludseende frem til ...
   \renewcommand\beforechapskip{0pt}
-  \renewcommand\printchaptername{right}
-  \renewcommand\printchapternum{left}
+  \renewcommand\printchaptername{}
+  \renewcommand\printchapternum{}
   \renewcommand\printchapternonum{\chapternonumtrue}
   \renewcommand\chaptitlefont{\fontfamily{pbk}\fontseries{db}\fontshape{n}\fontsize{25}{35}\selectfont\raggedleft}
   \renewcommand\chapnumfont{\fontfamily{pbk}\fontseries{m}\fontshape{n}\fontsize{1in}{0in}\selectfont\color{numbercolor}}

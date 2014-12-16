@@ -83,12 +83,14 @@ int main()
 
   outputTilFil(endeligRute, antalValgteAttraktioner);
 
-  int i;
-  printf("\nDin rute:\n");
-  for(i = 0; i < antalValgteAttraktioner+1; ++i){
-  printf("%s\n", endeligRute[i].navn);
+  if(antalValgteAttraktioner != 0){
+    int i;
+    printf("\nDin rute:\n");
+    for(i = 0; i < antalValgteAttraktioner+1; ++i){
+    printf("%s\n", endeligRute[i].navn);
+    }
+    printf("\nRutens saamlede laengde: %.2lfkm\n", samletLaengde);
   }
-  printf("\nRutens saamlede laengde: %.2lfkm\n", samletLaengde);
   return 0;
 }
 
@@ -157,7 +159,7 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
   int halvdelen = ANTAL_ATTRAKTIONER/2;
 
   for(i = 0; i < halvdelen; i++){
-    printf("%d: %-40s\t %d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
+    printf("%d: %-40s \t%d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
   }
 
   printf("Vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
@@ -364,8 +366,7 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
 
   do{
     opretNy = 1;
-
-    if(scanf("%d", &k) == 1){
+    if (scanf("%d", &k) ==  1){
       for (y = 0; y < j; y++)
       {
         if (strcmp(valgteAttraktioner[y].navn, ekstraAttraktioner[k-1].navn) == 0)
@@ -378,7 +379,7 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
         break;
       else if (k > antalEkstraAttraktioner || k < 0)
         printf("Tallet svarer ikke til en attraktion\n");
-      else if (opretNy)
+      else if (opretNy && (k <= antalEkstraAttraktioner))
       {
         valgteAttraktioner[j] = ekstraAttraktioner[k-1];
         printf("Tilfoejet attraktion: %s\n", ekstraAttraktioner[k-1].navn);
@@ -387,12 +388,12 @@ void valgAfEkstraAttraktioner(attraktion *valgteAttraktioner, int *antalValgteAt
     }
     else
     {
-      printf("Fejl i indlaesning  - proev igen\n");
-      char e;
-      scanf("%c", &e);
+      printf("Fejlindtastning - proev igen\n");
+      char e[MAX_STRING];
+      scanf("%s", e);
       k = 1;
     }
-  } while(j < ANTAL_ATTRAKTIONER && k != 0);
+  } while(j < antalEkstraAttraktioner + *antalValgteAttraktioner && k != 0);
   *antalValgteAttraktioner = j;
 }
 
@@ -456,6 +457,7 @@ void outputTilFil(attraktion *ruteAttraktioner, int antalValgteAttraktioner){
 
 void kopierFil(FILE *filSkabelon, FILE *filOutput){
   char ch;
+
   filSkabelon = fopen("outputSkabelon.kml", "r");
   filOutput = fopen("output.kml", "w");
 
@@ -463,9 +465,10 @@ void kopierFil(FILE *filSkabelon, FILE *filOutput){
     printf("kunne ikke aabne fil\n"); exit(1);
   }
 
+  fclose(filSkabelon);
+  fclose(filOutput);  
+
   while( ( ch = fgetc(filSkabelon) ) != EOF ){
       fputc(ch, filOutput);
   } 
-  fclose(filSkabelon);
-  fclose(filOutput);
 }

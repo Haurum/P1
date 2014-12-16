@@ -5,7 +5,7 @@ The style file: bibtex/harvard.bst
 A level-1 auxiliary file: formalia/forside.aux
 url: is an unknown function---line 320 of file bibtex/harvard.bst
 Database file #1: bibtex/litteratur.bib
-I was expecting a `,' or a `}'---line 178 of file bibtex/litteratur.bib
+I was expecting a `,' or a `}'---line 179 of file bibtex/litteratur.bib
  :  
  :  publisher = {Samfundslitteratur} ,
 (Error may have been on previous line)
@@ -52,7 +52,7 @@ while executing---line 1485 of file bibtex/harvard.bst
 while executing---line 1485 of file bibtex/harvard.bst
 You've used 19 entries,
             2921 wiz_defined-function locations,
-            715 strings with 7773 characters,
+            716 strings with 7777 characters,
 and the built_in function-call counts, 6392 in all, are:
 = -- 606
 > -- 220

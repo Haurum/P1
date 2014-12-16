@@ -41,7 +41,7 @@
 \contentsline {section}{\numberline {6.4}Algoritmer}{30}{section.6.4}
 \contentsline {chapter}{\chapternumberline {7}Konklusion}{32}{chapter.7}
 \contentsline {chapter}{\chapternumberline {8}Perspektivering}{33}{chapter.8}
-\contentsline {chapter}{Litteratur}{34}{section*.5}
+\contentsline {chapter}{Litteratur}{34}{section*.4}
 \contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{37}{appendix.A}
 \contentsline {section}{\numberline {A.1}Teori}{37}{section.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{37}{subsection.A.1.1}

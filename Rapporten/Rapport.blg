@@ -32,6 +32,8 @@ while executing---line 1485 of file bibtex/harvard.bst
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry NNA
 while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry DMST
+while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry PengeloseButikker
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry TDC
@@ -48,45 +50,45 @@ while executing---line 1485 of file bibtex/harvard.bst
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry VisitAalborg
 while executing---line 1485 of file bibtex/harvard.bst
-You've used 18 entries,
+You've used 19 entries,
             2921 wiz_defined-function locations,
-            710 strings with 7587 characters,
-and the built_in function-call counts, 6061 in all, are:
-= -- 574
-> -- 209
-< -- 36
-+ -- 76
-- -- 57
-* -- 360
-:= -- 1005
-add.period$ -- 88
-call.type$ -- 18
-change.case$ -- 37
-chr.to.int$ -- 17
-cite$ -- 37
-duplicate$ -- 381
-empty$ -- 548
-format.name$ -- 97
-if$ -- 1240
+            715 strings with 7773 characters,
+and the built_in function-call counts, 6392 in all, are:
+= -- 606
+> -- 220
+< -- 38
++ -- 80
+- -- 60
+* -- 379
+:= -- 1060
+add.period$ -- 93
+call.type$ -- 19
+change.case$ -- 39
+chr.to.int$ -- 18
+cite$ -- 39
+duplicate$ -- 402
+empty$ -- 578
+format.name$ -- 102
+if$ -- 1308
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 2
-newline$ -- 132
-num.names$ -- 90
-pop$ -- 117
+newline$ -- 139
+num.names$ -- 95
+pop$ -- 123
 preamble$ -- 1
-purify$ -- 37
+purify$ -- 39
 quote$ -- 0
-skip$ -- 234
+skip$ -- 247
 stack$ -- 0
-substring$ -- 36
-swap$ -- 73
+substring$ -- 38
+swap$ -- 77
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 193
+type$ -- 204
 warning$ -- 1
-while$ -- 54
+while$ -- 57
 width$ -- 0
-write$ -- 308
-(There were 20 error messages)
+write$ -- 325
+(There were 21 error messages)

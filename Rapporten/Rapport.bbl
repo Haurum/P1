@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -78,6 +78,15 @@
 \newblock \textit{Graph Theory: Nearest Neighbor Algorithm (NNA)}.
 \newblock \url{https://www.youtube.com/watch?v=zPgsNsOfxQ8}, 2013.
 \newblock Set d. 09/12-2014.
+
+\bibitem[Nilsson(2013)]{DMST}
+\textbf{Nilsson}, \textbf{2013}.
+\newblock Christian Nilsson.
+\newblock \textit{Heuristics for the Traveling Salesman Problem}.
+\newblock
+  \url{http://web.tuke.sk/fei-cit/butka/hop/htsp.pdfhttps://www.matematikfessor.dk/lessons/projektion-af-vektorer-199},
+  2013.
+\newblock Set d. 16/12-2014.
 
 \bibitem[Ritzau(2014)]{PengeloseButikker}
 \textbf{Ritzau}, \textbf{2014}.

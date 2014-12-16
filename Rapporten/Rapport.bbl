@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -56,6 +56,15 @@
 \newblock \url{https://www.youtube.com/watch?v=SC5CX8drAtU}, 2013.
 \newblock Set d. 09/12-2014.
 
+\bibitem[MatematikFessor(2014)]{ProjektionAfVektor}
+\textbf{MatematikFessor}, \textbf{2014}.
+\newblock MatematikFessor.
+\newblock \textit{Projektion af Vektorer}.
+\newblock
+  \url{https://www.matematikfessor.dk/lessons/projektion-af-vektorer-199},
+  2014.
+\newblock Set d. 16/12-2014.
+
 \bibitem[Mathispower4u(2013{\natexlab{a}})]{Dijkstra}
 \textbf{Mathispower4u}, \textbf{2013{\natexlab{a}}}.
 \newblock Mathispower4u.
@@ -75,15 +84,6 @@
 \newblock Ritzau.
 \newblock \textit{Forbrugerrådet: Pengeløse butikker udelukker kunder}.
 \newblock \url{http://www.information.dk/telegram/496765}, 2014.
-\newblock Set d. 20/11-2014.
-
-\bibitem[Østergaard og Lubson(2013)]{VisitAalborg}
-\textbf{Østergaard og Lubson}, \textbf{2013}.
-\newblock Mads~Zahle Østergaard og Paul Lubson.
-\newblock \textit{Turismens økonomiske betydning i Danmark 2011}.
-\newblock
-  \url{http://www.visitdenmark.dk/sites/default/files/vdk_images/PDF-and-other-files/Analyser/2013/turismens_oekonomiske_betydning_i_danmark_2011_revideret_udgave.pdf},
-  2013.
 \newblock Set d. 20/11-2014.
 
 \bibitem[TDC(2014)]{TDC}
@@ -113,27 +113,38 @@
   2013.
 \newblock Set d. 26/10-2014.
 
-\bibitem[Vitcenda(2011)]{UniversityOfMinnesota}
-\textbf{Vitcenda}, \textbf{2011}.
+\bibitem[Vitcenda(2013)]{UniversityOfMinnesota}
+\textbf{Vitcenda}, \textbf{2013}.
 \newblock Mary Vitcenda.
 \newblock \textit{Why should visitors love your town? Count the ways}.
 \newblock
-  \url{http://www.extension.umn.edu/community/news/tourism-assets.html}, 2011.
+  \url{http://www.extension.umn.edu/community/news/tourism-assets.html}, 2013.
 \newblock Set d. 20/11-2014.
 
-\bibitem[Vodafone()]{VF}
-\textbf{\textbf{Vodafone}}.
+\bibitem[Vodafone(2014)]{VF}
+\textbf{Vodafone}, \textbf{2014}.
 \newblock Vodafone.
 \newblock \textit{Turismen - Regionalt, nationalt og internationalt}.
 \newblock
-  \url{http://www.vodafone.co.uk/shop/pay-monthly/travelling-abroad/vodafone-data-traveller/index.htm}.
+  \url{http://www.vodafone.co.uk/shop/pay-monthly/travelling-abroad/vodafone-data-traveller/index.htm},
+  2014.
 
-\bibitem[{Youth Central}()]{YouthCentral}
-\textbf{\textbf{{Youth Central}}}.
+\bibitem[{Youth Central}(2014)]{YouthCentral}
+\textbf{{Youth Central}}, \textbf{2014}.
 \newblock {Youth Central}.
 \newblock \textit{Planning your trip}.
 \newblock
-  \url{https://www.youthcentral.vic.gov.au/travel-transport/travelling-overseas/planning-your-trip}.
+  \url{https://www.youthcentral.vic.gov.au/travel-transport/travelling-overseas/planning-your-trip},
+  2014.
 \newblock Set d. 27/10-2014.
+
+\bibitem[Østergaard og Lubson(2013)]{VisitAalborg}
+\textbf{Østergaard og Lubson}, \textbf{2013}.
+\newblock Mads~Zahle Østergaard og Paul Lubson.
+\newblock \textit{Turismens økonomiske betydning i Danmark 2011}.
+\newblock
+  \url{http://www.visitdenmark.dk/sites/default/files/vdk_images/PDF-and-other-files/Analyser/2013/turismens_oekonomiske_betydning_i_danmark_2011_revideret_udgave.pdf},
+  2013.
+\newblock Set d. 20/11-2014.
 
 \end{thebibliography}

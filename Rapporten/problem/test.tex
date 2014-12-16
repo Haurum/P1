@@ -1,0 +1,42 @@
+\chapter{Test}
+I dette afsnit vil forskellige tests blive beskrevet, hvor dette program er testet via blackbox testing. Denne test-type består i, at prøve alle mulige input-typer, og se hvorvidt outputtet er lig det forventede output.
+Casene er opbygget således:\newline
+\begin{tabular}{|l|l| p{5cm}|}
+\hline
+Case 1 & Korrekt valgt af attraktioner & Korrekt tilføjelse af interessante punkter \\ \hline
+Case 2 & Korrekt valgt af attraktioner & For mange tilføjelser af interessante punkter \\ \hline
+Case 3 & Korrekt valgt af attraktioner & Forkert input-type ved tilføjelser af interessante punkter\\ \hline
+Case 4 & Korrekt valgt af attraktioner & Ingen tilføjelse af interessante punkter (input ”0”) \\ \hline
+Case 5 & Valg af flere attraktioner end muligt & Forventer ikke prompt for andet input\\ \hline
+Case 6 & Valg af samme attraktion flere gange &	Forventer ikke prompt for andet input\\ \hline
+Case 7 & Forkert input-type til valg af attraktioner & Forventer ikke prompt for andet input\\ \hline
+Case 8 & Intet valg af attraktion (første input ”0”) & Forventer ikke prompt for andet input\\ \hline
+\end{tabular} 
+\newline
+
+CASE 1: 
+I denne første testcase, vil inputtet til valg af attraktioner være 1, 5 og 9. Ved brug af disse tal, vil et forventet output være Aalborghus\_Slot for 1, Springeren\_-\_Maritimt\_Oplevelsescenter for 5 og Nordkraft for 9. Herefter ville valget af attraktioner afsluttes, ved input 0.
+Output ved førte del af testcasen blev følgende: ”Tilfoejet attraktion: Aalborghus\_slot”, ”Tilfoejet attraktion: Springeren\_-\_Maritimt\_Oplevelsescenter” og ” Tilfoejet attraktion: Nordkraft”. Herved gav den første del et korrekt output. Ved afsluttelse af valg af attraktion, tilføjes disse attraktioner til ruten, og næste step er tilføjelse af interessante, nærliggende attraktioner. Eftersom de valgte attraktioner alle ligger tæt på havnen i Aalborg, vil andre interessante attraktioner være Utzon Centeret, Havnefronten og Friis, da disse alle ligger tæt på en tiltænkt rute fra Nordkraft til Springeren, hvor Aalborghus Slot også besøges.\newline
+Her foreslår programmet følgende: 1: Utzon\_Centeret, 2: Friis\_Aalborg\_Citycenter og 3: Havnefronten. Dette er et korrekt output efter de attraktioner der blev valgt. Disse er alle tre nærliggende attraktioner, til den rute der kunne være oprettet. Efterfølgende skal brugeren selv vælge, om han vil tilføje disse attraktioner til ruten. I dette tilfælde bliver inputtet 1 og 2, for tilføjelse af Utzon\_Centeret og Friis\_Aalborg\_Citycenter. Outputtet blev ”Tilfoejet attraktion: Utzon\_Centeret” og ”Tilfoejet attraktion: Friis\_Aalborg\_Citycenter”. Dette stemmer overens med det forventede output, og tilføjelsen afsluttes med input 0. Herefter vil ruten blive dannet, og alle attraktioner valgt vil blive printet ud som ”Din rute”. Heraf vil der vises Aalborghus Slot, Springeren, Nordkraft, Utzon Centeret og Friis. Disse vil sorteres efter hvornår på ruten de besøges, hvor startpunktet vil blive printet dobbelt, som både start-attraktion og slut-attraktion. Siden startattraktionen er Aalborghus\_Slot, skal ruten blive Aalborghus\_Slot, Utzon\_Centeret, Friis\_Aalborg\_Citycenter, Nordkraft, Springeren\_-\_Maritimt\_Oplevelsescenter og Aalborghus\_Slot. Dette er også tilfældet, da vores output er magen til det forventede:\newline
+Din rute:\newline
+Aalborghus\_Slot\newline
+Utzon\_Centeret\newline
+Friis\_Aalborg\_Citycenter\newline
+Nordkraft\newline
+Springeren\_-\_Maritimt\_Oplevelsescenter\newline
+Aalborghus\_Slot\newline
+Herefter er der også et output der beskriver rutens længde, som i dette tilfælde er 5.61km.
+
+CASE 2: I denne case blev inputtet det samme, indtil ruten blev testet for, hvorvidt der er attraktioner i nærheden. Her blev inputtet: ”1”, ”2”, ”3” ”4”, og her blev outputtet efter ”4” følgende: ”Tallet svarer ikke til en attraktion”, så det kan ikke tilføjes, og derfor er testen udført.
+
+CASE 3: Igen her er case inputtet det samme, men i stedet for at inputte for mange attraktioner, blev der testet med tegn og bogstaver, dvs. ikke-tal. Ved test af ”a” som input, var outputtet ”Fejlindtastning – Prøv igen”. Det samme output blev printet, da inputtet var ”test”. Efter test med inputtet ”13”, er output ”Tallet svarer ikke til en attraktion”, da der ikke er en vist attraktion med tallet ”13”.
+
+CASE 4: Ved korrekt input, men ingen tilføjelser af attraktioner til den interessante rute, kører programmet videre ved input ”0”, og output bliver en korrekt rute.
+
+CASE 5: Hvis en fuld rute ønskes, for alle punkter, er input alle attraktionernes tal. Ved indtastning af alle, vil der ikke blive promtet for flere input, og hele ruten beregnes. En indtastning af flere inputs end det fulde antal attraktioner, er derfor ikke mulig.
+
+CASE 6: I denne testcase vil inputtet repeteres, så det samme input bliver brugt flere gange. Hvis det samme input tastes mere end én gang, vil outputtet være ”Du har allerede indtastet denne attraktion. Prøv igen.” Den samme attraktion kan derfor ikke vælges to eller flere gange.
+
+CASE 7: Ved input ”test” og ”a” i den første promt, vil outputtet være, ligesom i case 3, ”Fejlindtastning – Prøv igen”. Hvis inputtet er et tal højere end det fulde antal attraktioner, vil output være det samme som i case 3 også: ”Tallet svarer ikke til en attraktion”.
+
+CASE 8: Hvis programmet startes, men det ikke indtastes en attraktion som input, men derimod taste ”0” som første input, vil programmet ikke køres til ende, og programmet stoppes.

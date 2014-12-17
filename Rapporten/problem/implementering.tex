@@ -122,7 +122,7 @@ pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{0pt}
 	\begin{center}
-		\includegraphics[scale=0.75]{valgAfAttraktioner}\newline
+		\includegraphics[scale=0.7]{valgAfAttraktioner}\newline
 		\textit{Figur 6.2: Flowchart over “valgafAttraktioner” funktionen}
 	\end{center}
 	\vspace{0pt}
@@ -132,15 +132,22 @@ pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
 Brugeren bliver præsenteret for en liste over alle tilgængelige attraktioner fra inputparameteren, og attraktionernes tilhørende nummer i funktionen "valgafAttraktioner. Brugeren bliver bedt om at indtaste attraktionernes matchende numre, hvilket vil blive tilføjet til en list. Taster brugeren 0, bliver brugeren præsentere for sine valg, og beregninger af den korteste rute igangsættes. Programmet returnere listen af valgte attraktioner. \newline
 
 \begin{lstlisting}
-void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ikkeValgteAttraktioner){
-int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, valgt = 0;
+void valgafAttraktioner(attraktion *attraktioner, 
+attraktion *valgteAttraktioner, 
+int *antalValgteAttraktioner, 
+attraktion *ikkeValgteAttraktioner){
+int i = 0, j = 0, k = 0, l = 0, 
+m = 0, n = 0, o = 0, valgt = 0;
 
 for(i = 0; i < ANTAL_ATTRAKTIONER; i++){
 printf("%d: %s\n", i+1, attraktioner[i].navn);
 }
 
-printf("vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
-printf("vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal\n");
+printf("vaelg de attraktioner du oensker 
+		at se ved at skrive det tilhoerende tal.\n");
+printf("vaelg et tal (svarende til en attraktion) 
+		af gangen og tryk enter efter 
+		hver indtastet tal\n");
 printf("indtast ikke samme tal 2 gange\n");
 do{
 if(scanf("%d", &k) != 1){
@@ -157,7 +164,8 @@ for (l = 0; l < ANTAL_ATTRAKTIONER; ++l)
 valgt = 0;
 for (m = 0; m < j; ++m)
 {
-if(strcmp(attraktioner[l].navn, valgteAttraktioner[m].navn) == 0){
+if(strcmp(attraktioner[l].navn, 
+   valgteAttraktioner[m].navn) == 0){
 m = j;
 valgt = 1;
 }	
@@ -171,41 +179,53 @@ n++;
 }
 \end{lstlisting}
 
+Funktionen ”findNaboRute” benytter NNA (Nearest Neighbour Algorithm, eller Nærmeste Nabo Algoritme), til at finde den korteste rute mellem en række attraktioner for et bestemt startsted, der er angivet i inputparametrene. Efter at have fundet den korteste rute ud fra NNA som beskrevet i teoriafsnittet 5.1.1 om grafteori, returnere den et array med ruten og distancen for denne rute. \newline
+
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{0pt}
 	\begin{center}
-		\includegraphics[scale=0.75]{findnaborute}\newline
+		\includegraphics[scale=0.7]{findnaborute}\newline
 		\textit{Figur 6.3: Flowchart over “findNaboRute” funktionen”}
 	\end{center}
 	\vspace{0pt}
 	\vspace{0pt}
 \end{wrapfigure}
 
-Funktionen ”findNaboRute” benytter NNA (Nearest Neighbour Algorithm, eller Nærmeste Nabo Algoritme), til at finde den korteste rute mellem en række attraktioner for et bestemt startsted, der er angivet i inputparametrene. Efter at have fundet den korteste rute ud fra NNA som beskrevet i teoriafsnittet 5.1.1 om grafteori, returnere den et array med ruten og distancen for denne rute. \newline
-
 \begin{lstlisting}
-void findNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde){
+void findNaboRute(attraktion *valgteAttraktioner, 
+int antalValgteAttraktioner, 
+attraktion *startAttraktion, 
+kant *kanter, attraktion **tempRute, 
+double *ruteLaengde){
 int i = 0;
 double lavesteLaengde = 10000;
 *ruteLaengde = 0;
 
 tempRute[i] = startAttraktion;
 
-for(i = 0; i < antalValgteAttraktioner-1; ++i){ /*da der f.eks. kun er 4 kanter imellem 5 punkter*/
+for(i = 0; i < antalValgteAttraktioner-1; ++i){ 
+/*da der f.eks. kun er 4 kanter 
+imellem 5 punkter*/
 tempRute[i]->besoegt = 1;
 int j = 0;
 for (j = 0; j < antalValgteAttraktioner; ++j)
 {
-if(valgteAttraktioner[j].besoegt != 1 && findDist(*tempRute[i], valgteAttraktioner[j], kanter) < lavesteLaengde){
-lavesteLaengde = findDist(*tempRute[i], valgteAttraktioner[j], kanter);
+if(valgteAttraktioner[j].besoegt != 1 && 
+findDist(*tempRute[i], 
+valgteAttraktioner[j], kanter) < lavesteLaengde){
+lavesteLaengde = findDist(*tempRute[i],
+valgteAttraktioner[j], kanter);
 tempRute[i+1] = &valgteAttraktioner[j];
 }
 }
 *ruteLaengde += lavesteLaengde;
 lavesteLaengde = 10000;
 }
-tempRute[antalValgteAttraktioner] = startAttraktion;
-*ruteLaengde += findDist(*tempRute[antalValgteAttraktioner-1], *tempRute[antalValgteAttraktioner], kanter);
+tempRute[antalValgteAttraktioner] 
+= startAttraktion;
+*ruteLaengde += 
+findDist(*tempRute[antalValgteAttraktioner-1], 
+*tempRute[antalValgteAttraktioner], kanter);
 }
 \end{lstlisting}
 
@@ -222,8 +242,13 @@ tempRute[antalValgteAttraktioner] = startAttraktion;
 ”findKortesteNaboRute” benytter funktionen ”findNaboRute”, til at finde ud af hvilket startsted der giver den korteste rute. Dette gøres ved at sætte en variable til en stor værdi, som rutedistancen ikke vil gå over, og opdatere den hvis ”findNaboRute” returnere en distance for ruten gennem de givne attraktioner med en given start attraktion, der er lavere end de foregående ruter. ”findKortesteNaboRute” returnere et array med den korteste rute, og den samlede længde af denne rute.  \newline
 
 \begin{lstlisting}
-void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde){
-/* indput er valgteAttraktioner arrayet, og kanter arrayet*/
+void findKortesteNaboRute(attraktion
+*valgteAttraktioner, 
+int antalValgteAttraktioner, 
+attraktion *ruteAttraktioner, kant *kanter, 
+double *samletLaengde){
+/* indput er valgteAttraktioner arrayet, 
+og kanter arrayet*/
 /*output er ruteAttraktioner og samletLaengde*/
 double ruteLaengde;
 attraktion *tempRute[antalValgteAttraktioner+1];
@@ -232,13 +257,14 @@ attraktion *tempRute[antalValgteAttraktioner+1];
 int i;
 int h;
 int j;
-for (i = 0; i < antalValgteAttraktioner; ++i)
-{
-for (h = 0; h < antalValgteAttraktioner; ++h)
-{
+for (i = 0; i < antalValgteAttraktioner; ++i){
+for (h = 0; h < antalValgteAttraktioner; ++h){
 valgteAttraktioner[h].besoegt = 0;
 }
-findNaboRute(valgteAttraktioner, antalValgteAttraktioner, &valgteAttraktioner[i], kanter, tempRute, &ruteLaengde);
+findNaboRute(valgteAttraktioner,
+antalValgteAttraktioner, 
+&valgteAttraktioner[i], kanter, tempRute,
+&ruteLaengde);
 if(ruteLaengde < *samletLaengde){
 *samletLaengde = ruteLaengde;
 for (j = 0; j < antalValgteAttraktioner+1; ++j)

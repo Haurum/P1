@@ -29,12 +29,12 @@ En af disse løsninger er Nearest neighbor algoritme, som behandler et problem d
 	\vspace{-40pt}
 	\begin{center}
 		\includegraphics[scale=0.8]{grafteori2} \newline
-		\textit{ Figur 4.2: Hamiltonian Path. \newline Følger kanter med laveste værdier.}
+		\textit{ Figur 5.2: Hamiltonian Path. \newline Følger kanter med laveste værdier.}
 	\end{center}
 	\vspace{-10pt}
 \end{wrapfigure}
 
-I dette tilfælde (figur 4.2), er den endelige rutes længde: 1+5+4+8 = 18. Spørgsmålet er så, er dette den koreste rute? Herefter opstilles en matrix, der beskriver alle kanter.
+I dette tilfælde (figur 5.2), er den endelige rutes længde: 1+5+4+8 = 18. Spørgsmålet er så, er dette den koreste rute? Herefter opstilles en matrix, der beskriver alle kanter.
 
 \begin{tabular}{| l | l | l | l | l | l |}
 	\hline
@@ -121,9 +121,8 @@ Længden af AB opløftet i anden vil være: \[ \sqrt{6^2+0^2}^2 = 36 \]
 Ud fra dette kan vektoren fra projektionen af AP på AB findes: 
 \[ \frac{24}{36} * \begin{bmatrix} 6 \\ 0 \end{bmatrix} \rightarrow \frac{24}{36} * 6 \wedge \frac{24}{36} * 0 = \begin{bmatrix} 4 \\ 0 \end{bmatrix} \]
 
-Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \text{ ,} \]  som også vil have startpunkt i A. Hvis der igen tages udgangspunkt i formlen:
-\[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
-\begin{wrapfigure}{R}{0.4\textwidth}
+Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \text{ ,} \]  som også vil have startpunkt i A. Hvis der igen tages udgangspunkt i formlen:\newline
+\begin{wrapfigure}{r}{0.4\textwidth}
 	\vspace{-20pt}
 	\begin{center}
 		\includegraphics[scale=0.6]{matematikteori2} \newline
@@ -131,7 +130,7 @@ Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \
 	\end{center}
 	\vspace{-20pt}
 \end{wrapfigure}
-
+\[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde: \[ \begin{bmatrix} 0 \\ -1 \end{bmatrix} \text{ .} \]\newline
 
 \textbf{Opsummering}\newline

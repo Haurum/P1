@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -41,6 +41,13 @@
 \newblock Thomas Harboe.
 \newblock \textit{Metode og projektskrivning}.
 \newblock 2011.
+
+\bibitem[Humerfelt(1999)]{Earth}
+\textbf{Humerfelt}, \textbf{1999}.
+\newblock Sigurd Humerfelt.
+\newblock \textit{Earth according to WGS 84}.
+\newblock \url{http://home.online.no/~sigurdhu/Grid_1deg.htm}, 1999.
+\newblock Set d. 11/12-2014.
 
 \bibitem[JMT(2010)]{GraphTheory}
 \textbf{JMT}, \textbf{2010}.
@@ -95,6 +102,13 @@
 \newblock \url{http://www.evm.dk/arbejdsomraader/internationalt-udsyn/turisme},
   2014.
 \newblock Set d. 16/12-2014.
+
+\bibitem[Postamenter(2014)]{PM}
+\textbf{Postamenter}, \textbf{2014}.
+\newblock Postamenter.
+\newblock \textit{Jordkloden}.
+\newblock \url{http://www.postamenter.dk/kloden/kloden.pdf}, 2014.
+\newblock Set d. 11/12-2014.
 
 \bibitem[Ritzau(2014)]{PengeloseButikker}
 \textbf{Ritzau}, \textbf{2014}.

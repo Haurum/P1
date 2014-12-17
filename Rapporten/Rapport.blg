@@ -20,6 +20,8 @@ while executing---line 1485 of file bibtex/harvard.bst
 Warning--empty publisher in metodeogprojektskrivning
 1 is an integer literal, not a string, for entry metodeogprojektskrivning
 while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry Earth
+while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry GraphTheory
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry TSP
@@ -33,6 +35,8 @@ while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry DMST
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry EVM
+while executing---line 1485 of file bibtex/harvard.bst
+1 is an integer literal, not a string, for entry PM
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry PengeloseButikker
 while executing---line 1485 of file bibtex/harvard.bst
@@ -48,4 +52,4 @@ while executing---line 1485 of file bibtex/harvard.bst
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry YouthCentral
 while executing---line 1485 of file bibtex/harvard.bst
-(There were 21 error messages)
+(There were 23 error messages)

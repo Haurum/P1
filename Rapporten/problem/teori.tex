@@ -120,18 +120,36 @@ Længden af AB opløftet i anden vil være: \[ \sqrt{6^2+0^2}^2 = 36 \]
 Ud fra dette kan vektoren fra projektionen af AP på AB findes: 
 \[ \frac{24}{36} * \begin{bmatrix} 6 \\ 0 \end{bmatrix} \rightarrow \frac{24}{36} * 6 \wedge \frac{24}{36} * 0 = \begin{bmatrix} 4 \\ 0 \end{bmatrix} \]
 
-Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \text{ ,} \]  som også vil have startpunkt i A. Hvis der igen tages udgangspunkt i formlen:
-\[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 \begin{wrapfigure}{R}{0.4\textwidth}
-  \vspace{-20pt}
+  \vspace{-50pt}
   \begin{center}
     \includegraphics[scale=0.6]{matematikteori2} \newline
     \textit{Figur 5.2: Fortsat eksempel på om en attraktion er indenfor punkt a og b.}\newline
   \end{center}
   \vspace{-20pt}
+  \vspace{0pt}
 \end{wrapfigure}
 
-overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde: \[ \begin{bmatrix} 0 \\ -1 \end{bmatrix} \text{ .} \]\newline
+Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \text{ ,} \]  som også vil have startpunkt i A. Hvis der igen tages udgangspunkt i formlen:
+\[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 
-\textbf{Opsummering}\newline
-I grafteorien blev der konkluderet, at Nearest Neighbor algoritmen er den mest egnede til programmet, da dette projekt forholder sig til udregning af en relativt kort rute, hvorved en interessant rute kan findes efterfølgende. Vektorteorien gjorde grund for udregning af, hvilke attraktioner der er nærliggende, så en interessant rute kan findes ud fra ruten der i første omgang bliver dannet af NNA.
+overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde: \[ \begin{bmatrix} 0 \\ -1 \end{bmatrix} \text{ .} \]\newpage
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+  \vspace{-50pt}
+  \begin{center}
+    \includegraphics[scale=0.5]{globerapport}\newline
+    \textit{Figur 5.2: Fortsat eksempel på om en attraktion er indenfor punkt a og b.}\newline
+  \end{center}
+  \vspace{40pt}
+  \vspace{10pt}
+\end{wrapfigure}
+\section{Længde- og breddegrader}
+I projektet bruges længde- og breddegrader til at udregne afstanden mellem attraktionerne. Dette sker kort sagt ved, at finde to koordinatsæt og bruge pythagoras’ sætning til at udregne afstanden. I dette afsnit vil der være en kort forklaring om længde- og breddegrader, og hvordan gruppen har brugt dem i dette projekt.\newline
+
+Længdegrader er de lodrette streger der kan ses på globussen i figur X. De lodrette streger kaldes for en meridian, hvor disse vil have mindre afstand mellem hinanden i nærheden af de geografiske poler, i forhold til når de er tæt ved ækvator. De vandrette streger er breddegrader, hvor disse er kaldt paralleller. Breddegradernes afstand ændre sig ikke på samme måde som længdegraderne. [1] \newline
+Ligesom på en cirkel er jorden delt op i 360 længdegrader. 0 grader vil ligge i observatoriet i Greenwich, som ligger i London området. De 360 grader er opdelt i 180 vestlige og 180 østlige længdegrader. Breddegrader begynder fra 0 grader ved ækvator og rammer 90 grader ved en af polerne, i henholdsvis nordlige- eller sydlige breddegrader. [1]\newline
+Der findes forskellige metoder til at notere koordinatsættet i form af længde- og breddegrader. I dette projekt bruges der et grade tal med decimaler, eksempelvis 57,12345. I dette system nævnes ikke om det er i sydlig, nordlig,vestlig eller østlig retning, men istedet er de sydlige breddegrader og vestlige længdegrader, negative tal . En anden måde at notere dette er at dele det op i grader, minutter og sekunder, hvor der går 60 sekunder på et minut og 60 minutter på en grad. Breddegraderne ligger fast på ca. 111 km pr. grad, mens længdegraderne variere da der bliver kortere afstand mellem meridianerne jo tættere de er på polerne. Med andre ord kan det siges, at hvis man er på 5. længdegrad, så er man 5 længdegrader fra Greenwich (0 grader), men afstanden i km for hver længdegrad ændre sig i forhold til hvilken breddegrad der undersøges. Denne afstand kan enten udregnes eller findes i en tabel. I dette projekt er det afstanden kigget op i en tabel[2]. Som viser at der ved Aalborg, ved den 57. breddegrad, går 1012.87 meter per minut, altså 1012.87*60 =  60772.2 meter pr grad = 60.77 kilometer pr grad.[1]
+
+\section{Opsummering}
+I grafteorien blev der konkluderet, at Nearest Neighbor algoritmen er den mest egnede til programmet, da dette projekt forholder sig til udregning af en relativt kort rute, hvorved en interessant rute kan findes efterfølgende. Vektorteorien gjorde grund for udregning af, hvilke attraktioner der er nærliggende, så en interessant rute kan findes ud fra ruten der i første omgang bliver dannet af NNA. Bredde- og længdegrader bruges til at udregne afstanden mellem attraktionerne.

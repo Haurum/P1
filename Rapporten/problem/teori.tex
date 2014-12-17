@@ -1,7 +1,7 @@
 \chapter{Teori}
 I dette afsnit vil teorien, der ligger til grund for programmet, blive beskrevet, hvorunder tre hovedafsnit findes. Grafteori vil være det første afsnit, efterfulgt af vektorteori og  positionsbestemmelse. Under grafteori vil et par forskellige algoritmer tages i brug, hvoraf den bedste match til programmet findes. I grafteorien vil Nearest neighbor, Dijkstra’s algoritme og Double Minimum Spanning Tree algoritmerne blive beskrevet. I vektorteorien vil teorien bag udregning af afstanden mellem to knuder, eller en knude og en rute gøres rede for. Denne teori vil blive brugt i programmet til dannelse af rute, og udregning af nærliggende attraktioner.
 
-\subsection{Grafteori}
+\section{Grafteori}
 Grafteori er et afsnit i denne rapport, som omhandler en generel forklaring på grafteori, hvorefter teorien bag Nearest neighbor algoritme, Dijkstra’s algoritme, Double Minimum Spanning Tree og Traveling salesman problem vil blive beskrevet. Alt dette beskrives, for at give et udgangspunkt for implementering af en hensigtsmæssig algoritme i programmet for denne rapport.\newline
 Matematikken bag grafteori er ét aspekt af emnet, hvor visualisering og tegning er en anden. Den matematiske del behandler kombinationerne af knuder og kanter. En knude er et punkt, i dette tilfælde en attraktion, som skal besøges, hvor en kant er ruten mellem to knuder. En kant er derfor længden fra ét punkt til det næste \citep{GraphTheory}.
 I grafteori er begrebet ”graf” mere fleksibelt, da punkterne ikke nødvendigvis har x, y eller z værdier, alt efter antallet af dimensioner det behandles i. Grafen er en afbildning af punkter i en form, der virker hensigtsmæssig. Heraf opstår isomorfe modeller, som er forskellige afbildninger, af selv samme graf. 
@@ -69,14 +69,14 @@ Double Minimum Spanning Tree er algoritmen der ligger til grund for Christofides
 
 
 
-\subsection{Vektorteori}
+\section{Vektorteori}
 Essensen i dette projekt er at finde en flerpunktsrute mellem nogle valgte attraktioner, hvor brugeren skal have mulighed for, at vælge nogle attraktioner til deres rute. Gruppen vil ikke diktere hvad en interessant rute er for brugeren, derfor skal de have muligheden for at vælge de foreslåede attraktioner til eller fra.
 
 \begin{wrapfigure}{}{0.4\textwidth}
 	\vspace{-10pt}
 	\begin{center}
 		\includegraphics[scale=0.6]{matematikteori1} \newline
-		\textit{Figur 5.1: Eksempel på om en attraktion er indenfor punkt a og b.}\newline
+		\textit{Figur 5.3: Eksempel på om en attraktion er indenfor punkt a og b.}\newline
 	\end{center}
 	\vspace{-20pt}
 \end{wrapfigure}
@@ -108,7 +108,6 @@ Punktet D vil så ledes findes  ved at tage vektoren fra før og multiplicere me
 \[\ D = \begin{bmatrix} 0 \\ 2 \end{bmatrix} * -2 = \begin{bmatrix} 0 \\ -4 \end{bmatrix} + \begin{bmatrix} 1 \\ 5 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \text{ .} \]
 
 
-
 Dog vil der først findes en vektor AP mellem punkterne A og P med formlen: \[ \overrightarrow{AP} = \begin{matrix}X2-X1 \\ Y2-Y1\end{matrix} \]
 Vektor AP: A(1,5) og P(5,4): \[ \overrightarrow{AP} = \begin{bmatrix}5-1 \\ 4-5\end{bmatrix} = \begin{bmatrix} 4 \\ -1 \end{bmatrix} \]
 \[ \text{Vektor AB er allerede kendt, da det er det samme som } \overrightarrow{ab} \text{.} \]
@@ -120,16 +119,16 @@ Prikproduktet af vektorerne: \[ \overrightarrow{AP} \cdot \overrightarrow{AB} = 
 Længden af AB opløftet i anden vil være: \[ \sqrt{6^2+0^2}^2 = 36 \]
 Ud fra dette kan vektoren fra projektionen af AP på AB findes: 
 \[ \frac{24}{36} * \begin{bmatrix} 6 \\ 0 \end{bmatrix} \rightarrow \frac{24}{36} * 6 \wedge \frac{24}{36} * 0 = \begin{bmatrix} 4 \\ 0 \end{bmatrix} \]
-
-Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \text{ ,} \]  som også vil have startpunkt i A. Hvis der igen tages udgangspunkt i formlen:\newline
+Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \text{ ,} \] 
 \begin{wrapfigure}{r}{0.4\textwidth}
-	\vspace{-20pt}
+	\vspace{0pt}
 	\begin{center}
 		\includegraphics[scale=0.6]{matematikteori2} \newline
-		\textit{Figur 5.2: Fortsat eksempel på om en attraktion er indenfor punkt a og b.}\newline
+		\textit{Figur 5.4: Fortsat eksempel på om en attraktion er indenfor punkt a og b.}\newline
 	\end{center}
 	\vspace{-20pt}
 \end{wrapfigure}
+som også vil have startpunkt i A. Hvis der igen tages udgangspunkt i formlen:\newline
 \[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde: \[ \begin{bmatrix} 0 \\ -1 \end{bmatrix} \text{ .} \]\newline
 

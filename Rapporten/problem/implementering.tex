@@ -179,42 +179,27 @@ n++;
 }
 \end{lstlisting}
 
+
 Funktionen ”findNaboRute” benytter NNA (Nearest Neighbour Algorithm, eller Nærmeste Nabo Algoritme), til at finde den korteste rute mellem en række attraktioner for et bestemt startsted, der er angivet i inputparametrene. Efter at have fundet den korteste rute ud fra NNA som beskrevet i teoriafsnittet 5.1.1 om grafteori, returnere den et array med ruten og distancen for denne rute. \newline
-
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\vspace{0pt}
-	\begin{center}
-		\includegraphics[scale=0.7]{findnaborute}\newline
-		\textit{Figur 6.3: Flowchart over “findNaboRute” funktionen”}
-	\end{center}
-	\vspace{0pt}
-	\vspace{0pt}
-\end{wrapfigure}
-
+\begin{flushleft}
+	\includegraphics[scale=0.6]{findnaborute}\newline
+	\textit{Figur 6.3: Flowchart over “findNaboRute” funktionen”}
+\end{flushleft}
 \begin{lstlisting}
 void findNaboRute(attraktion *valgteAttraktioner, 
-int antalValgteAttraktioner, 
-attraktion *startAttraktion, 
-kant *kanter, attraktion **tempRute, 
-double *ruteLaengde){
+int antalValgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde){
 int i = 0;
 double lavesteLaengde = 10000;
 *ruteLaengde = 0;
 
 tempRute[i] = startAttraktion;
 
-for(i = 0; i < antalValgteAttraktioner-1; ++i){ 
-/*da der f.eks. kun er 4 kanter 
-imellem 5 punkter*/
+for(i = 0; i < antalValgteAttraktioner-1; ++i){ /*da der f.eks. kun er 4 kanter imellem 5 punkter*/
 tempRute[i]->besoegt = 1;
 int j = 0;
-for (j = 0; j < antalValgteAttraktioner; ++j)
-{
-if(valgteAttraktioner[j].besoegt != 1 && 
-findDist(*tempRute[i], 
-valgteAttraktioner[j], kanter) < lavesteLaengde){
-lavesteLaengde = findDist(*tempRute[i],
-valgteAttraktioner[j], kanter);
+for (j = 0; j < antalValgteAttraktioner; ++j){
+if(valgteAttraktioner[j].besoegt != 1 && findDist(*tempRute[i], valgteAttraktioner[j], kanter) < lavesteLaengde){
+lavesteLaengde = findDist(*tempRute[i],valgteAttraktioner[j], kanter);
 tempRute[i+1] = &valgteAttraktioner[j];
 }
 }
@@ -223,24 +208,15 @@ lavesteLaengde = 10000;
 }
 tempRute[antalValgteAttraktioner] 
 = startAttraktion;
-*ruteLaengde += 
-findDist(*tempRute[antalValgteAttraktioner-1], 
-*tempRute[antalValgteAttraktioner], kanter);
+*ruteLaengde += findDist(*tempRute[antalValgteAttraktioner-1], *tempRute[antalValgteAttraktioner], kanter);
 }
 \end{lstlisting}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\vspace{0pt}
-	\begin{center}
-		\includegraphics[scale=0.75]{findKortesteNaboRute}\newline
-		\textit{Figur 6.4: Flowchart over “findKortesteNaboRute” funktionen”}
-	\end{center}
-	\vspace{0pt}
-	\vspace{0pt}
-\end{wrapfigure}
-
 ”findKortesteNaboRute” benytter funktionen ”findNaboRute”, til at finde ud af hvilket startsted der giver den korteste rute. Dette gøres ved at sætte en variable til en stor værdi, som rutedistancen ikke vil gå over, og opdatere den hvis ”findNaboRute” returnere en distance for ruten gennem de givne attraktioner med en given start attraktion, der er lavere end de foregående ruter. ”findKortesteNaboRute” returnere et array med den korteste rute, og den samlede længde af denne rute.  \newline
-
+\begin{flushleft}
+	\includegraphics[scale=0.6]{findKortesteNaboRute}\newline
+	\textit{Figur 6.3: Flowchart over “findKortesteNaboRute” funktionen”}
+\end{flushleft}
 \begin{lstlisting}
 void findKortesteNaboRute(attraktion
 *valgteAttraktioner, 

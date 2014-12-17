@@ -55,5 +55,7 @@
 \contentsline {subsection}{\numberline {B.1.4}Lukkede og \IeC {\r a}bne sp\IeC {\o }rgsm\IeC {\r a}l}{47}{subsection.B.1.4}
 \contentsline {subsection}{\numberline {B.1.5}Passive teknikker}{47}{subsection.B.1.5}
 \contentsline {subsection}{\numberline {B.1.6}Aktiv sp\IeC {\o }rgeteknik}{47}{subsection.B.1.6}
-\contentsline {Bilag}{bliag}{47}{section*.6}
-\contentsline {appendix}{\chapternumberline {C}Transskribering - Bilag}{48}{appendix.C}
+\contentsline {appendix}{\chapternumberline {C}Interviewguide}{48}{appendix.C}
+\contentsline {appendix}{\chapternumberline {D}Transskribering}{49}{appendix.D}
+\contentsline {appendix}{\chapternumberline {E}Program koden}{56}{appendix.E}
+\contentsline {appendix}{\chapternumberline {F}Nyt p1 forslag}{64}{appendix.F}

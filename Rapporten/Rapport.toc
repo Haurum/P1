@@ -36,6 +36,7 @@
 \contentsline {section}{\numberline {8.1}Sp\IeC {\o }rgeskema}{32}{section.8.1}
 \contentsline {section}{\numberline {8.2}Interview}{33}{section.8.2}
 \contentsline {section}{\numberline {8.3}Programmet}{33}{section.8.3}
+\contentsline {section}{\numberline {8.4}Den interessante rute}{34}{section.8.4}
 \contentsline {chapter}{\chapternumberline {9}Konklusion \& Perspektivering}{35}{chapter.9}
 \contentsline {chapter}{Litteratur}{37}{section*.4}
 \contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{39}{appendix.A}
@@ -52,4 +53,5 @@
 \contentsline {subsection}{\numberline {B.1.4}Lukkede og \IeC {\r a}bne sp\IeC {\o }rgsm\IeC {\r a}l}{44}{subsection.B.1.4}
 \contentsline {subsection}{\numberline {B.1.5}Passive teknikker}{44}{subsection.B.1.5}
 \contentsline {subsection}{\numberline {B.1.6}Aktiv sp\IeC {\o }rgeteknik}{44}{subsection.B.1.6}
-\contentsline {section}{\numberline {B.2}Transskribering}{45}{section.B.2}
+\contentsline {Bilag}{bliag}{44}{section*.6}
+\contentsline {appendix}{\chapternumberline {C}Transskribering - Bilag}{45}{appendix.C}

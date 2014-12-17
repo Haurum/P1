@@ -1,6 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: Rapport.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Rapport.aux
 The style file: bibtex/harvard.bst
 A level-1 auxiliary file: formalia/forside.aux
 url: is an unknown function---line 320 of file bibtex/harvard.bst
@@ -50,45 +48,4 @@ while executing---line 1485 of file bibtex/harvard.bst
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry YouthCentral
 while executing---line 1485 of file bibtex/harvard.bst
-You've used 19 entries,
-            2921 wiz_defined-function locations,
-            716 strings with 7615 characters,
-and the built_in function-call counts, 6322 in all, are:
-= -- 599
-> -- 209
-< -- 38
-+ -- 77
-- -- 57
-* -- 369
-:= -- 1051
-add.period$ -- 93
-call.type$ -- 19
-change.case$ -- 38
-chr.to.int$ -- 18
-cite$ -- 39
-duplicate$ -- 402
-empty$ -- 578
-format.name$ -- 95
-if$ -- 1293
-int.to.chr$ -- 2
-int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 139
-num.names$ -- 95
-pop$ -- 122
-preamble$ -- 1
-purify$ -- 38
-quote$ -- 0
-skip$ -- 245
-stack$ -- 0
-substring$ -- 38
-swap$ -- 77
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 204
-warning$ -- 1
-while$ -- 57
-width$ -- 0
-write$ -- 325
 (There were 21 error messages)

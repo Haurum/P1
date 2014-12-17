@@ -1,14 +1,12 @@
-\chapter{Problemløsning}
-I dette kapitel vil gruppen beskrive hvilke krav gruppen stiller til projektet, hvilke teorier og algoritmer der er vigtige i forhold til projektet og hvordan gruppen har valgt at lave programmet, altså implementeringsprocessen.
 
-\section{Kravspecifikationer}
-I dette afsnit vil gruppen vurdere, hvilke krav der skal indegå i en løsning. Heri vil der både blive opstillet krav til en optimal løsning og til en afgrænset løsning, som gruppen mener at være realistisk, at kunne lave.
+\chapter{Kravspecifikationer}
+I dette afsnit vil gruppen vurdere, hvilke krav der skal indgå i en løsning. Heri vil der både blive opstillet krav til en optimal løsning og til en afgrænset løsning, som gruppen mener vil være realistisk, at kunne lave.
 
-\subsection{Optimale løsningsforslag}
+\section{Optimale løsningsforslag}
 For at kunne udvilke en softwareløsning, der besvarer gruppens problemformulering, er det vigtigt at definere nogle krav til programmet. Til en optimal løsning, har gruppen vurderet, at der skal være følgende krav:
 \begin{itemize}
 	\item Programmet skal udvikles som en applikation til moderne smartphones, inklusiv iOS, Android og Windows Phone.
-	\item Programmet skal hjælpe brugeren, til at lave en interresant rute gennem byen vedkommende vil besøge.
+	\item Programmet skal hjælpe brugeren, til at lave en interresant rute gennem byen, vedkommende vil besøge.
 	\item Programmet skal vise et overskueligt og scalerbart kort med ruten.
 	\item Ruten skal udskrives i samme stil som Google Maps.
 	\item Programmet skal kunne give rutevejledning undervejs på ruten. 
@@ -16,26 +14,25 @@ For at kunne udvilke en softwareløsning, der besvarer gruppens problemformuleri
 \end{itemize}
 Til disse krav har gruppen konstrueret nogle skitser og en beskrivelse af den optimale løsning, for at give et billede af hvordan det eventuelt kunne se ud. \newpage
 
-Gruppen har valgt at lave den ideele løsning på følgende måde:\newline
+Gruppen har valgt at lave den ideelle løsning på følgende måde:\newline
 \newline
 Brugeren bliver præsenteret for en liste over alle attraktioner i byen, sorteret efter afstand fra brugerens nuværende position, alfabetisk rækkefølge eller rating. \newline
-Ratingen vil blive fundet ved at tage gennemsnittet af alle brugeres rating af den specifikke attraktion. \newline
-Dette gøres for at give brugeren mulighed for at vælge de attraktioner vedkommende gerne vil se.\newline
+Ratingen vil blive fundet ved at tage gennemsnittet af alle brugeres rating af den specifikke attraktion. Dette gøres for at give brugeren mulighed for at vælge de attraktioner vedkommende gerne vil se.
 \newline
-Programmet skal under udvælgelsen give brugeren mulighed for at læse om de enkelte attraktioner, så brugeren kan foretage indformerede beslutninger om til og fravælgelse af attraktioner.\newline
+Programmet skal under udvælgelsen give brugeren mulighed for at læse om de enkelte attraktioner, så brugeren kan foretage informerede beslutninger om til- og fravælgelse af attraktioner.\newline
 \newline
-Når brugeren har valgt de attraktioner vedkommende vil besøge, udformes et kort med den korteste rute mellem disse attraktioner. På dette kort vil alle attraktioner som ligger indefor en forudbestemt afstand til ruten, blive vist. Derefter kan brugeren tilføje nogle ekstra attraktioner, som vil blive tilføjet til den endelige rute.\newline
-Dette gøres så brugeren kan udforme en mere interessant rute. Gruppen vil ikke diktere hvad den interessante rute er, men lade brugeren selv tilvælge, og derved få deres egen unikke interresante rute. \newline 
- 
+Når brugeren har valgt de attraktioner vedkommende vil besøge, udformes et kort med den korteste rute mellem disse attraktioner. På dette kort vil alle attraktioner som ligger indenfor en forudbestemt afstand til ruten, blive vist. Derefter kan brugeren tilføje nogle ekstra attraktioner, som vil blive tilføjet til den endelige rute.\newline
+Dette gøres så brugeren kan udforme en mere interessant rute. Gruppen vil ikke diktere hvad den interessante rute er, men lade brugeren selv tilvælge, og derved få deres egen unikke interessante rute. \newline 
+
 
 \begin{wrapfigure}{r}{0.3\textwidth}
-  \vspace{-20pt}
-  \begin{center}
-    \includegraphics[scale=0.35]{start1} \newline
-    \textit{Figur 3.1: Brugergrænseflade}\newline
-  \end{center}
-  \vspace{-20pt}
-  \vspace{-20pt}
+	\vspace{-20pt}
+	\begin{center}
+		\includegraphics[scale=0.35]{start1} \newline
+		\textit{Figur 3.1: Brugergrænseflade}\newline
+	\end{center}
+	\vspace{-20pt}
+	\vspace{-20pt}
 \end{wrapfigure}
 
 
@@ -45,12 +42,12 @@ Gruppen ønsker, at programmet skulle fungere på den måde, at der findes to va
 \newline
 
 \begin{wrapfigure}{l}{0.3\textwidth}
-  \vspace{-50pt}
-  \begin{center}
-    \includegraphics[scale=0.35]{start2} \newline
-    \textit{Figur 3.2: \newline Udvidet brugergrænseflade}\newline
-  \end{center}
-  \vspace{20pt}
+	\vspace{-50pt}
+	\begin{center}
+		\includegraphics[scale=0.35]{start2} \newline
+		\textit{Figur 3.2: \newline Udvidet brugergrænseflade}\newline
+	\end{center}
+	\vspace{20pt}
 \end{wrapfigure}
 
 Herudover ønsker gruppen, at der er en form for menu, som indeholder informationer omkring de forskellige attraktioner. Udover dette, skal der også være mulighed for at vælge et start- eller slutpunkt. Disse punkter skal give brugeren mulighed for at vælge, hvor brugeren ønsker at starte/slutte sin rute. Figur 3.2 viser en skitse af en udvidet brugergrænseflade.\newline
@@ -60,13 +57,13 @@ Herudover ønsker gruppen, at der er en form for menu, som indeholder informatio
 \newline
 
 \begin{wrapfigure}{r}{0.3\textwidth}
-  \vspace{-30pt}
-  \begin{center}
-    \includegraphics[scale=0.3]{rute1} \newline
-    \textit{Figur 3.3: Rute - Ruten er\newline hentet fra Maps.Google.com}\newline
-  \end{center}
-  \vspace{0pt}
-  \vspace{-100pt}
+	\vspace{-30pt}
+	\begin{center}
+		\includegraphics[scale=0.3]{rute1} \newline
+		\textit{Figur 3.3: Rute - Ruten er\newline hentet fra Maps.Google.com}\newline
+	\end{center}
+	\vspace{0pt}
+	\vspace{-100pt}
 \end{wrapfigure}
 
 
@@ -74,13 +71,13 @@ Når der er valgt nogle ønskede destinationer/attraktioner, skal programmet fre
 \newpage
 
 \begin{wrapfigure}{r}{0.3\textwidth}
-  \vspace{-20pt}
-  \begin{center}
-    \includegraphics[scale=0.3]{rute2} \newline
-    \textit{Figur 3.4: Udvidet rute - Ruten er hentet fra\newline Maps.Google.com}\newline
-  \end{center}
-  \vspace{-20pt}
-  \vspace{-10pt}
+	\vspace{-20pt}
+	\begin{center}
+		\includegraphics[scale=0.3]{rute2} \newline
+		\textit{Figur 3.4: Udvidet rute - Ruten er hentet fra\newline Maps.Google.com}\newline
+	\end{center}
+	\vspace{-20pt}
+	\vspace{-10pt}
 \end{wrapfigure}
 
 Der skal desuden også her være mulighed for at få information om attraktionerne, der er i nærheden af den valgte rute. Der skal være en "tilføj til nuværende rute"-funktion, som tilføjer de valgte attraktioner, som er i nærheden til den rute, der allerede er lavet. Figur 3.4 viser hvordan det eventuelt kunne laves. \newline
@@ -92,25 +89,27 @@ Der skal desuden også her være mulighed for at få information om attraktioner
 \newline
 \newline
 \newline
- 
 
-\subsection{Gruppens løsningsforslag}
-Gruppen har gennem spørgskema og interview, fået stillet en række krav til løsningen, af turister og VisitAalborg. 
+
+\section{Gruppens løsningsforslag}
+Gruppen har gennem spørgeskema og interview fået stillet en række krav til løsningen, af respondentgruppen og VisitAalborg. 
 Gennem spørgskemaet, blev det konkluderet, at det vigtigste for turister, er at de kan opleve byen på en interessant rute. 
-Derudover har turistbureauet givet udtryk for, at løsningen gerne skal være så enkelt som muligt, altså meget få funktioner, så brugeren ikke bliver forvirret, da de mener, at det er i turistens bedste interesse. \newline
+Derudover har turistbureauet givet udtryk for, at løsningen gerne skal være så enkelt som muligt, altså færrest mulige funktioner, så brugeren ikke bliver forvirret, da de mener, at det er i turistens bedste interesse. \newline
 Der er blevet stillet krav fra universitets side, om at programmet skal være et lille specifikt program i C, af høj kvalitet. Dette stemmer godt overens, med de krav der er blevet stillet fra turistbureauets side.   \newline
 Ud fra dette, har gruppen opsat nogle krav for gruppens løsningsforslag, og de er som følgende:
 \begin{itemize}
-	\item Programmet skal kunne beregne den korteste rute mellem en række punkter.
-	\item Programmet skal give beregne om der ligger en attraktion tæt ved ruten, og tilføje ekstra attraktionen til ruten.
- 	\item Programmet skal som output, give en liste over rutens destinationer.
+	\item Programmet skal kunne beregne en kort rute mellem en række punkter.
+	\item Programmet skal beregne om der ligger en attraktion mindre end 100 meter fra ruten, og tilføje ekstra attraktionen til ruten, hvis brugeren ønsker det.
+	\item Programmet skal som output give en liste over rutens destinationer, i den rækkefølge de skal besøges, i forhold til den korte rute.
 \end{itemize}
 
 Da dette er et P1 projekt, og gruppen er begrænset af både tid og erfaring, har gruppen valgt at begrænse softwareløsningen, på følgende punkter: 
 \begin{itemize}
-	\item Rutevejledningen bliver i fugleflugtslinje.
+	\item Afstanden mellem attraktioner vil blive beregnet i fugleflugtslinje.
 	\item Brugeren kan kun vælge destinationer ud fra en række forudbestemte punkter.
 	\item Tekstbaseret brugergrænseflade.
 \end{itemize}
 
-På baggrund af kravene og afgrænsningen, har gruppen tænkt sig at lave et program, som har nogle forudbestemte destinationer, der dækker over destinationerne i Aalborg, hvorefter brugeren vælger de destinationer han/hun ønsker at besøge. Programmet vil ud fra disse punkter, beregne den korteste rute, og undersøge om der er andre attraktioner, som ligger tæt på ruten, og spørge brugeren, om det kunne være interessant at besøge disse steder. Hvis ja, vil disse punkter også blive inkluderet. På den måde for brugeren selv lov til at skabe sig den mest interresante rute. Resultatet bliver en liste over destinationerne, der står i rækkefølge, så turisten ved hvilken rækkefølge de skal besøge dem i, for at få den mest optimale rute.
+På baggrund af kravene og afgrænsningen, har gruppen valgt at lave et program, som har nogle forudbestemte destinationer, der dækker over attraktioner i Aalborg, hvorefter brugeren vælger de attraktioner vedkommende ønsker at besøge. Programmet vil ud fra disse punkter, beregne en kort rute, og undersøge om der er andre attraktioner, som ligger tæt på ruten, og spørge brugeren, om det kunne være interessant at besøge disse steder. Hvis ja, vil disse punkter også blive inkluderet. På den måde får brugeren selv lov til at skabe sig den mest interessante rute. Resultatet bliver en liste over destinationerne, der står i rækkefølge, så turisten ved hvilken rækkefølge de skal besøge dem i, for at få den mest optimale rute.
+
+Det næste afsnit vil omhandle de teorier, som beskriver de formler, algoritmer og metoder, der er brugt i løsningen.

@@ -28,15 +28,14 @@
 \contentsline {subsection}{\numberline {5.0.1}Grafteori}{16}{subsection.5.0.1}
 \contentsline {subsection}{\numberline {5.0.2}Vektorteori}{18}{subsection.5.0.2}
 \contentsline {chapter}{\chapternumberline {6}Implementering}{22}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.3}Programbeskrivelse}{22}{subsection.6.0.3}
-\contentsline {subsection}{\numberline {6.0.4}Beskrivelse af structs}{22}{subsection.6.0.4}
-\contentsline {subsection}{\numberline {6.0.5}Beskrivelse af funktioner}{23}{subsection.6.0.5}
+\contentsline {section}{\numberline {6.1}Programbeskrivelse}{22}{section.6.1}
+\contentsline {section}{\numberline {6.2}Beskrivelse af structs}{22}{section.6.2}
+\contentsline {section}{\numberline {6.3}Beskrivelse af funktioner}{23}{section.6.3}
 \contentsline {chapter}{\chapternumberline {7}Test}{31}{chapter.7}
 \contentsline {chapter}{\chapternumberline {8}Diskussion}{34}{chapter.8}
 \contentsline {section}{\numberline {8.1}Sp\IeC {\o }rgeskema}{34}{section.8.1}
-\contentsline {section}{\numberline {8.2}Interview}{34}{section.8.2}
+\contentsline {section}{\numberline {8.2}Interview}{35}{section.8.2}
 \contentsline {section}{\numberline {8.3}Programmet}{35}{section.8.3}
-\contentsline {section}{\numberline {8.4}Algoritmer}{35}{section.8.4}
 \contentsline {chapter}{\chapternumberline {9}Konklusion \& Perspektivering}{37}{chapter.9}
 \contentsline {chapter}{Litteratur}{39}{section*.4}
 \contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{41}{appendix.A}

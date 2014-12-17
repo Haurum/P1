@@ -1,8 +1,21 @@
 \chapter{Implementering}
 I dette afsnit vil programmet blive beskrevet, både en overordnet programbeskrivelse og en dybdegående forklaring af programmets funktioner. Derudover vil der blive beskrevet hvordan brugeren interagere med programmet. 
 
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\vspace{-40pt}
+	\begin{center}
+		\includegraphics[scale=0.75]{program}\newline
+		\textit{Figur 4.x: Rute - Ruten er hentet fra Maps.Google.com}
+	\end{center}
+	\vspace{0pt}
+	\vspace{0pt}
+\end{wrapfigure}
+
 \subsection{Programbeskrivelse}
 Programmet begynder med at indlæse alle de forudbestemte tilgængelige attraktioner fra en tekstfil. Alle disse attraktioner bliver vist på en liste for brugeren i kommandopromten med numre ud for hver attraktion. Brugeren vælger så hvilke attraktioner vedkommende har lyst til at besøge, ved at indtaste attraktionens nummer, hvor attraktionen så vil blive tilføjet til en liste. Denne liste kører gennem programmet, og den korteste rute bestemmes. Programmet tjekker derefter, for nærliggende attraktioner der kan tilføjes til ruten, på samme måde som i begyndelsen da de valgte attraktioner til deres rute. Hvis brugeren vælger ekstra attraktioner til deres rute, kører programmet igen, og den nye rute beregnes.  Når ruten er beregnet, vil ruten blive vist på skærmen, i den beregnede rækkefølge. Den samlede længde af ruten vil også blive vist.
+
+
+
 \subsection{Beskrivelse af structs}
 Til programmet bruges fire forskellige structs. Den første struct er "attraktion", som indeholder to strings, "navn" og "adresse", to doubles, "kmFraGreenwich" og "kmFraAekvator", og en int, "besoegt", der beskriver om attraktionen er besøgt eller ej. Denne struct bruges til at opdele og gamme de enkelte attraktioners data i programmet.\newline
 
@@ -108,6 +121,16 @@ double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
 }
 \end{lstlisting}
 
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\vspace{0pt}
+	\begin{center}
+		\includegraphics[scale=0.75]{valgAfAttraktioner}\newline
+		\textit{Figur 4.x: Rute - Ruten er hentet fra Maps.Google.com}
+	\end{center}
+	\vspace{0pt}
+	\vspace{0pt}
+\end{wrapfigure}
+
 Brugeren bliver præsenteret for en liste over alle tilgængelige attraktioner fra inputparameteren, og attraktionernes tilhørende nummer i funktionen "valgafAttraktioner. Brugeren bliver bedt om at indtaste attraktionernes matchende numre, hvilket vil blive tilføket til en list. Taster brugeren 0, bliver brugeren præsentere for sine valg, og beregninger af den korteste rute igangsættes. Programmet returnere listan af valgte attraktioner. \newline
 
 \begin{lstlisting}
@@ -149,7 +172,17 @@ void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner
 	*antalValgteAttraktioner = j;
 }
 \end{lstlisting}
-	
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\vspace{0pt}
+	\begin{center}
+		\includegraphics[scale=0.75]{findnaborute}\newline
+		\textit{Figur 4.x: Rute - Ruten er hentet fra Maps.Google.com}
+	\end{center}
+	\vspace{0pt}
+	\vspace{0pt}
+\end{wrapfigure}
+
 Funktionen ”findNaboRute” benytter NNA (Nearest Neighbour Algorithm, eller Nærmeste Nabo Algoritme), til at finde den korteste rute mellem en række attraktioner for et bestemt startsted, der er opgivet i inputparametrene. Efter at have fundet den korteste rute ud fra NNA som en beskrevet i teoriafsnittet X, returnere den et array med ruten og distancen for denne rute. \newline
 
 \begin{lstlisting}
@@ -177,6 +210,16 @@ void findNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, a
 	*ruteLaengde += findDist(*tempRute[antalValgteAttraktioner-1], *tempRute[antalValgteAttraktioner], kanter);
 }
 \end{lstlisting}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\vspace{0pt}
+	\begin{center}
+		\includegraphics[scale=0.75]{findKortesteNaboRute}\newline
+		\textit{Figur 4.x: Rute - Ruten er hentet fra Maps.Google.com}
+	\end{center}
+	\vspace{0pt}
+	\vspace{0pt}
+\end{wrapfigure}
 
 ”findKortesteNaboRute” benytter funktionen ”findNaboRute”, til at finde ud af hvilket startsted der giver den korteste rute. Dette gøres ved at sætte en variable til en stor værdi, som rutedistancen ikke vil gå over, og opdatere den hvis ”findNaboRute” returnere en distance for ruten gennem de givne attraktioner med en given start attraktion, der er lavere end de forgående ruter. ”findKortesteNaboRute” returnere et array med en korteste rute, og den samlede længde af denne rute.  \newline
 
@@ -337,18 +380,3 @@ void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttra
 	}
 }
 \end{lstlisting}
-
-\subsection{Flowcharts}
-Til overstående funktioner er der lavet flowcharts, over programmets funktionalitet og udførelse, samt hvordan de arbejder sammen.\newline
-
-\begin{wrapfigure}{r}{0.5\textwidth}
-  \vspace{-40pt}
-  \begin{center}
-    \includegraphics[scale=0.75]{program}\newline
-    \textit{Figur 4.x: Rute - Ruten er hentet fra Maps.Google.com}
-  \end{center}
-  \vspace{0pt}
-  \vspace{0pt}
-\end{wrapfigure}
-
-Der kommer flere flowcharts

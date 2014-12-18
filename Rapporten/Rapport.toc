@@ -26,6 +26,10 @@
 \contentsline {section}{\numberline {4.2}Gruppens l\IeC {\o }sningsforslag}{13}{section.4.2}
 \contentsline {chapter}{\chapternumberline {5}Teori}{15}{chapter.5}
 \contentsline {section}{\numberline {5.1}Grafteori}{15}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Begrebsbeskrivelse}{15}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Nearest neighbour algoritmen}{16}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Dijkstra's algoritme}{16}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Opsummering}{17}{subsection.5.1.4}
 \contentsline {section}{\numberline {5.2}Vektorteori}{17}{section.5.2}
 \contentsline {section}{\numberline {5.3}Positionsbestemmelse}{20}{section.5.3}
 \contentsline {chapter}{\chapternumberline {6}Implementering}{21}{chapter.6}

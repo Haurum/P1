@@ -2,86 +2,87 @@
 I dette afsnit vil teorien, der ligger til grund for programmet, blive beskrevet, hvorunder tre hovedafsnit findes. Grafteori vil være det første afsnit, efterfulgt af vektorteori og  positionsbestemmelse. Under grafteori vil et par forskellige algoritmer tages i brug, hvoraf den bedste match til programmet findes. I grafteorien vil Nearest neighbor, Dijkstra’s algoritme og Double Minimum Spanning Tree algoritmerne blive beskrevet. I vektorteorien vil teorien bag udregning af afstanden mellem to knuder, eller en knude og en rute gøres rede for. Denne teori vil blive brugt i programmet til dannelse af rute, og udregning af nærliggende attraktioner.
 
 \section{Grafteori}
-Grafteori er et afsnit i denne rapport, som omhandler en generel forklaring på grafteori, hvorefter teorien bag Nearest neighbor algoritme, Dijkstra’s algoritme, Double Minimum Spanning Tree og Traveling salesman problem vil blive beskrevet. Alt dette beskrives, for at give et udgangspunkt for implementering af en hensigtsmæssig algoritme i programmet for denne rapport.\newline
-Matematikken bag grafteori er ét aspekt af emnet, hvor visualisering og tegning er en anden. Den matematiske del behandler kombinationerne af knuder og kanter. En knude er et punkt, i dette tilfælde en attraktion, som skal besøges, hvor en kant er ruten mellem to knuder. En kant er derfor længden fra ét punkt til det næste \citep{GraphTheory}.
-I grafteori er begrebet ”graf” mere fleksibelt, da punkterne ikke nødvendigvis har x, y eller z værdier, alt efter antallet af dimensioner det behandles i. Grafen er en afbildning af punkter i en form, der virker hensigtsmæssig. Heraf opstår isomorfe modeller, som er forskellige afbildninger, af selv samme graf. 
+Grafteori er et afsnit i denne rapport, som omhandler en generel forklaring på grafteori, hvorefter teorien bag Nearest neighbor algoritmen, Dijkstra’s algoritmen, Double Minimum Spanning Tree og Traveling salesman problem vil blive beskrevet. Alt dette beskrives, for at give et udgangspunkt for implementering af en hensigtsmæssig algoritme i programmet for denne rapport.
 
-\begin{wrapfigure}{}{0.6\textwidth}
-	\vspace{-20pt}
-	\begin{center}
-		\includegraphics[scale=0.8]{grafteori1} \newline
-		\textit{Figur 5.1: Isomorfe modeller}\newline
-	\end{center}
-	\vspace{-20pt}
-	\vspace{-20pt}
-\end{wrapfigure}
+\subsection{Begrebsbeskrivelse}
+En knude er et punkt på grafen. Knuder vil i denen rapports sammenhæng være attraktioner. \newline
+En kant forbinder to knuder. Kanter kan vægtes, i denne rapport vil vægtningen af kanter være afstanden mellem de to knuder som kanten forbinder. \newline
+En path er en rute gennem et antal knuder, hvor startknuden ikke er endeknuden. \newline
+Et circuit er en rute gennem et antal knuder, hvor startknuden også er endeknuden. \newline
+Et  Hamiltonian circuit er et circuit, hvori alle knuder er besøgt én gang, med undtagelse af slutpunktet, som skal være det samme som startpunktet. \newline
+I denne rapport søges et circuit, som går igennem alle knuder én gang, hvor en samlet vægtning af kanterne (længden af ruten) bliver så kort som mulig. Dette er i grafteori også kaldet Traveling Saleman Problem. En umiddelbar løsning til TSP ville ville være at undersøge alle mulige Hamiltonian circuits, og finde den korteste. Problemet er, at når en graf med n knuder skal undersøges, skal der bruges (n–1)!/2 udregninger. Dette skyldes, at efter en startknude er valgt, vil der være (n – 1) mulige knuder som næste punkt, og derefter (n – 2) osv. Da der ikke er en bestemt retning på Hamiltonian circuits, vil der altid være to veje, hvor den ene beskriver den anden  bare omvendt. Derfor fås (n – 1)!/2. 
+Med 25 knuder vil der være (24)!/2, som svarer til \[3.1 * 10^{23}\] forskellige Hamiltonian circuits. Hvis det antages, at det tager et nanosekund at udregne ét Hamiltonian circuit, vil dette tage cirka 10 millioner år, at udregne alle circuits, og finde den optimale. Derfor bruges algoritmer, som udregner en løsning som er tæt på den optimale. Nedenfor vil tre sådanne algoritmer blive beskrevet. \citep{DisMat}
 
-Denne matematik-type er stadig under udforskning, da der endnu ikke er en fuldstændig løsning på problemer i teorien, for blandt andet ”Traveling salesman problem”. Heriblandt findes mange typer af problemer, hvor forskellige teoretiske løsninger kan bruges. 
-En af problematikkerne vedrørende Traveling salesman problem er,
-at der ønskes både en optimal rute, og en en hensigtsmæssig udregningstid. Dette problem opstår i det, at en optimal rute skal findes mellem et hvis antal byer (knuder), hvor man i ét kan lave en hurtig estimeret ”kort” rute, hvis man starter med at lave tilfældige kanter fra knuderne, dog ikke mere end to kanter per knude, og derefter tester for, hvorvidt to nye kanter er kortere end to eksisterende kanter. På et tidspunkt vil en semi-optimal rute findes, dog er denne ikke nødvendigvis den fuldt optimale rute. Dette skyldes, at der igennem forløbet med udskiftning af kanter muligvis er truffet valg om rute som fører til, at en kortere kant ikke kan findes lokalt, men at den sammenlagte rute stadig ikke er optimal. Hvis der er fundet korte kanter lokalt, kan dette stoppe søgen i en kortere kant, da den korteste lokale kant er fundet, men ikke den korteste kant, hvis der tages hensyn til den sammenlagte kant-værdi. \citep{TSP} \newline
-
-\textbf{Nearest neighbor algoritme}\newline
-En af disse løsninger er Nearest neighbor algoritme, som behandler et problem der opstår, når en række knuder skal indgå, og kun skal indgå én gang, hvilket betyder, at der ikke må være en løkke (loop). Dette opnåes gennem brug af Hamiltonian Paths, hvilket er en ”rute” gennem knuder på grafen. I NNA vil en kant have en værdi, og disse værdier er bestemmende for, hvilken kant der skal følges. Fra den knude der behandles, skal kanten med den laveste værdi følges. Dette kan dog optimeres, ved at lave en matrice over kanterne fra alle knuder. Her tages højde for hvilke kanter der samlet set giver den korteste rute, uden brug af løkker. \citep{NNA}
-\newline
-
-
+\subsection{Nearest neighbour algoritmen}
 \begin{wrapfigure}{}{0.4\textwidth}
-	\vspace{-40pt}
+	\vspace{70pt}
 	\begin{center}
 		\includegraphics[scale=0.8]{grafteori2} \newline
-		\textit{ Figur 5.2: Hamiltonian Path. \newline Følger kanter med laveste værdier.}
+		\textit{ Figur 5.1: Hamiltonian Circuit. \newline Følger kanter med laveste værdier.}
 	\end{center}
 	\vspace{-10pt}
 \end{wrapfigure}
+Fremgangsmetode: \newline
+Vælg en startknude. \newline
+Følg kanten med den laveste vægtning. \newline
+Check om der er flere ubesøgte knuder tilbage, hvis ja, gå tilbage til trin 2. \newline
+Gå tilbage til startknuden. \newline
+Fra den knude der behandles, skal kanten med den laveste værdi følges. Hvis alle knuder er besøgt, skal kanten der går tilbage til startknuden vælges. \newline
+Eksempelvis i dette tilfælde (figur 5.1),  er den endelige rutes længde, udregnet med NNA: 1+5+4+8+2 = 20. \newline
+NNA udregner ikke med sikkerhed en optimal rute, hvilket skyldes at den ikke tager højde for konsekvenserne af de skridt den tager. Selvom det første skridt er det korteste blandt de mulige, kan det i det lange løb godt ende med at blive en meget længere rute der bliver sammensat. En måde dette kan optimiseres, er ved at køre NNA flere gange med forskellige startpunkter. Her kaldet en udvidet NNA. Nedenfor er en udvidet NNA beskrevet. \newline
+Fremgangsmetode: \newline
+Udfør NNA på en ny ikke testet startknude. \newline
+Er der knuder der ikke er testet som startknude, hvis ja, gå tilbage til trin 1. \newline
+Vælg det korteste circuit af de testede. \newline
 
-I dette tilfælde (figur 5.2), er den endelige rutes længde: 1+5+4+8 = 18. Spørgsmålet er så, er dette den koreste rute? Herefter opstilles en matrix, der beskriver alle kanter.
 
 \begin{tabular}{| l | l | l | l | l | l |}
 	\hline
-	& A & B & C & D & E \\ \hline
-	A & - & 3 & 1 & - & 2 \\ \hline
-	B & 3 & - & - & 3 & 8 \\ \hline
-	C & 1 & - & - & 5 & 6 \\ \hline
-	D & - & 4 & 5 & - & 7 \\ \hline
-	E & 2 & 8 & 6 & 7 & - \\
+	& A & B & C & D  \\ \hline
+	A & - & 8 & 1 & 2 \\ \hline
+	B & 8 & - & 6 & 3  \\ \hline
+	C & 1 & 6 & - & 5  \\ \hline
+	D & 2 & 4 & 5 & -  \\ \hline
 	\hline
 \end{tabular}\newline
 
-
 De mulige ruter er: \newline
-ABDCE = 3+4+5+6 = 18. \newline
-ACDBE = 1+5+4+8 = 18. \newline
-AEBDC = 2+8+4+5 = 19. \newline
-ABECD = 3+8+6+5 = 22. \newline
-ABEDC = 3+8+7+5 = 23. \newline
-ACEBD = 1+6+8+4 = 19. \newline
-ACEDB = 1+6+7+4 = 18. \newline
-AECDB = 2+6+5+4 = 17. \newline
+ACDBA = 1 + 5 + 4 + 8 = 18\newline
+BDACB = 4 + 2 + 1 + 6 = 13\newline
+CADBC = 1 + 2 + 4 + 6 = 13\newline
+DACBD = 2 + 1 + 6 + 4 = 13\newline
+Den korteste rute er altså BDACB, hvilket er 5 kortere end den antagede rute. Den optimale circuit fundet med udvidet NNA er derfor denne rute. Dette tager standard NNA ikke højde for, da den starter i en valgt start-knude, og derefter følger kanten, med den derfra laveste værdi. NNA kræver ikke lige så mange beregninger som en brute force udregning kræver, og kan derfor bruges i praksis, dog er den ikke sikker på at finde den optimale rute.
 
-Den korteste rute er altså AECDB, hvilket er 1 kortere end den antagede rute. Den optimale Hamiltonian Path er derfor denne rute. Dette tager NNA ikke højde for, da den starter i en valgt start-knude, og derefter følger kanten, med den derfra laveste værdi. Det smarte ved NNA er, at den ikke kræver meget kraft for en computer at udføre, hvorimod at finde den optimale Hamiltonian rute, vil være langt mere compliceret. NNA tager dog ikke højde for, hvad konsekvenser de skridt den tager, har for det endelige resultat.
 
-\textbf{Dijkstra's algoritme}\newline
-Udover NNA, findes også Dijkstra’s algoritme, hvor første step er, at bestemme ende-knuden, og sætte dens distance til nul. Denne knude sættes til at være den første knude, som behandles. I det en knude er checket færdig, vil denne knude markeres som ”besøgt”, og kanten med den mindste værdi følges, og næste knude markeres som ”nuværende” knude. En kant bliver kun fulgt, hvis det er den korteste rute, tilregnet tidligere kanter.
+\subsection{Dijkstra's algoritme}
+Udover NNA, findes også Dijkstra’s algoritme, hvor første trin er, at bestemme ende-knuden, og sætte dens distance til nul. Denne knude sættes til at være den første knude, som behandles. I det en knude er checket færdig, vil denne knude markeres som ”besøgt”, og kanten med den mindste værdi følges, og næste knude markeres som ”nuværende” knude. En kant bliver kun fulgt, hvis det er den korteste rute, tilregnet tidligere kanter.
 Problematikken med Dijkstra’s algoritme i forhold til dette projekt er, at den checker den korteste rute fra start-knude til slut-knude, men den indkluderer ikke nødvendigvis alle knuder som oplyses. I det denne rapport er afgrænset til fugleflugtslinjer, vil Dijkstra’s ikke være den optimale. Hvis en rute igennem en by, hvor der er tilregnet veje, stier og andre knuder, vil Dijkstra’s være det bedste valg. Denne algoritme vil også være i brug ved den optimale løsning. Ved brug af Dijkstra’s algoritme, vil den nuværende rute altid blive testet for, hvorvidt ruten der undersøges efter, er kortere eller længere end den hidtil korteste rute. Hvis den er kortere, vil denne rute blive sat som den hidtil korteste rute. \citep{Dijkstra}
 
-/textbf{Double Minimum Spanning Tree}
-Double Minimum Spanning Tree er algoritmen der ligger til grund for Christofides algoritme, hvor DMST hart re steps: Først oprettes et minimal spanning tree, som indkluderer alle knuder, hvorefter alle kanter duplikeres, og så skal den korteste rute findes mellem disse kanter, hvor en knude kun besøges én gang. Hvis ikke der er ubrugte kanter, oprettes en ”genvej” fra den nuværende knude til en ubesøgt knude \citep{DMST}. Denne metode kræver flere kræfter at køre end NNA, da NNA er en ringere algoritme til at finde den korteste rute, men dette projekt forholder sig til at finde en relativ kort rute, hvoraf en interessant rute kan findes.
+/subsection{Double Minimum Spanning Tree}
+Double Minimum Spanning Tree er algoritmen der ligger til grund for Christofides algoritme, hvor DMST har tre trin: \newline
+Først oprettes et minimum spanning tree, som indkluderer alle knuder. \newline
+Alle kanter duplikeres. \newline
+Den korteste rute findes mellem disse kanter, hvor en knude kun besøges én gang. \newline
+Hvis der ikke er kanter til ubesøgte knuder, oprettes en ”genvej” fra den nuværende knude til en ubesøgt knude \citep{DMST}. \newline
+Et minimum spanning tree findes ved at tage så få kanter som muligt, med den laveste vægtning, så alle knuder er besøgt blot én gang.
 
-
+\subsection{Opsummering}
+Da dette projekt forholder sig til en forholdvis kort rute, men hovedsagligt tager udgangspunkt i en rute hvortil der kan tilføjes flere punkter, for at lave en interessant rute, er NNA valgt som den bedste kandidat. Dette skyldes, at Dijkstra’s ikke nødvendigvis indkluderer alle knuder, da den finder en kort rute fra startpunkt til slutpunkt. DMST finder en mere optimal rute end NNA, men samtidig kræver den længere tid at udregne, og derfor blev NNA valgt som den optimale algoritme til dette projekt.
 
 \section{Vektorteori}
-Essensen i dette projekt er at finde en flerpunktsrute mellem nogle valgte attraktioner, hvor brugeren skal have mulighed for, at vælge nogle attraktioner til deres rute. Gruppen vil ikke diktere hvad en interessant rute er for brugeren, derfor skal de have muligheden for at vælge de foreslåede attraktioner til eller fra.
 
 \begin{wrapfigure}{}{0.4\textwidth}
 	\vspace{-10pt}
 	\begin{center}
 		\includegraphics[scale=0.6]{matematikteori1} \newline
-		\textit{Figur 5.3: Eksempel på om en attraktion er indenfor punkt a og b.}\newline
+		\textit{Figur 5.2: Eksempel på om en attraktion er indenfor punkt a og b.}\newline
 	\end{center}
-	\vspace{-20pt}
+	\vspace{-40pt}
 \end{wrapfigure}
 
-Der tages nu udgangspunkt i figur 5.1. En del af brugerens rute ligger fra attraktion a til attraktion b. Der skal nu tjekkes om der ligger andre attraktioner mellem afstanden fra a til b (eller AB), og med bredden AD hvor brugeren vil blive spurgt om denne attraktion skal tilføjes til ruten. AD er i projektets program sat til at være V * 2. Dette vil blive udregnet vha. vektorer 
+Essensen i dette projekt er at finde en flerpunktsrute mellem nogle valgte attraktioner, hvor brugeren skal have mulighed for, at vælge nogle attraktioner til deres rute. Gruppen vil ikke diktere hvad en interessant rute er for brugeren, derfor skal de have muligheden for at vælge de foreslåede attraktioner til eller fra.
+
+Der tages nu udgangspunkt i figur 5.2. En del af brugerens rute ligger fra attraktion a til attraktion b. Der skal nu tjekkes om der ligger andre attraktioner mellem afstanden fra a til b (eller AB), og med bredden AD hvor brugeren vil blive spurgt om denne attraktion skal tilføjes til ruten. AD er i projektets program sat til at være V * 2. Dette vil blive udregnet vha. vektorer 
 Hvis der antages at punktet P er en attraktion som programmet skal tjekke, ligger denne inden for længden af ruten AB og bredden AD. Dette tjekkes med følgende formel:
 \[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 Hvor prikproduktet af vektorerne AP og AB, skal være større end 0 og mindre end prikproduktet af vektorerne AB og AB. Det samme vil gælde for AD i stedet for AB.
@@ -114,36 +115,36 @@ Vektor AP: A(1,5) og P(5,4): \[ \overrightarrow{AP} = \begin{bmatrix}5-1 \\ 4-5\
 For at projektere AP på AB skal følgende formel benyttes: \citep{ProjektionAfVektor} \[ b_{a} = (\frac{a*b}{|a|^2}) * a \]
 Med denne formel vil vektoren b blive projekteret på vektoren a. I tælleren findes prikproduktet som kan findes ved at: \[ a \cdot b = \begin{matrix}X1 * X2 \\ Y1 * Y2\end{matrix}  \]
 I nævneren findes længden på vektor a i anden, som kan regnes ved at sige: \[ \sqrt{ax^2+ay^2}^2 \]
-Hvis der forsat tages udgangspunkt i eksemplet med figur 5.1, vil projektionen af AP på AB se således ud:
+Hvis der forsat tages udgangspunkt i eksemplet med figur 5.2, vil projektionen af AP på AB kunne ses på figur 5.3:
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+	\vspace{-20pt}
+	\begin{center}
+		\includegraphics[scale=0.6]{matematikteori2} \newline
+		\textit{Figur 5.3: Fortsat eksempel på om en attraktion er indenfor punkt a og b.}\newline
+	\end{center}
+	\vspace{-20pt}
+\end{wrapfigure}
+
 Prikproduktet af vektorerne: \[ \overrightarrow{AP} \cdot \overrightarrow{AB} = \begin{bmatrix} 4 & 6 \\ -1 & 0 \end{bmatrix} = 4*6+(-1)*0 = 24 \]
 Længden af AB opløftet i anden vil være: \[ \sqrt{6^2+0^2}^2 = 36 \]
 Ud fra dette kan vektoren fra projektionen af AP på AB findes: 
 \[ \frac{24}{36} * \begin{bmatrix} 6 \\ 0 \end{bmatrix} \rightarrow \frac{24}{36} * 6 \wedge \frac{24}{36} * 0 = \begin{bmatrix} 4 \\ 0 \end{bmatrix} \]
 Hvor resultatet vil give en ny vektor: \[ \begin{bmatrix} 4 \\ 0 \end{bmatrix} \text{ ,} \] 
-\begin{wrapfigure}{r}{0.4\textwidth}
-	\vspace{0pt}
-	\begin{center}
-		\includegraphics[scale=0.6]{matematikteori2} \newline
-		\textit{Figur 5.4: Fortsat eksempel på om en attraktion er indenfor punkt a og b.}\newline
-	\end{center}
-	\vspace{-20pt}
-\end{wrapfigure}
 som også vil have startpunkt i A. Hvis der igen tages udgangspunkt i formlen:\newline
 \[0 < AP \cdot AB < AB \cdot AB \wedge 0 < AP \cdot AD < AD \cdot AD \]
 overholder punktet P første del, og ovenstående metode skal derfor gentages med vektoren AD i stedet for AB, for matematisk at finde ud af om punktet ligger inden 	for den afsatte bredde og længden af ruten a til b. Ved udregning af projektionen af AP på AD vil den nye vektor hedde: \[ \begin{bmatrix} 0 \\ -1 \end{bmatrix} \text{ .} \]\newline
-
 \textbf{Opsummering}\newline
 I grafteorien blev der konkluderet, at Nearest Neighbor algoritmen er den mest egnede til programmet, da dette projekt forholder sig til udregning af en relativt kort rute, hvorved en interessant rute kan findes efterfølgende. Vektorteorien gjorde grund for udregning af, hvilke attraktioner der er nærliggende, så en interessant rute kan findes ud fra ruten der i første omgang bliver dannet af NNA.
 
-
 \section{Positionsbestemmelse}
 \begin{wrapfigure}{r}{0.4\textwidth}
-	\vspace{0pt}
+	\vspace{-20pt}
 	\begin{center}
-		\includegraphics[scale=0.4]{globerapport} \newline
+		\includegraphics[scale=0.3]{globerapport} \newline
 		\textit{Figur 5.4: Fortsat eksempel på om en attraktion er indenfor punkt a og b.}\newline
 	\end{center}
-	\vspace{-20pt}
+	\vspace{-30pt}
 \end{wrapfigure}
 I projektet bruges længde- og breddegrader til at udregne afstanden mellem attraktionerne. Dette sker kort sagt ved, at finde to koordinatsæt og bruge pythagoras’ sætning til at udregne afstanden. I dette afsnit vil der være en kort forklaring om længde- og breddegrader, og hvordan gruppen har brugt dem i dette projekt.\newline
 Længdegrader er de lodrette streger der kan ses på globussen i figur X. De lodrette streger kaldes for en meridian, hvor disse vil have mindre afstand mellem hinanden i nærheden af de geografiske poler, i forhold til når de er tæt ved ækvator. De vandrette streger er breddegrader, hvor disse er kaldt paralleller. Breddegradernes afstand ændre sig ikke på samme måde som længdegraderne. \citep{PM} \newline

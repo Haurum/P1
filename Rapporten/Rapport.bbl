@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -49,20 +49,6 @@
 \newblock \url{http://home.online.no/~sigurdhu/Grid_1deg.htm}, 1999.
 \newblock Set d. 11/12-2014.
 
-\bibitem[JMT(2010)]{GraphTheory}
-\textbf{JMT}, \textbf{2010}.
-\newblock Patrick JMT.
-\newblock \textit{Graph Theory - An Introduction!}
-\newblock \url{https://www.youtube.com/watch?v=HmQR8Xy9DeM}, 2010.
-\newblock Set d. 09/12-2014.
-
-\bibitem[Kolpack(2013)]{TSP}
-\textbf{Kolpack}, \textbf{2013}.
-\newblock James Kolpack.
-\newblock \textit{Traveling Salesman Problem Visualization}.
-\newblock \url{https://www.youtube.com/watch?v=SC5CX8drAtU}, 2013.
-\newblock Set d. 09/12-2014.
-
 \bibitem[MatematikFessor(2014)]{ProjektionAfVektor}
 \textbf{MatematikFessor}, \textbf{2014}.
 \newblock MatematikFessor.
@@ -72,18 +58,11 @@
   2014.
 \newblock Set d. 16/12-2014.
 
-\bibitem[Mathispower4u(2013{\natexlab{a}})]{Dijkstra}
-\textbf{Mathispower4u}, \textbf{2013{\natexlab{a}}}.
+\bibitem[Mathispower4u(2013)]{Dijkstra}
+\textbf{Mathispower4u}, \textbf{2013}.
 \newblock Mathispower4u.
 \newblock \textit{Graph Theory: Dijkstra's Algorithm}.
 \newblock \url{https://www.youtube.com/watch?v=KvRwplnIoEM}, 2013.
-\newblock Set d. 09/12-2014.
-
-\bibitem[Mathispower4u(2013{\natexlab{b}})]{NNA}
-\textbf{Mathispower4u}, \textbf{2013{\natexlab{b}}}.
-\newblock Mathispower4u.
-\newblock \textit{Graph Theory: Nearest Neighbor Algorithm (NNA)}.
-\newblock \url{https://www.youtube.com/watch?v=zPgsNsOfxQ8}, 2013.
 \newblock Set d. 09/12-2014.
 
 \bibitem[Nilsson(2003)]{DMST}
@@ -116,6 +95,13 @@
 \newblock \textit{Forbrugerrådet: Pengeløse butikker udelukker kunder}.
 \newblock \url{http://www.information.dk/telegram/496765}, 2014.
 \newblock Set d. 20/11-2014.
+
+\bibitem[Rosen(2011)]{DisMat}
+\textbf{Rosen}, \textbf{2011}.
+\newblock Kenneth~H. Rosen.
+\newblock \textit{Discrete Mathematics and its Applications}.
+\newblock pdfbook. McGraw-Hill, 2011.
+\newblock s. 715.
 
 \bibitem[TDC(2014)]{TDC}
 \textbf{TDC}, \textbf{2014}.

@@ -36,30 +36,30 @@
 \contentsline {section}{\numberline {6.1}Programbeskrivelse}{21}{section.6.1}
 \contentsline {section}{\numberline {6.2}Beskrivelse af structs}{21}{section.6.2}
 \contentsline {section}{\numberline {6.3}Beskrivelse af funktioner}{22}{section.6.3}
-\contentsline {chapter}{\chapternumberline {7}Test}{30}{chapter.7}
-\contentsline {section}{\numberline {7.1}Testcases}{30}{section.7.1}
-\contentsline {chapter}{\chapternumberline {8}Diskussion}{33}{chapter.8}
-\contentsline {section}{\numberline {8.1}Sp\IeC {\o }rgeskema}{33}{section.8.1}
-\contentsline {section}{\numberline {8.2}Interview}{34}{section.8.2}
-\contentsline {section}{\numberline {8.3}Programmet}{34}{section.8.3}
-\contentsline {section}{\numberline {8.4}Den interessante rute}{35}{section.8.4}
-\contentsline {chapter}{\chapternumberline {9}Konklusion \& Perspektivering}{36}{chapter.9}
-\contentsline {chapter}{Litteratur}{38}{section*.4}
-\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{40}{appendix.A}
-\contentsline {section}{\numberline {A.1}Teori}{40}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{40}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Formulering}{40}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}R\IeC {\ae }kkef\IeC {\o }lge}{41}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}R\IeC {\r a}data}{41}{section.A.2}
-\contentsline {appendix}{\chapternumberline {B}Interview}{44}{appendix.B}
-\contentsline {section}{\numberline {B.1}Teori}{44}{section.B.1}
-\contentsline {subsection}{\numberline {B.1.1}Enkeltinterview}{44}{subsection.B.1.1}
-\contentsline {subsection}{\numberline {B.1.2}Telefoninterview}{44}{subsection.B.1.2}
-\contentsline {subsection}{\numberline {B.1.3}Sp\IeC {\o }rgeteknikker og metoder til interview}{45}{subsection.B.1.3}
-\contentsline {subsection}{\numberline {B.1.4}Lukkede og \IeC {\r a}bne sp\IeC {\o }rgsm\IeC {\r a}l}{45}{subsection.B.1.4}
-\contentsline {subsection}{\numberline {B.1.5}Passive teknikker}{45}{subsection.B.1.5}
-\contentsline {subsection}{\numberline {B.1.6}Aktiv sp\IeC {\o }rgeteknik}{45}{subsection.B.1.6}
-\contentsline {appendix}{\chapternumberline {C}Interviewguide}{46}{appendix.C}
-\contentsline {appendix}{\chapternumberline {D}Transskribering}{47}{appendix.D}
-\contentsline {appendix}{\chapternumberline {E}Program koden}{54}{appendix.E}
-\contentsline {appendix}{\chapternumberline {F}Nyt p1 forslag}{62}{appendix.F}
+\contentsline {chapter}{\chapternumberline {7}Test}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Testcases}{31}{section.7.1}
+\contentsline {chapter}{\chapternumberline {8}Diskussion}{34}{chapter.8}
+\contentsline {section}{\numberline {8.1}Sp\IeC {\o }rgeskema}{34}{section.8.1}
+\contentsline {section}{\numberline {8.2}Interview}{35}{section.8.2}
+\contentsline {section}{\numberline {8.3}Programmet}{35}{section.8.3}
+\contentsline {section}{\numberline {8.4}Den interessante rute}{36}{section.8.4}
+\contentsline {chapter}{\chapternumberline {9}Konklusion \& Perspektivering}{37}{chapter.9}
+\contentsline {chapter}{Litteratur}{39}{section*.4}
+\contentsline {appendix}{\chapternumberline {A}Sp\IeC {\o }rgeskema}{41}{appendix.A}
+\contentsline {section}{\numberline {A.1}Teori}{41}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Sp\IeC {\o }rgsm\IeC {\r a}lene}{41}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Formulering}{41}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}R\IeC {\ae }kkef\IeC {\o }lge}{42}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}R\IeC {\r a}data}{42}{section.A.2}
+\contentsline {appendix}{\chapternumberline {B}Interview}{45}{appendix.B}
+\contentsline {section}{\numberline {B.1}Teori}{45}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}Enkeltinterview}{45}{subsection.B.1.1}
+\contentsline {subsection}{\numberline {B.1.2}Telefoninterview}{45}{subsection.B.1.2}
+\contentsline {subsection}{\numberline {B.1.3}Sp\IeC {\o }rgeteknikker og metoder til interview}{46}{subsection.B.1.3}
+\contentsline {subsection}{\numberline {B.1.4}Lukkede og \IeC {\r a}bne sp\IeC {\o }rgsm\IeC {\r a}l}{46}{subsection.B.1.4}
+\contentsline {subsection}{\numberline {B.1.5}Passive teknikker}{46}{subsection.B.1.5}
+\contentsline {subsection}{\numberline {B.1.6}Aktiv sp\IeC {\o }rgeteknik}{46}{subsection.B.1.6}
+\contentsline {appendix}{\chapternumberline {C}Interviewguide}{47}{appendix.C}
+\contentsline {appendix}{\chapternumberline {D}Transskribering}{48}{appendix.D}
+\contentsline {appendix}{\chapternumberline {E}Program koden}{55}{appendix.E}
+\contentsline {appendix}{\chapternumberline {F}Nyt p1 forslag}{63}{appendix.F}

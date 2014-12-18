@@ -119,56 +119,71 @@ pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
 }
 \end{lstlisting}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\vspace{0pt}
-	\begin{center}
-		\includegraphics[scale=0.7]{valgAfAttraktioner}\newline
-		\textit{Figur 6.2: Flowchart over “valgafAttraktioner” funktionen}
-	\end{center}
-	\vspace{0pt}
-	\vspace{0pt}
-\end{wrapfigure}
-
 Brugeren bliver præsenteret for en liste over alle tilgængelige attraktioner fra inputparameteren, og attraktionernes tilhørende nummer i funktionen "valgafAttraktioner. Brugeren bliver bedt om at indtaste attraktionernes matchende numre, hvilket vil blive tilføjet til en list. Taster brugeren 0, bliver brugeren præsentere for sine valg, og beregninger af den korteste rute igangsættes. Programmet returnere listen af valgte attraktioner. \newline
-
+\begin{flushleft}
+	\includegraphics[scale=0.7]{valgAfAttraktioner}\newline
+	\textit{Figur 6.2: Flowchart over “valgafAttraktioner” funktionen}
+\end{flushleft}
 \begin{lstlisting}
-void valgafAttraktioner(attraktion *attraktioner, 
-attraktion *valgteAttraktioner, 
-int *antalValgteAttraktioner, 
-attraktion *ikkeValgteAttraktioner){
-int i = 0, j = 0, k = 0, l = 0, 
-m = 0, n = 0, o = 0, valgt = 0;
+void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ikkeValgteAttraktioner){
+int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, valgt = 0, y = 0;
+int opretNy = 1;
 
-for(i = 0; i < ANTAL_ATTRAKTIONER; i++){
-printf("%d: %s\n", i+1, attraktioner[i].navn);
+printf("Rutevejledning - A401 - P1\n");
+printf("Dette program vil, ud fra dine oenskede attraktioner, bestemme den korteste rute.\n");
+printf("Du kan se de attraktioner du kan vaelge her:\n");
+
+int halvdelen = ANTAL_ATTRAKTIONER/2;
+
+for(i = 0; i < halvdelen; i++){
+printf("%d: %-40s \t%d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
 }
 
-printf("vaelg de attraktioner du oensker 
-		at se ved at skrive det tilhoerende tal.\n");
-printf("vaelg et tal (svarende til en attraktion) 
-		af gangen og tryk enter efter 
-		hver indtastet tal\n");
-printf("indtast ikke samme tal 2 gange\n");
+printf("Vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
+printf("Vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal.\n");
+printf("Tast 0, efterfulgt af enter, for at gaa videre. Indtast ikke samme tal 2 gange.\n");
 do{
-if(scanf("%d", &k) != 1){
-printf("Fejl i indlaesning. Farvel.\n"); exit(0);
+opretNy = 1;
+if (scanf("%d", &k) ==  1){
+for (y = 0; y < j; y++)
+{
+if (strcmp(valgteAttraktioner[y].navn, attraktioner[k-1].navn) == 0)
+{
+printf("Du har allerede indtastet denne attraktion. Proev igen.\n");
+opretNy = 0;
 }
-if(k != 0){
+}
+if (k == 0)
+break;
+else if (k > ANTAL_ATTRAKTIONER || k < 0)
+printf("Tallet svarer ikke til en attraktion\n");
+else if (opretNy && (k <= ANTAL_ATTRAKTIONER))
+{
 valgteAttraktioner[j] = attraktioner[k-1];
+printf("Tilfoejet attraktion: %s\n", attraktioner[k-1].navn);
 j++;
 }
+}
+else
+{
+printf("Fejlindtastning - proev igen\n");
+char e[MAX_STRING];
+scanf("%s", e);
+k = 1;
+}
 } while(j < ANTAL_ATTRAKTIONER && k != 0);
+
+
 
 for (l = 0; l < ANTAL_ATTRAKTIONER; ++l)
 {
 valgt = 0;
 for (m = 0; m < j; ++m)
 {
-if(strcmp(attraktioner[l].navn, 
-   valgteAttraktioner[m].navn) == 0){
+if(strcmp(attraktioner[l].navn, valgteAttraktioner[m].navn) == 0){
 m = j;
 valgt = 1;
-}	
+}
 }
 if(valgt != 1){
 ikkeValgteAttraktioner[n] = attraktioner[l];

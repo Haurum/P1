@@ -11,11 +11,13 @@ I was expecting a `,' or a `}'---line 179 of file bibtex/litteratur.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Projektskrivning"
+1 is an integer literal, not a string, for entry Faxe
+while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry Turismen
 while executing---line 1485 of file bibtex/harvard.bst
-1 is an integer literal, not a string, for entry ftbr
+1 is an integer literal, not a string, for entry EVM
 while executing---line 1485 of file bibtex/harvard.bst
-1 is an integer literal, not a string, for entry Faxe
+1 is an integer literal, not a string, for entry ftbr
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry googleapi
 while executing---line 1485 of file bibtex/harvard.bst
@@ -29,8 +31,6 @@ while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry Dijkstra
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry DMST
-while executing---line 1485 of file bibtex/harvard.bst
-1 is an integer literal, not a string, for entry EVM
 while executing---line 1485 of file bibtex/harvard.bst
 1 is an integer literal, not a string, for entry PM
 while executing---line 1485 of file bibtex/harvard.bst

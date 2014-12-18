@@ -5,12 +5,27 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[{Dansk Statistik}(2008)]{Turismen}
-\textbf{{Dansk Statistik}}, \textbf{2008}.
-\newblock {Dansk Statistik}.
+\bibitem[{Center for Erhverv \& Udvikling}(2012)]{Faxe}
+\textbf{{Center for Erhverv \& Udvikling}}, \textbf{2012}.
+\newblock {Center for Erhverv \& Udvikling}.
+\newblock \textit{Erhverv og turisme}.
+\newblock \url{http://www.faxekommune.dk/erhverv-turisme}, 2012.
+\newblock Set d. 20/11-2014.
+
+\bibitem[{Danmarks Statistik}(2008)]{Turismen}
+\textbf{{Danmarks Statistik}}, \textbf{2008}.
+\newblock {Danmarks Statistik}.
 \newblock \textit{Turismen - Regionalt, nationalt og internationalt}.
 \newblock \url{http://www.dst.dk/pukora/epub/upload/11676/tur08.pdf}, 2008.
 \newblock Set d. 19/11-2014 - side 8.
+
+\bibitem[{Erhvervs- og Vækstministeriet}(2014)]{EVM}
+\textbf{{Erhvervs- og Vækstministeriet}}, \textbf{2014}.
+\newblock {Erhvervs- og Vækstministeriet}.
+\newblock \textit{Turisme}.
+\newblock \url{http://www.evm.dk/arbejdsomraader/internationalt-udsyn/turisme},
+  2014.
+\newblock Set d. 16/12-2014.
 
 \bibitem[FindTheBestRoute.com(2014)]{ftbr}
 \textbf{FindTheBestRoute.com}, \textbf{2014}.
@@ -19,13 +34,6 @@
   addresses}.
 \newblock \url{http://findthebestroute.com/RouteFinder.html}, 2014.
 \newblock Set d. 27/10-2014.
-
-\bibitem[for Erhverv \&~Udvikling(2012)]{Faxe}
-\textbf{for Erhverv \&~Udvikling}, \textbf{2012}.
-\newblock Center for Erhverv \&~Udvikling.
-\newblock \textit{Erhverv og turisme}.
-\newblock \url{http://www.faxekommune.dk/erhverv-turisme}, 2012.
-\newblock Set d. 20/11-2014.
 
 \bibitem[Google(2014)]{googleapi}
 \textbf{Google}, \textbf{2014}.
@@ -72,14 +80,6 @@
 \newblock
   \url{http://web.tuke.sk/fei-cit/butka/hop/htsp.pdfhttps://www.matematikfessor.dk/lessons/projektion-af-vektorer-199},
   2003.
-\newblock Set d. 16/12-2014.
-
-\bibitem[og~Vækstministeriet(2014)]{EVM}
-\textbf{og~Vækstministeriet}, \textbf{2014}.
-\newblock Erhvervs og~Vækstministeriet.
-\newblock \textit{Turisme}.
-\newblock \url{http://www.evm.dk/arbejdsomraader/internationalt-udsyn/turisme},
-  2014.
 \newblock Set d. 16/12-2014.
 
 \bibitem[Postamenter(2014)]{PM}

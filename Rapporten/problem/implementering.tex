@@ -19,10 +19,10 @@ Til programmet bruges fire forskellige structs. Den første struct er "attraktio
 
 \begin{lstlisting}
 typedef struct {
-char navn[MAX_STRING];
-char adresse[MAX_STRING]; 
-double kmFraGreenwich, kmFraAekvator;
-int besoegt;
+  char navn[MAX_STRING];
+  char adresse[MAX_STRING]; 
+  double kmFraGreenwich, kmFraAekvator;
+  int besoegt;
 } attraktion;
 \end{lstlisting} 
 
@@ -30,8 +30,8 @@ Næste struct er "naboRute", som indeholder en double, "ruteLaengde", og et arra
 
 \begin{lstlisting}
 typedef struct {
-double ruteLaengde;
-attraktion rute[ANTAL_ATTRAKTIONER];
+  double ruteLaengde;
+  attraktion rute[ANTAL_ATTRAKTIONER];
 } naboRute;
 \end{lstlisting}
 
@@ -39,9 +39,9 @@ Næste struct er "kant", som indeholder to attraktioner, "startAttraktion" og "s
 
 \begin{lstlisting}
 typedef struct {
-attraktion start;
-attraktion slut;
-double laengde;
+  attraktion start;
+  attraktion slut;
+  double laengde;
 } kant;
 \end{lstlisting}
 
@@ -49,7 +49,7 @@ Sidste struct er "vektor", som indeholder to doubles, "x" og "y". Denne struct b
 
 \begin{lstlisting}
 typedef struct {
-double x, y;
+  double x, y;
 } vektor;
 \end{lstlisting}
 
@@ -58,25 +58,25 @@ Attraktionerne til programmet bliver indlæst fra en .txt fil når programmet k�
 
 \begin{lstlisting}
 void initialiserAttraktioner(attraktion *attraktioner){
-FILE *input_file_pointer;
-int i = 0;
-double lndgrad;
-double brdgrad;
+  FILE *input_file_pointer;
+  int i = 0;
+  double lndgrad;
+  double brdgrad;
 
-input_file_pointer = fopen("attraktioner.txt", "r");
+  input_file_pointer = fopen("attraktioner.txt", "r");
 
-if(input_file_pointer != NULL){
-while(fscanf(input_file_pointer, " %s %s %lf %lf", attraktioner[i].navn, attraktioner[i].adresse, &brdgrad, &lndgrad) == 4){
-attraktioner[i].kmFraGreenwich = lndgrad * KM_PR_LNDGRAD;
-attraktioner[i].kmFraAekvator = brdgrad * KM_PR_BRDGRAD;
-attraktioner[i].besoegt = 0;
-i++;
-}
-}else{
-printf("kunne ikke aabne fil\n"); exit(1);
-}
-fclose(input_file_pointer);
-} 
+  if(input_file_pointer != NULL){
+    while(fscanf(input_file_pointer, " %s %s %lf %lf", attraktioner[i].navn, attraktioner[i].adresse, &brdgrad, &lndgrad) == 4){
+      attraktioner[i].kmFraGreenwich = lndgrad * KM_PR_LNDGRAD;
+      attraktioner[i].kmFraAekvator = brdgrad * KM_PR_BRDGRAD;
+      attraktioner[i].besoegt = 0;
+      i++;
+    }
+  }else{
+    printf("kunne ikke aabne fil\n"); exit(1);
+  }
+  fclose(input_file_pointer);
+}  
 \end{lstlisting}
 
 Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne. Beregningen af distancerne sker vha. ”beregn\_dist”, ved at sende en start og slut attraktion. Derefter bliver start- og slut attraktionen plus længden imellem dem lagt ind som en kant i kanter arrayet. Dette gøres i en for-løkke i en anden for-løkke, hvor der for hvert punkt bliver der udregnet distancen til de punkter der ikke allerede er blevet oprettet en kant for, i en tidligere iteration af løkkerne. For hver kant der bliver oprettet, oprettes en ekstra kant som har samme længde, men har modsat start og slut attraktion. Så hvis der oprettes en kant fra x til y, vil der også blive oprettet en kant fra y til x, med samme længde. Kanterne bliver tilføjet til kantarrayet, gennem den pointer der er inputparameter til funktionen, så kanterne kan blive tilgået fra resten af programmet. \newline
@@ -84,28 +84,28 @@ Funktionen ”udregn\_kanter” bruges til at udregne distancen mellem punkterne
 \begin{lstlisting}
 void udregn_kanter(attraktion *attraktioner, kant *kanter)
 {
-int i;
-int y;
-int indexTilKanter = 0;
-for (i = 0; i < ANTAL_ATTRAKTIONER; i++)
-{
-for (y = i; y < ANTAL_ATTRAKTIONER; y++)
-{
-if (strcmp(attraktioner[i].navn, attraktioner[y].navn) != 0)
-{
-kant k, j;
-k.start = attraktioner[i];
-j.slut = k.start;
-k.slut = attraktioner[y];
-j.start = k.slut;
-k.laengde = beregn_dist(k.start, k.slut);
-j.laengde = k.laengde;
-kanter[indexTilKanter] = k;
-kanter[indexTilKanter+1] = j;
-indexTilKanter += 2;
-}
-}
-}
+  int i;
+  int y;
+  int indexTilKanter = 0;
+  for (i = 0; i < ANTAL_ATTRAKTIONER; i++)
+  {
+    for (y = i; y < ANTAL_ATTRAKTIONER; y++)
+    {
+      if (strcmp(attraktioner[i].navn, attraktioner[y].navn) != 0)
+      {
+        kant k, j;
+        k.start = attraktioner[i];
+        j.slut = k.start;
+        k.slut = attraktioner[y];
+        j.start = k.slut;
+        k.laengde = beregn_dist(k.start, k.slut);
+        j.laengde = k.laengde;
+        kanter[indexTilKanter] = k;
+        kanter[indexTilKanter+1] = j;
+        indexTilKanter += 2;
+      }
+    }
+  }
 }
 \end{lstlisting}
 
@@ -114,8 +114,8 @@ Funktionen ”beregn\_dist” er en implementering af pythagoras sætning til at
 \begin{lstlisting}
 double beregn_dist(attraktion startAttraktion, attraktion slutAttraktion)
 {
-return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
-pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
+  return sqrt(pow(startAttraktion.kmFraGreenwich - slutAttraktion.kmFraGreenwich, 2) + 
+  pow(startAttraktion.kmFraAekvator - slutAttraktion.kmFraAekvator, 2));
 }
 \end{lstlisting}
 
@@ -126,71 +126,71 @@ Brugeren bliver præsenteret for en liste over alle tilgængelige attraktioner f
 \end{flushleft}
 \begin{lstlisting}
 void valgafAttraktioner(attraktion *attraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, attraktion *ikkeValgteAttraktioner){
-int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, valgt = 0, y = 0;
-int opretNy = 1;
+  int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, valgt = 0, y = 0;
+  int opretNy = 1;
 
-printf("Rutevejledning - A401 - P1\n");
-printf("Dette program vil, ud fra dine oenskede attraktioner, bestemme den korteste rute.\n");
-printf("Du kan se de attraktioner du kan vaelge her:\n");
+  printf("Rutevejledning - A401 - P1\n");
+  printf("Dette program vil, ud fra dine oenskede attraktioner, bestemme den korteste rute.\n");
+  printf("Du kan se de attraktioner du kan vaelge her, den foerske du vaelger, vil vaere der hvor du starter:\n");
 
-int halvdelen = ANTAL_ATTRAKTIONER/2;
+  int halvdelen = ANTAL_ATTRAKTIONER/2;
 
-for(i = 0; i < halvdelen; i++){
-printf("%d: %-40s \t%d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
-}
+  for(i = 0; i < halvdelen; i++){
+    printf("%d: %-40s \t%d: %s\n", i+1, attraktioner[i].navn, i+halvdelen+1, attraktioner[i+halvdelen].navn);
+  }
 
-printf("Vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
-printf("Vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal.\n");
-printf("Tast 0, efterfulgt af enter, for at gaa videre. Indtast ikke samme tal 2 gange.\n");
-do{
-opretNy = 1;
-if (scanf("%d", &k) ==  1){
-for (y = 0; y < j; y++)
-{
-if (strcmp(valgteAttraktioner[y].navn, attraktioner[k-1].navn) == 0)
-{
-printf("Du har allerede indtastet denne attraktion. Proev igen.\n");
-opretNy = 0;
-}
-}
-if (k == 0)
-break;
-else if (k > ANTAL_ATTRAKTIONER || k < 0)
-printf("Tallet svarer ikke til en attraktion\n");
-else if (opretNy && (k <= ANTAL_ATTRAKTIONER))
-{
-valgteAttraktioner[j] = attraktioner[k-1];
-printf("Tilfoejet attraktion: %s\n", attraktioner[k-1].navn);
-j++;
-}
-}
-else
-{
-printf("Fejlindtastning - proev igen\n");
-char e[MAX_STRING];
-scanf("%s", e);
-k = 1;
-}
-} while(j < ANTAL_ATTRAKTIONER && k != 0);
+  printf("Vaelg de attraktioner du oensker at se ved at skrive det tilhoerende tal.\n");
+  printf("Vaelg et tal (svarende til en attraktion) af gangen og tryk enter efter hver indtastet tal.\n");
+  printf("Tast 0, efterfulgt af enter, for at gaa videre. Indtast ikke samme tal 2 gange.\n");
+  do{
+    opretNy = 1;
+    if (scanf("%d", &k) ==  1){
+      for (y = 0; y < j; y++)
+      {
+        if (strcmp(valgteAttraktioner[y].navn, attraktioner[k-1].navn) == 0)
+        {
+          printf("Du har allerede indtastet denne attraktion. Proev igen.\n");
+          opretNy = 0;
+        }
+      }
+      if (k == 0)
+        break;
+      else if (k > ANTAL_ATTRAKTIONER || k < 0)
+        printf("Tallet svarer ikke til en attraktion\n");
+      else if (opretNy && (k <= ANTAL_ATTRAKTIONER))
+      {
+        valgteAttraktioner[j] = attraktioner[k-1];
+        printf("Tilfoejet attraktion: %s\n", attraktioner[k-1].navn);
+        j++;
+      }
+    }
+    else
+    {
+      printf("Fejlindtastning - proev igen\n");
+      char e[MAX_STRING];
+      scanf("%s", e);
+      k = 1;
+    }
+  } while(j < ANTAL_ATTRAKTIONER && k != 0);
 
 
 
-for (l = 0; l < ANTAL_ATTRAKTIONER; ++l)
-{
-valgt = 0;
-for (m = 0; m < j; ++m)
-{
-if(strcmp(attraktioner[l].navn, valgteAttraktioner[m].navn) == 0){
-m = j;
-valgt = 1;
-}
-}
-if(valgt != 1){
-ikkeValgteAttraktioner[n] = attraktioner[l];
-n++;
-}
-}
-*antalValgteAttraktioner = j;
+  for (l = 0; l < ANTAL_ATTRAKTIONER; ++l)
+  {
+    valgt = 0;
+    for (m = 0; m < j; ++m)
+    {
+      if(strcmp(attraktioner[l].navn, valgteAttraktioner[m].navn) == 0){
+        m = j;
+        valgt = 1;
+      }
+    }
+    if(valgt != 1){
+      ikkeValgteAttraktioner[n] = attraktioner[l];
+      n++;
+    }
+  }
+  *antalValgteAttraktioner = j;
 }
 \end{lstlisting}
 
@@ -201,29 +201,28 @@ Funktionen ”findNaboRute” benytter NNA (Nearest Neighbour Algorithm, eller N
 	\textit{Figur 6.3: Flowchart over “findNaboRute” funktionen”}
 \end{flushleft}
 \begin{lstlisting}
-void findNaboRute(attraktion *valgteAttraktioner, 
-int antalValgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde){
-int i = 0;
-double lavesteLaengde = 10000;
-*ruteLaengde = 0;
+void findNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *startAttraktion, kant *kanter, attraktion **tempRute, double *ruteLaengde){
+  int i = 0;
+  double lavesteLaengde = 10000;
+  *ruteLaengde = 0;
 
-tempRute[i] = startAttraktion;
+  tempRute[i] = startAttraktion;
 
-for(i = 0; i < antalValgteAttraktioner-1; ++i){ /*da der f.eks. kun er 4 kanter imellem 5 punkter*/
-tempRute[i]->besoegt = 1;
-int j = 0;
-for (j = 0; j < antalValgteAttraktioner; ++j){
-if(valgteAttraktioner[j].besoegt != 1 && findDist(*tempRute[i], valgteAttraktioner[j], kanter) < lavesteLaengde){
-lavesteLaengde = findDist(*tempRute[i],valgteAttraktioner[j], kanter);
-tempRute[i+1] = &valgteAttraktioner[j];
-}
-}
-*ruteLaengde += lavesteLaengde;
-lavesteLaengde = 10000;
-}
-tempRute[antalValgteAttraktioner] 
-= startAttraktion;
-*ruteLaengde += findDist(*tempRute[antalValgteAttraktioner-1], *tempRute[antalValgteAttraktioner], kanter);
+  for(i = 0; i < antalValgteAttraktioner-1; ++i){ /*da der f.eks. kun er 4 kanter imellem 5 punkter*/
+    tempRute[i]->besoegt = 1;
+    int j = 0;
+    for (j = 0; j < antalValgteAttraktioner; ++j)
+    {
+      if(valgteAttraktioner[j].besoegt != 1 && findDist(*tempRute[i], valgteAttraktioner[j], kanter) < lavesteLaengde){
+        lavesteLaengde = findDist(*tempRute[i], valgteAttraktioner[j], kanter);
+        tempRute[i+1] = &valgteAttraktioner[j];
+      }
+    }
+    *ruteLaengde += lavesteLaengde;
+    lavesteLaengde = 10000;
+  }
+  tempRute[antalValgteAttraktioner] = startAttraktion;
+  *ruteLaengde += findDist(*tempRute[antalValgteAttraktioner-1], *tempRute[antalValgteAttraktioner], kanter);
 }
 \end{lstlisting}
 
@@ -233,37 +232,31 @@ tempRute[antalValgteAttraktioner]
 	\textit{Figur 6.4: Flowchart over “findKortesteNaboRute” funktionen”}
 \end{flushleft}
 \begin{lstlisting}
-void findKortesteNaboRute(attraktion
-*valgteAttraktioner, 
-int antalValgteAttraktioner, 
-attraktion *ruteAttraktioner, kant *kanter, 
-double *samletLaengde){
-/* indput er valgteAttraktioner arrayet, 
-og kanter arrayet*/
-/*output er ruteAttraktioner og samletLaengde*/
-double ruteLaengde;
-attraktion *tempRute[antalValgteAttraktioner+1];
-*samletLaengde = 100000;
+void findKortesteNaboRute(attraktion *valgteAttraktioner, int antalValgteAttraktioner, attraktion *ruteAttraktioner, kant *kanter, double *samletLaengde){
+  /* indput er valgteAttraktioner arrayet, og kanter arrayet*/
+  /*output er ruteAttraktioner og samletLaengde*/
+  double ruteLaengde;
+  attraktion *tempRute[antalValgteAttraktioner+1];
+  *samletLaengde = 100000;
 
-int i;
-int h;
-int j;
-for (i = 0; i < antalValgteAttraktioner; ++i){
-for (h = 0; h < antalValgteAttraktioner; ++h){
-valgteAttraktioner[h].besoegt = 0;
-}
-findNaboRute(valgteAttraktioner,
-antalValgteAttraktioner, 
-&valgteAttraktioner[i], kanter, tempRute,
-&ruteLaengde);
-if(ruteLaengde < *samletLaengde){
-*samletLaengde = ruteLaengde;
-for (j = 0; j < antalValgteAttraktioner+1; ++j)
-{
-ruteAttraktioner[j] = *tempRute[j];
-}
-}
-}
+  int i;
+  int h;
+  int j;
+  for (i = 0; i < antalValgteAttraktioner; ++i)
+  {
+    for (h = 0; h < antalValgteAttraktioner; ++h)
+    {
+      valgteAttraktioner[h].besoegt = 0;
+    }
+    findNaboRute(valgteAttraktioner, antalValgteAttraktioner, &valgteAttraktioner[i], kanter, tempRute, &ruteLaengde);
+    if(ruteLaengde < *samletLaengde){
+      *samletLaengde = ruteLaengde;
+      for (j = 0; j < antalValgteAttraktioner+1; ++j)
+      {
+        ruteAttraktioner[j] = *tempRute[j];
+      }
+    }
+  }
 }
 \end{lstlisting}
 
@@ -271,29 +264,29 @@ Funktionen "findDist" gennemgår alle kanter der allerede er oprettet, og return
 
 \begin{lstlisting}
 double findDist(attraktion start, attraktion slut, kant *kanter){
-int i;
-for (i = 0; i < ANTAL_KANTER; ++i)
-{
-if(strcmp(kanter[i].start.navn, start.navn) == 0 && strcmp(kanter[i].slut.navn, slut.navn) == 0){
-return kanter[i].laengde;
-}
-}
-printf("Kunne ikke finde passende kant\n"); exit(0);
+  int i;
+  for (i = 0; i < ANTAL_KANTER; ++i)
+  {
+    if(strcmp(kanter[i].start.navn, start.navn) == 0 && strcmp(kanter[i].slut.navn, slut.navn) == 0){
+      return kanter[i].laengde;
+    }
+  }
+  printf("Kunne ikke finde passende kant\n"); exit(0);
 }
 \end{lstlisting}
 
 Funktionen ”attraktionErTilfoejet” bruges til at finde ud af, om en attraktioner allerede er tilføjet til ens liste over ekstra attraktioner, og returnere enten true eller false. \newline
 
 \begin{lstlisting}
-int attraktionErTilfoejet(attraktion *ekstraAttraktioner, int antalEsktraAttraktioner, attraktion attraktionAtTilfoeje){
-int i;
-for (i = 0; i < antalEsktraAttraktioner; ++i)
-{
-if(strcmp(ekstraAttraktioner[i].navn, attraktionAtTilfoeje.navn) == 0){
-return 1;
-}
-}
-return 0;
+int attraktionErTilfoejet(attraktion *ekstraAttraktioner, int antalEkstraAttraktioner, attraktion attraktionAtTilfoeje){
+  int i;
+  for (i = 0; i < antalEkstraAttraktioner; ++i)
+  {
+    if(strcmp(ekstraAttraktioner[i].navn, attraktionAtTilfoeje.navn) == 0){
+      return 1;
+    }
+  }
+  return 0;
 }
 \end{lstlisting}
 
@@ -301,68 +294,66 @@ Funktionen ”prikProdukt” bruges til at finde prikproduktet mellem to vektore
 
 \begin{lstlisting}
 double prikProdukt(vektor vektor1, vektor vektor2){
-return (vektor1.x * vektor2.x) + (vektor1.y * vektor2.y);
+  return (vektor1.x * vektor2.x) + (vektor1.y * vektor2.y);
 }
 \end{lstlisting}
 
 Funktionen ”findEkstraAttraktionerFirkant” benytter beregningerne fra teoriafsnittet "Vektorteori", til at finde ud af om der findes en evt. interessant attraktion på brugerens rute. Der tjekkes om attraktionAtTilfoeje ligger inden for en bestemt distance til linjen mellem start og slut punkter. Hvis attraktionAtTilfoeje ligger indenfor, bliver den lagt i ekstraAttraktioner arrayet. \newline
 
 \begin{lstlisting}
-void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, attraktion *valgteAttraktioner, 
-int *antalValgteAttraktioner, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist, 
-attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner){
-int i, j;
-double vektorLaengde;
-vektor ruteVektor, ruteVinkelretVektor, ruteEnhedsVinkelretVektor, mainHjoerne, side1Vektor, side2Vektor, punktVektor;
+void findEkstraAttraktionerFirkant(attraktion startAttraktion, attraktion slutAttraktion, kant *kanter, attraktion attraktionAtTilfoeje, double maxDist, 
+                                  attraktion *ekstraAttraktioner, int *antalEkstraAttraktioner){
+  double vektorLaengde;
+  vektor ruteVektor, ruteVinkelretVektor, ruteEnhedsVinkelretVektor, mainHjoerne, side1Vektor, side2Vektor, punktVektor;
 
-vektorLaengde = findDist(startAttraktion, slutAttraktion, kanter);
-ruteVektor.x = slutAttraktion.kmFraGreenwich - startAttraktion.kmFraGreenwich;
-ruteVektor.y = slutAttraktion.kmFraAekvator - startAttraktion.kmFraAekvator;
-ruteVinkelretVektor.x = -ruteVektor.y;
-ruteVinkelretVektor.y = ruteVektor.x;
-ruteEnhedsVinkelretVektor.x = ruteVinkelretVektor.x / vektorLaengde;
-ruteEnhedsVinkelretVektor.y = ruteVinkelretVektor.y / vektorLaengde;
-mainHjoerne.x = startAttraktion.kmFraGreenwich + ruteEnhedsVinkelretVektor.x * maxDist;
-mainHjoerne.y = startAttraktion.kmFraAekvator + ruteEnhedsVinkelretVektor.y * maxDist;
-side1Vektor.x = ruteVektor.x;
-side1Vektor.y = ruteVektor.y;
-side2Vektor.x = -2 * ruteEnhedsVinkelretVektor.x * maxDist;
-side2Vektor.y = -2 * ruteEnhedsVinkelretVektor.y * maxDist;
+  vektorLaengde = findDist(startAttraktion, slutAttraktion, kanter);
+  ruteVektor.x = slutAttraktion.kmFraGreenwich - startAttraktion.kmFraGreenwich;
+  ruteVektor.y = slutAttraktion.kmFraAekvator - startAttraktion.kmFraAekvator;
+  ruteVinkelretVektor.x = -ruteVektor.y;
+  ruteVinkelretVektor.y = ruteVektor.x;
+  ruteEnhedsVinkelretVektor.x = ruteVinkelretVektor.x / vektorLaengde;
+  ruteEnhedsVinkelretVektor.y = ruteVinkelretVektor.y / vektorLaengde;
+  mainHjoerne.x = startAttraktion.kmFraGreenwich + ruteEnhedsVinkelretVektor.x * maxDist;
+  mainHjoerne.y = startAttraktion.kmFraAekvator + ruteEnhedsVinkelretVektor.y * maxDist;
+  side1Vektor.x = ruteVektor.x;
+  side1Vektor.y = ruteVektor.y;
+  side2Vektor.x = -2 * ruteEnhedsVinkelretVektor.x * maxDist;
+  side2Vektor.y = -2 * ruteEnhedsVinkelretVektor.y * maxDist;
 
-punktVektor.x = attraktionAtTilfoeje.kmFraGreenwich - mainHjoerne.x;
-punktVektor.y = attraktionAtTilfoeje.kmFraAekvator - mainHjoerne.y;
-if(0 < prikProdukt(punktVektor, side1Vektor) && prikProdukt(punktVektor, side1Vektor) < prikProdukt(side1Vektor, side1Vektor) &&
-0 < prikProdukt(punktVektor, side2Vektor) && prikProdukt(punktVektor, side2Vektor) < prikProdukt(side2Vektor, side2Vektor)){
-ekstraAttraktioner[*antalEsktraAttraktioner] = attraktionAtTilfoeje;
-*antalEsktraAttraktioner += 1;
-}
+  punktVektor.x = attraktionAtTilfoeje.kmFraGreenwich - mainHjoerne.x;
+  punktVektor.y = attraktionAtTilfoeje.kmFraAekvator - mainHjoerne.y;
+  if(0 < prikProdukt(punktVektor, side1Vektor) && prikProdukt(punktVektor, side1Vektor) < prikProdukt(side1Vektor, side1Vektor) &&
+      0 < prikProdukt(punktVektor, side2Vektor) && prikProdukt(punktVektor, side2Vektor) < prikProdukt(side2Vektor, side2Vektor)){
+    ekstraAttraktioner[*antalEkstraAttraktioner] = attraktionAtTilfoeje;
+    *antalEkstraAttraktioner += 1;
+  }
 }
 \end{lstlisting}
 
 For at foreslå ekstra attraktioner til den valgte rute, bruges funktionen ”findEkstraAttraktioner”, hvor dette vil udgøre den interessante rute. Dette gøres den ved først at bruge funktionen ”findDist”, til at finde ikke valgte attraktioner inden for en bestemt distance af de valgte attraktioner. Er en attraktion ikke inden for denne radius, bruges funktionen ”findEkstraAttraktionerFirkant” for at finde ud af, om attraktionen ligger tæt på ruten mellem to attraktioner. De attraktioner der enten er inden for den bestemte distance af enten attraktionerne eller ruterne derimellem, tilføjes til et array der returneres fra funktionen. \newline
 
 \begin{lstlisting}
-void findEkstraAttraktioner(attraktion *ruteAttraktioner, attraktion *valgteAttraktioner, int *antalValgteAttraktioner, 
-kant *kanter, attraktion *ikkeValgteAttraktioner, double maxDist, attraktion *ekstraAttraktioner, int *antalEsktraAttraktioner){
+void findEkstraAttraktioner(attraktion *ruteAttraktioner, int *antalValgteAttraktioner, 
+                            kant *kanter, attraktion *ikkeValgteAttraktioner, double maxDist, attraktion *ekstraAttraktioner, int *antalEkstraAttraktioner){
 
-int i, j, antalIkkeValgteAttraktioner = ANTAL_ATTRAKTIONER - *antalValgteAttraktioner;
+  int i, j, antalIkkeValgteAttraktioner = ANTAL_ATTRAKTIONER - *antalValgteAttraktioner;
 
-for (i = 0; i < *antalValgteAttraktioner; ++i)
-{
-for (j = 0; j < antalIkkeValgteAttraktioner; ++j)
-{
+  for (i = 0; i < *antalValgteAttraktioner; ++i)
+  {
+    for (j = 0; j < antalIkkeValgteAttraktioner; ++j)
+    {
 
-if(attraktionErTilfoejet(ekstraAttraktioner, *antalEsktraAttraktioner, ikkeValgteAttraktioner[j])){
-}else if(findDist(ruteAttraktioner[i], ikkeValgteAttraktioner[j], kanter) < maxDist || 
-findDist(ruteAttraktioner[i+1], ikkeValgteAttraktioner[j], kanter) < maxDist){
-ekstraAttraktioner[*antalEsktraAttraktioner] = ikkeValgteAttraktioner[j];
-*antalEsktraAttraktioner += 1;
-}else{
-findEkstraAttraktionerFirkant(ruteAttraktioner[i], ruteAttraktioner[i+1], valgteAttraktioner, antalValgteAttraktioner,
-kanter, ikkeValgteAttraktioner[j], maxDist, ekstraAttraktioner, antalEsktraAttraktioner);
-}
-}
-}
+      if(attraktionErTilfoejet(ekstraAttraktioner, *antalEkstraAttraktioner, ikkeValgteAttraktioner[j])){
+      }else if(findDist(ruteAttraktioner[i], ikkeValgteAttraktioner[j], kanter) < maxDist || 
+         findDist(ruteAttraktioner[i+1], ikkeValgteAttraktioner[j], kanter) < maxDist){
+        ekstraAttraktioner[*antalEkstraAttraktioner] = ikkeValgteAttraktioner[j];
+        *antalEkstraAttraktioner += 1;
+      }else{
+        findEkstraAttraktionerFirkant(ruteAttraktioner[i], ruteAttraktioner[i+1], 
+                                      kanter, ikkeValgteAttraktioner[j], maxDist, ekstraAttraktioner, antalEkstraAttraktioner);
+      }
+    }
+  }
 }
 \end{lstlisting}
 
@@ -371,28 +362,28 @@ Funktionen ”aendre\_startsted”, tager en rute som inputparameter, sammen med
 \begin{lstlisting}
 void aendre_startsted(attraktion *ruten, attraktion nytStartSted, int antalAttraktioner, attraktion *outputRute)
 {
-int i = 0, startStedIndex = 0;
+  int i = 0, startStedIndex = 0;
 
-for (i = 0; i < antalAttraktioner; i++)
-{
-if (strcmp(ruten[i].navn, nytStartSted.navn) == 0)
-startStedIndex = i;
-}
+  for (i = 0; i < antalAttraktioner; i++)
+  {
+    if (strcmp(ruten[i].navn, nytStartSted.navn) == 0)
+      startStedIndex = i;
+  }
 
-for (i = 0; i < antalAttraktioner; i++)
-{
+  for (i = 0; i < antalAttraktioner; i++)
+  {
 
-if (startStedIndex == antalAttraktioner-1)
-{
-startStedIndex = 1;
-outputRute[i] = ruten[0];
-}
-else
-{
-outputRute[i] = ruten[startStedIndex];
-startStedIndex++;
-}
-}
+    if (startStedIndex == antalAttraktioner-1)
+    {
+      startStedIndex = 1;
+      outputRute[i] = ruten[0];
+    }
+    else
+    {
+      outputRute[i] = ruten[startStedIndex];
+      startStedIndex++;
+    }
+  }
 }
 \end{lstlisting}
 
